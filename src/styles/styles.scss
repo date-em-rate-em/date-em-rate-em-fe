@@ -1,0 +1,30 @@
+/* ==========================================================================
+l - Settings - Global Variables
+========================================================================== */
+@import "./i-settings/_colors.scss";
+@import "./i-settings/_typography.scss";
+
+/* ==========================================================================
+ll - Tools - Mixins
+========================================================================== */
+@import "./ii-tools/_keyframes.scss";
+@import "./ii-tools/_mixins.scss";
+
+/* ==========================================================================
+lll - Generic - Resets & Normalize Styles
+========================================================================== */
+@import './iii-generic/_generics.scss';
+
+/* ==========================================================================
+lV - Elements - Semanitic Bare Elements 
+========================================================================== */
+@import './iv-elements/_elements.scss';
+
+/* ==========================================================================
+V -  Components -  Specific UI components
+========================================================================== */
+// @import "./v-components/_Header.scss";
+// @import "./v-components/_Welcome.scss";
+// @import "./v-components/_FavesContainer.scss";
+// @import "./v-components/_Fave.scss";
+// @import "./v-components/_Quote.scss";
