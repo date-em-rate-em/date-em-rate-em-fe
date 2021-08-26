@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a, Link {
+    text-decoration: none;
+    &:focus, &:hover, &:visited, &:link, &:active {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  button {
+    padding: .5rem;
+    margin: 1rem;
+    background: none;
+    cursor: pointer;
+    text-transform: none;
+    border: 1px solid $color-dark;
+    font-size: 1rem;
+    font-family: $font-family-secondary;
+    letter-spacing: 1.5px;
+    background: $color-background;
+    transition: background-color 1s ease-out;
+      &:hover{
+        background-color: $color-dark;
+        color: $color-primary;
+        border: 1px solid $color-primary;
+      }
+  }
