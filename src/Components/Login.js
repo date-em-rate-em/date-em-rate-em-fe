@@ -1,11 +1,26 @@
 import { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export const Login = () => {   
+export const Login = (validateLogin) => {   
 
     const [ user, setUser ] = useState('');
     const [ password, setPassword ] = useState('');
+
+    const loginUser = (event) => {
+        event.preventDefault()
+        const userLogin = {
+                userName: user,
+                password: password
+        }
+        // validateLogin(userLogin); //will need to create a validateLogin func in App that sends the login info to the BE which sends us back that specific user's information
+        clearInputs();
+       }
+
+    const clearInputs = () => {
+        setUser('')
+        setPassword('');
+    }
 
     return (
         <section className='login'>
@@ -18,15 +33,27 @@ export const Login = () => {
                     name='username' 
                     autocomplete='off' 
                     placeholder='Username'
-                    required/>
-                    <label for='password-input'>Password:</label>
+                    value={user}
+                    required
+                    onChange={event => setUser(event.target.value)}
+                    />
+                    
                     <input 
                     type='password' 
                     autocomplete='off'
                     name='password'
                     placeholder='Password' 
-                    required/>
-                    <button className='loginBtn'>Log in</button>
+                    value={password}
+                    required
+                    onChange={event => setPassword(event.target.value)}
+                    />
+                    <Link to='/Dashboard'>
+                        <button 
+                        className='loginBtn'
+                        onClick={(event) => loginUser(event)}>
+                        Log in
+                        </button>`
+                    </Link>
                     {/* <p class='login-error hidden' id='loginError'>Login Error. Please try again.</p> */}
                 </form>
             </article>
