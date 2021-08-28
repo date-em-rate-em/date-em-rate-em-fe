@@ -1,11 +1,24 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
-const Footer = () => {
+export const Footer = () => {
+
+    //Footer will only be rendered on mobile view
+
     return (
-        <div>
-            
-        </div>
+        <section>
+            <Route exact path='/Dashboard' render={() => 
+            <div className='footer-icons'>
+                {/* magnifying class on left, plus sign on right */}
+            </div>
+        }
+        />
+            <Link to='/Dashboard'>
+                <div className='return-home'>
+                    {/* back arrow icon  */}
+                </div>
+            </Link>
+        </section>
     );
 };
 
-export default Footer;
