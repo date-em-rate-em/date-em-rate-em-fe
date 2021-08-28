@@ -3,13 +3,22 @@ import ReviewCard from './ReviewCard';
 
 const Review = () => {
 
-    const allReviews = allReviews.map(review => {
+    const allReviews = allReviews.reviews.map(review => {
         return (
             <ReviewCard
                 id={review.id}
                 key={review.id}
-                name={review.name}
-                amount={review.amount}
+                date={review.date}
+                review={review.review}
+                title={title.title}
+                rating={review.rating}
+                size={review.size}
+                payment={review.payment}
+                kindness={title.kindness}
+                vibe={review.vibe}
+                gender={review.gender}
+                wouldIGoOutWithThemAgain={review.wouldIGoOutWithThemAgain}
+                safety={review.safety}
             />
         )
     })
