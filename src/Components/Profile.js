@@ -11,7 +11,9 @@ const Profile = () => {
                     <p>(this is where the client's phone number/email/contact information will go from state)</p>
             </section>
             <section className="add-review-btn-section">
-
+            <button className="add-review-btn">
+                        Add Review
+                </button>
             </section>
         </div>
     );
