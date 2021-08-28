@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import Review from './Review';
+import ReviewCard from './ReviewCard';
 // import Review from './Review';
 
 const Profile = () => {
