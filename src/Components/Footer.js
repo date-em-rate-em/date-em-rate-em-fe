@@ -9,7 +9,7 @@ export const Footer = () => {
         <section>
             <Route exact path='/Dashboard' render={() => 
             <div className='footer-icons'>
-                {/* magnifying class on left, plus sign on right */}
+                {/* magnifying glass on left, plus sign on right */}
             </div>
         }
         />
