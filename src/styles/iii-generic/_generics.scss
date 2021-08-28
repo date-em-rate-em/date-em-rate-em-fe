@@ -34,7 +34,7 @@
     transition: background-color 1s ease-out;
       &:hover{
         background-color: $color-dark;
-        color: $color-primary;
+        color: white;
         border: 1px solid $color-primary;
       }
   }
