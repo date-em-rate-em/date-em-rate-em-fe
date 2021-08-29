@@ -1,29 +1,34 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-class ReviewForm extends Component {
-    constructor(props) {
-        super(props);
+const ReviewForm = () => {
+    return (
+        <div>
+            <header>
+                <h2 className="form-heading">Enter new client information here to keep yourself and your community in the know about the current ClientTell out there. </h2>
+            </header>
+             <div className="form-container">
+                 <p>Enter either or both of the following: </p>
+            <input
+                id="phoneNumberInput"
+                type="text"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                // value=""
+                // onChange={event => this.handleChange(event)}
+            /> 
+             <input
+                id="emailInput"
+                type="text"
+                name="email"
+                placeholder="Email Address"
+                // value=""
+                // onChange={event => this.handleChange(event)}
+            /> 
+        <button id="arrowBtn" className="arrow-button">➡️ </button>
+        </div>
 
-    }
-
-
-    componentDidMount() {
-
-    }
-
-
-    render() {
-        return (
-            <div>
-
-            </div>
-        );
-    }
-}
-
-ReviewForm.propTypes = {
-
+        </div>
+    );
 };
 
 export default ReviewForm;
