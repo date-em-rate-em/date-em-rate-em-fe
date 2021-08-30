@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Footer = () => {
@@ -14,7 +14,7 @@ export const Footer = () => {
                 <FontAwesomeIcon icon="plus" /> 
             </div>
         }
-        />
+        /> 
             <Link to='/Dashboard'>
                 <div className='return-home'>
                     <FontAwesomeIcon icon="home" />
