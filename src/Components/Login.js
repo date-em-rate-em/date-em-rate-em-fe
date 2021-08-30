@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Login = (validateLogin) => {   
 
@@ -24,6 +25,10 @@ export const Login = (validateLogin) => {
 
     return (
         <section className='login'>
+            <div>
+    <FontAwesomeIcon icon="check-square" />
+    Your <FontAwesomeIcon icon="coffee" /> is hot and ready!
+  </div>
             <h1>ClientTell</h1>
             <article className='login-content'>
                 <p>Account Login</p>
