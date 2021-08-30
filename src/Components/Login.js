@@ -26,8 +26,8 @@ export const Login = (validateLogin) => {
     return (
         <section className='login'>
             <div>
-    <FontAwesomeIcon icon="check-square" />
-    Your <FontAwesomeIcon icon="coffee" /> is hot and ready!
+    <FontAwesomeIcon icon="search" />
+    <FontAwesomeIcon icon="plus" /> 
   </div>
             <h1>ClientTell</h1>
             <article className='login-content'>
