@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Footer = () => {
 
@@ -9,7 +10,8 @@ export const Footer = () => {
         <section>
             <Route exact path='/Dashboard' render={() => 
             <div className='footer-icons'>
-                {/* magnifying glass on left, plus sign on right */}
+                <FontAwesomeIcon icon="search" />
+                <FontAwesomeIcon icon="plus" /> 
             </div>
         }
         />
