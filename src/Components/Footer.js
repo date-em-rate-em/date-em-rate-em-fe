@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 export const Footer = () => {
 
-    //Footer will only be rendered on mobile view
+    //Footer will only be rendered on mobile view... need to look into how to do this to show/hide a component based on screen size 
 
     return (
         <section>
