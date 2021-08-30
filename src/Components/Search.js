@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 export const Search = ({clients}) => {
    const [ searchTerm, setSearchTerm ] = useState('');
 
+   //we will need to do some error handling with the way someone types in the phone number/email...
    const clientCard = clients.filter(client => {
       if (client.phoneNumber.includes(searchTerm) || client.emailAddress.includes(searchTerm)) {
            return client;
