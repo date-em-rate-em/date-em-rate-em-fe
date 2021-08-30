@@ -17,7 +17,7 @@ export const Footer = () => {
         />
             <Link to='/Dashboard'>
                 <div className='return-home'>
-                    {/* back arrow icon  */}
+                    <FontAwesomeIcon icon="home" />
                 </div>
             </Link>
         </section>
