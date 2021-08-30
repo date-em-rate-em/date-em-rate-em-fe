@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
+import React, from 'react';
 import PropTypes from 'prop-types';
 
-class Search extends Component {
-    constructor(props) {
-        super(props);
+export const Search = ({clients}) => {
+   const [ searchTerm, setSearchTerm ] = useState('');
 
-    }
+   const clientCard = clients.filter(client => {
+      if (client.phoneNumber.includes(searchTerm) || client.emailAddress.includes(searchTerm)) {
+           return client;
+       }
+   }).map(client => {
+       return (
+           <ContactCard 
+               id={client.id}
+               key={client.id}
+               phoneNumber={client.phoneNumber}
+               email={client.emailAddress}
+           />
+       )
+   });
 
-    componentDidMount() {
-
-    }
-
-
-    render() {
-        return (
-            <div>
-
-            </div>
-        );
-    }
+   return (
+    <section className='searchView'>
+        <input className='search-bar'
+            type='text' 
+            placeholder='Search by phone number or email...'
+            onChange={(event) => {
+                setSearchTerm(event.target.value);
+            }} 
+        />
+        <article className='cards-container'>
+        {clientCard.length ? clientCard : <h2> There are no clients that match your search.</h2>} 
+        </article>
+    </section>
+)
 }
 
 Search.propTypes = {
 
 };
 
-export default Search;
