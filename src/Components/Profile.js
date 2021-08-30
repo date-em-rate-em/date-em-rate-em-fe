@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react';
 import ReviewCard from './ReviewCard';
 // import Review from './Review';
 
+//this page will be the client profile. We will need to pass props for the reviews to load on here, as well as the 
+//client's contact information info 
+//The button to add a review will need to take the client's ID and route them to the ReviewForm page 
+
 const Profile = () => {
     return (
         <div>
