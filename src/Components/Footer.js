@@ -10,8 +10,12 @@ export const Footer = () => {
         <section>
             <Route exact path='/Dashboard' render={() => 
             <div className='footer-icons'>
-                <FontAwesomeIcon icon="search" />
-                <FontAwesomeIcon icon="plus" /> 
+                <Link to='/Search'>
+                    <FontAwesomeIcon icon="search" />
+                </Link>
+                <Link to='/ReviewForm'>
+                    <FontAwesomeIcon icon="plus" />
+                </Link>
             </div>
         }
         /> 
