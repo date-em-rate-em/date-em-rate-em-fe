@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Footer = () => {
@@ -8,23 +8,26 @@ export const Footer = () => {
 
     return (
         <section>
-            <Route exact path='/Dashboard' render={() => 
-            <div className='footer-icons'>
-                <Link to='/Search'>
-                    <FontAwesomeIcon icon="search" />
-                </Link>
-                <Link to='/ReviewForm'>
-                    <FontAwesomeIcon icon="plus" />
-                </Link>
-            </div>
-        }
-        /> 
-            <Link to='/Dashboard'>
-                <div className='return-home'>
-                    <FontAwesomeIcon icon="home" />
+            <Switch>
+                <Route exact path='/Dashboard' render={() => 
+                <div className='footer-icons'>
+                    <Link to='/Search'>
+                        <FontAwesomeIcon icon="search" />
+                    </Link>
+                    <Link to='/ReviewForm'>
+                        <FontAwesomeIcon icon="plus" />
+                    </Link>
                 </div>
-            </Link>
+            }
+            /> 
+                <Link to='/Dashboard'>
+                    <div className='return-home'>
+                        <FontAwesomeIcon icon="home" />
+                    </div>
+                </Link>
+            </Switch>
         </section>
+
     );
 };
 
