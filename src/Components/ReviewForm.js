@@ -1,6 +1,18 @@
 import React from 'react';
+import { useState } from 'react'; 
 
 const ReviewForm = () => {
+
+    const [ phoneNumber, setPhoneNumber] = useState('');
+    const [ email, setEmail] = useState('');
+
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    
+    //   }
+
+
     return (
         <div>
             <header>
@@ -13,17 +25,18 @@ const ReviewForm = () => {
                 type="text"
                 name="phoneNumber"
                 placeholder="Phone Number"
-                // value=""
-                // onChange={event => this.handleChange(event)}
+                value={phoneNumber}
+                onChange={event => setPhoneNumberevent}
             /> 
              <input
                 id="emailInput"
                 type="text"
                 name="email"
                 placeholder="Email Address"
-                // value=""
-                // onChange={event => this.handleChange(event)}
+                value={email}
+                onChange={event => setEmail(event)}
             /> 
+
         <button id="arrowBtn" className="arrow-button">➡️ </button>
         </div>
 
