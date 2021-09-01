@@ -25,7 +25,7 @@ const App = () => {
           console.log('user', users)
           console.log("clients", clients)
         }
-      }, []);
+      }, [clients, clientsData, clientsLoading, userData, userLoading, users]);
 
   return (
     <div className="App">
