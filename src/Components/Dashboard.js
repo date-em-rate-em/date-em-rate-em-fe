@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 export const Dashboard = (userName, clients) => {
     const [ highClientCard, setHigh ] = useState({});
     const [ lowClientCard, setLow ] = useState({});
@@ -15,10 +16,10 @@ export const Dashboard = (userName, clients) => {
 
     return (
         <section>
-            <h2>Welcome back, {userName}!</h2>
+            {/* <h2>Welcome back, {userName}!</h2> */}
             <article>
                 <h3>Today's Top Client:</h3>
-                <Link to='/Profile'>
+                {/* <Link to='/Profile'>
                     <ContactCard 
                     client={highClientCard}
                     />
@@ -28,7 +29,7 @@ export const Dashboard = (userName, clients) => {
                     <ContactCard 
                     client={lowClientCard}
                     />
-                </Link>
+                </Link> */}
             </article>
             <section className='resource'>
                 {/* Resource?? */}
