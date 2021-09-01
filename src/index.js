@@ -22,6 +22,7 @@ export const CLIENT_DATA_QUERY = gql `
     allClients {
       id
       email
+      averageRating
       reviews {
           id
           clientId
