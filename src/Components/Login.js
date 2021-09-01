@@ -3,49 +3,11 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { GET_ALL_CLIENT_DATA } from './../index';
-import { GET_ALL_CLIENT_DATA } from '../index'
-import { GET_ALL_USER_DATA } from '../index'
-import { useQuery } from '@apollo/client';
 
 export const Login = (validateLogin) => {   
 
     const [ user, setUser ] = useState('');
     const [ password, setPassword ] = useState('');
-
-    const [clients, setClients] = useState('');
-    const [users, setUsers] = useState('');
-
-    // const { loading, error, data } = useQuery(GET_ALL_CLIENT_DATA);
-
-    const { loading, error, data } = useQuery(GET_ALL_USER_DATA);
-
-    // useEffect(() => {
-    //   if (!loading && data) {
-    //     setClients(data.allClients);
-    //     // setUsers(data.allUsers);
-    //     // console.log('user', users);
-    //     console.log('clients', clients);
-    //   }
-    // }, [data, loading]);
-
-    useEffect(() => {
-        if (!loading && data) {
-          setUsers(data.allUsers);
-          console.log('user', users)
-        }
-      }, [data, loading]);
-  
-    // const seeClients = (clients) => {
-    //     console.log("seeClients", clients)
-    //     // console.log("")
-    // }
-  
-    const seeUser = (users) => {
-        console.log("seeUsers", users)
-        // console.log("")
-    }
-    
-
 
     const loginUser = (event) => {
         event.preventDefault()
@@ -71,7 +33,7 @@ export const Login = (validateLogin) => {
   </div>
             <h1>ClientTell</h1>
             {/* {!error && seeClients(clients)} */}
-            {!error && seeUser(users)}
+            {/* {!error && seeUser(users)} */}
             <article className='login-content'>
                 <p>Account Login</p>
                 <form className='login-credentials'>
@@ -94,13 +56,13 @@ export const Login = (validateLogin) => {
                     required
                     onChange={event => setPassword(event.target.value)}
                     />
-                    <Link to='/Dashboard'>
+                    {/* <Link to='/Dashboard'>
                         <button 
                         className='loginBtn'
                         onClick={(event) => loginUser(event)}>
                         Log in
                         </button>`
-                    </Link>
+                    </Link> */}
                     {/* <p class='login-error hidden' id='loginError'>Login Error. Please try again.</p> */}
                 </form>
             </article>
