@@ -17,7 +17,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-export const GET_ALL_CLIENT_DATA = gql `
+export const CLIENT_DATA_QUERY = gql `
   query {
     allClients {
       id
@@ -42,7 +42,7 @@ export const GET_ALL_CLIENT_DATA = gql `
   }
 `;
 
-export const GET_ALL_USER_DATA = gql `
+export const USER_DATA_QUERY = gql `
   query {
     allUsers {
       id
