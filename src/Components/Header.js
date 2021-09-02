@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 
 export const Header = () => {
 
-    const exitURL = 'https://weather.com/'
     return (
-        <section>
+        <nav>
             <div className='header-left'>
-                <Link to={exitURL}>
+                <a target="_blank" href='https://weather.com/'>
                     <button>Quick Exit</button>
-                </Link>
-                <h1>ClienTell</h1>
+                </a>
+                <h1 className='nav-logo'>ClienTell</h1>
             </div>
             <div className='header-links'>
                 <Link to='/'>
@@ -26,6 +25,6 @@ export const Header = () => {
                     <button>Resources</button>
                 </Link>
             </div>
-        </section>
+        </nav>
     );
 };
