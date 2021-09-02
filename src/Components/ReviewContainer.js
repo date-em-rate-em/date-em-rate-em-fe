@@ -12,12 +12,14 @@ const ReviewContainer = () => {
                 review={review.review}
                 title={title.title}
                 rating={review.rating}
+                body={review.body}
+                extendedBody={review.extendedBody}
                 size={review.size}
                 payment={review.payment}
                 kindness={title.kindness}
                 vibe={review.vibe}
                 gender={review.gender}
-                wouldIGoOutWithThemAgain={review.wouldIGoOutWithThemAgain}
+                dateAgain={review.dateAgain}
                 safety={review.safety}
             />
         )
