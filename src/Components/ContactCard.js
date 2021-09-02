@@ -1,7 +1,8 @@
 import React from 'react';
 import { Search } from './Search';
+import { NavLink } from 'react-router-dom';
 
-export const ContactCard = () => {
+export const ContactCard = ({ id, key, email, averageRating, reviews }) => {
     return (
         <NavLink to={`/client-profile/${id}`}>
             <article className='contact-card' id={id}>
@@ -10,7 +11,6 @@ export const ContactCard = () => {
                 <p># of reviews: {reviews.length}</p>
                 <button class="view-details-btn">View Client</button>
             </article>
-         </NavLink>
- 
+        </NavLink>
     );
 };
