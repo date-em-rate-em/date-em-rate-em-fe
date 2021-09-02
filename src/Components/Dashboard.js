@@ -7,22 +7,18 @@ export const Dashboard = ({ user, clients }) => {
     const [ lowClientCard, setLow ] = useState({});
     const [ featuredClient, setClientCard ] = useState({});
 
-    console.log('DASHBOARD USER', user)
-    console.log('DASHBOARD CLIENTS', clients)
-// if we want to try to find high/low client...
-// const mapClients = clients.map(client => client.email )
-// console.log(mapClients)
-// const topClient = sortedClients[0]
-// setHigh(topClient);
+    // console.log('DASHBOARD USER', user)
+    // console.log('DASHBOARD CLIENTS', clients)
+
 
 // otherwise, we could just do a featured client of the day...
 const randomClient = clients[Math.floor(Math.random() * clients.length)];  
-console.log("gimmeRandom", randomClient.reviews[0].body)
+// console.log("gimmeRandom", randomClient.reviews[0].body)
 
 useEffect(() => {
     if (randomClient) {
         setClientCard(randomClient);
-        console.log("feature", featuredClient.email)
+        // console.log("feature", featuredClient.email)
     }
 
     if(clients) {
@@ -31,52 +27,56 @@ useEffect(() => {
         console.log("highhhhhhh", highClientCard)
         console.log("lowwwwwwww", lowClientCard)
     }
-  }, [randomClient]);
+  }, [randomClient, clients]);
 
-//   const sortedClients = clients.sort((a, b) => a.averageRating - b.averageRating)
-// console.log(sortedClients)
-
-// const sortClients = clients.sort((a, b) => b.averageRating - a.averageRating )
-// console.log("sortClients", sortClients)
 
 const sortByRatings = (clients) => {
     const allClients = [...clients]
 
     const sortAverages = allClients.sort((a, b) => a.averageRating - b.averageRating)
-    // setHigh(sortAverages.pop())
-    // setLow(sortAverages.shift())
-    // console.log("setHigh", highClientCard)
-//    console.log("gimmmmme", sortAverages.pop())
-//    console.log("gimmmmme22222", sortAverages.shift())
     return sortAverages
   }
-//   console.log("Sorted, lowest", sortByRatings(clients))
-//   console.log("lowClientCard", lowClientCard)
-//   console.log("highClientCard", highClientCard)
-//   console.log("Sorted, highest", sortByRatings(clients).pop())
 
- 
 
     return (
         <section>
-            {/* <h2>Welcome back, {userName}!</h2> */}
+            <h2>Welcome Back to ClienTell</h2>
             <article>
-                <h3>Today's Top Client:</h3>
-                {clients && featuredClient && <ContactCard featuredClient={featuredClient}/>}
+                {/* <h3>Today's Featured Client:</h3> */}
+                {/* {clients && featuredClient && <ContactCard highlyRated={highClientCard} lowRated={lowClientCard} featuredClient={featuredClient}/>} */}
                 {/* // {featuredClient.averageRating} */}
                 {/* // {featuredClient.reviews[0].body} */}
                 {/* {featuredClient.reviews[1]} */}
-                {/* <Link to='/Profile'>
+                {clients && featuredClient &&
                     <ContactCard 
-                    client={highClientCard}
+                    id={featuredClient.id}
+                    email={featuredClient.email}
+                    averageRating={featuredClient.averageRating}
+                    reviews={featuredClient.reviews}
+                    // client={highClientCard}
                     />
-                </Link>
+
+                }
+                {clients && highClientCard &&
+                    <ContactCard 
+                    id={highClientCard.id}
+                    email={highClientCard.email}
+                    averageRating={highClientCard.averageRating}
+                    reviews={highClientCard.reviews}
+                    // client={highClientCard}
+                    />
+
+                }
                 <h3>Here's one to avoid:</h3>
-                <Link to='/Profile'>
+                {clients && lowClientCard && 
                     <ContactCard 
-                    client={lowClientCard}
+                     id={lowClientCard.id}
+                    email={lowClientCard.email}
+                  averageRating={lowClientCard.averageRating}
+                  reviews={lowClientCard.reviews}
+
                     />
-                </Link> */}
+                }
             </article>
             <section className='resource'>
                 {/* Resource?? */}
