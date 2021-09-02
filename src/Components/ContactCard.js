@@ -1,27 +1,16 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
-const ContactCard = ({featuredClient, lowRated, highlyRated}) => {
-
+export const ContactCard = ({id, key, email, averageRating, reviews}) => {
     return (
-        <section className="contact-card-section">
-            <div className="featured-client-contact-card">
-                <h2>Client's Data</h2>
-                <p className="email">Email: {featuredClient.email} </p>
-                <p className="average-rating">Average Rating: {featuredClient.averageRating} </p>
-            </div>
-            <div className="high-rated-client-card">
-                <h2>Highly Rated Client's Data</h2>
-                <p className="email">Email: {highlyRated.email} </p>
-                <p className="average-rating">Average Rating: {highlyRated.averageRating} </p>
-            </div>
-            <div className="low-rated-client-card">
-                <h2>Low Rated Client's Data</h2>
-                <p className="email">Email: {lowRated.email} </p>
-                <p className="average-rating">Average Rating: {lowRated.averageRating} </p>
-            </div>
-
-        </section>
+        <NavLink to={`/client-profile/${id}`}>
+            <article className='contact-card' id={id}>
+                <h3>{email}</h3>
+                <p>Average Rating:{averageRating}</p>
+                <p># of reviews: {reviews.length}</p>
+                <button class="view-details-btn">View Client</button>
+            </article>
+         </NavLink>
+ 
     );
 };
-
-export default ContactCard;
