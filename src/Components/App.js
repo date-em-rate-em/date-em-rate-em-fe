@@ -1,6 +1,6 @@
-// import logo from './logo.svg';
 import { Login } from './Login';
-import { Footer } from './Footer';
+import { Header } from './Header';
+import { Search } from './Search';
 import { Dashboard } from './Dashboard';
 import { Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -31,18 +31,12 @@ const App = () => {
   return (
     <div className="App">
       {clients && user && 
-      <Dashboard 
+      <Search
       clients={clients}
       user={user}
       />}
-      
-      
-
-
-
-
-      {/* <Footer /> */}
-    
+      {/* <Footer />
+     */}
     </div>
   );
 }
