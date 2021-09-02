@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Search } from './Search';
 
-export const ContactCard = ({id, key, email, averageRating, reviews}) => {
+export const ContactCard = () => {
     return (
         <NavLink to={`/client-profile/${id}`}>
             <article className='contact-card' id={id}>
