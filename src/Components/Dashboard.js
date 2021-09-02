@@ -1,18 +1,26 @@
 import { useState } from 'react';
 
 
-export const Dashboard = (userName, clients) => {
+export const Dashboard = ({ user, clients }) => {
     const [ highClientCard, setHigh ] = useState({});
     const [ lowClientCard, setLow ] = useState({});
-    const [ featured, setclientCard ] = useState({});
-//if we want to try to find high/low client...
-// const sortedClients = clients.sort((a, b) => a.avgRating - b.avgRating)
+    const [ featured, setClientCard ] = useState({});
+
+    console.log('DASHBOARD USER', user)
+    console.log('DASHBOARD CLIENTS', clients.length)
+// if we want to try to find high/low client...
+
+// const sortedClients = clients.sort((a, b) => a.averageRating - b.averageRating)
+// console.log(sortedClients)
+// const mapClients = clients.map(client => client.email )
+// console.log(mapClients)
 // const topClient = sortedClients[0]
 // setHigh(topClient);
 
-//otherwise, we could just do a featured client of the day...
-// const featuredClient = clients[Math.floor(Math.random() * clients.length)];  
-// setClientCard(featuredClient); 
+// otherwise, we could just do a featured client of the day...
+const featuredClient = clients[Math.floor(Math.random() * clients.length)];  
+console.log(featuredClient)
+setClientCard(featuredClient); 
 
     return (
         <section>

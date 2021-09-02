@@ -2,6 +2,7 @@
 import { Login } from './Login';
 import { Footer } from './Footer';
 import { Dashboard } from './Dashboard';
+import { Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSearch, faPlus, faHome } from '@fortawesome/free-solid-svg-icons'
@@ -13,24 +14,27 @@ import { useState, useEffect } from 'react';
 const App = () => {
   library.add(fab, faSearch, faPlus, faHome)
   const [clients, setClients] = useState('');
-  const [users, setUsers] = useState('');
+  const [user, setUser] = useState('');
 
   const { loading: userLoading, error: userError, data: userData } = useQuery(USER_DATA_QUERY);
   const { loading: clientsLoading, error: clientsError, data: clientsData } = useQuery(CLIENT_DATA_QUERY);
     
     useEffect(() => {
         if ((!userLoading && userData) && (!clientsLoading && clientsData)) {
-          setUsers(userData.allUsers);
+          setUser(userData.allUsers);
           setClients(clientsData.allClients);
-          console.log('user', users)
-          console.log("clients", clients)
+          // console.log('user', users)
+          // console.log("clients", clients)
         }
-      }, [clients, clientsData, clientsLoading, userData, userLoading, users]);
+      }, [clients, clientsData, clientsLoading, userData, userLoading, user]);
 
   return (
     <div className="App">
-      {!clientsLoading && !userLoading && <h2>Loading...</h2>}
-      <Dashboard/>
+      {clients && user && 
+      <Dashboard 
+      clients={clients}
+      user={user}
+      />}
       {/* <Footer /> */}
     
     </div>
