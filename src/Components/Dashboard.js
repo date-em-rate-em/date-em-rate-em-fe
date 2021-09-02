@@ -24,6 +24,13 @@ useEffect(() => {
         setClientCard(randomClient);
         console.log("feature", featuredClient.email)
     }
+
+    if(clients) {
+        setHigh(sortByRatings(clients).pop())
+        setLow(sortByRatings(clients).shift())
+        console.log("highhhhhhh", highClientCard)
+        console.log("lowwwwwwww", lowClientCard)
+    }
   }, [randomClient]);
 
 //   const sortedClients = clients.sort((a, b) => a.averageRating - b.averageRating)
@@ -32,13 +39,21 @@ useEffect(() => {
 // const sortClients = clients.sort((a, b) => b.averageRating - a.averageRating )
 // console.log("sortClients", sortClients)
 
-const sortByHighRatings = (clients) => {
+const sortByRatings = (clients) => {
     const allClients = [...clients]
 
     const sortAverages = allClients.sort((a, b) => a.averageRating - b.averageRating)
+    // setHigh(sortAverages.pop())
+    // setLow(sortAverages.shift())
+    // console.log("setHigh", highClientCard)
+//    console.log("gimmmmme", sortAverages.pop())
+//    console.log("gimmmmme22222", sortAverages.shift())
     return sortAverages
   }
-  console.log("Sorted!", sortByHighRatings(clients))
+//   console.log("Sorted, lowest", sortByRatings(clients))
+//   console.log("lowClientCard", lowClientCard)
+//   console.log("highClientCard", highClientCard)
+//   console.log("Sorted, highest", sortByRatings(clients).pop())
 
  
 
