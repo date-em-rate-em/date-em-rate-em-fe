@@ -8,7 +8,7 @@ export const ContactCard = ({ id, key, email, averageRating, reviews }) => {
             <article className='contact-card' id={id}>
                 <h3>{email}</h3>
                 <p>Average Rating:{averageRating}</p>
-                <p># of reviews: {reviews.length}</p>
+                <p># of reviews: {reviews}</p>
                 <button class="view-details-btn">View Client</button>
             </article>
         </NavLink>
