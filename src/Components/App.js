@@ -35,6 +35,12 @@ const App = () => {
       clients={clients}
       user={user}
       />}
+      
+      
+
+
+
+
       {/* <Footer /> */}
     
     </div>
