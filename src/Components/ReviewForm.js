@@ -20,13 +20,13 @@ const ReviewForm = () => {
             </header>
              <div className="form-container">
                  <p>Enter either or both of the following: </p>
-            <input
+            {/* <input
                 id="phoneNumberInput"
                 type="text"
                 name="phoneNumber"
                 placeholder="Phone Number"
                 value={phoneNumber}
-                onChange={event => setPhoneNumberevent}
+                onChange={() => setPhoneNumber}
             /> 
              <input
                 id="emailInput"
@@ -35,7 +35,7 @@ const ReviewForm = () => {
                 placeholder="Email Address"
                 value={email}
                 onChange={event => setEmail(event)}
-            /> 
+            />  */}
 
         <button id="arrowBtn" className="arrow-button">➡️ </button>
         </div>
