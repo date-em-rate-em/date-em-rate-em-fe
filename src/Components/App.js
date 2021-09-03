@@ -29,7 +29,7 @@ const App = () => {
           setUser(userData.allUsers);
           setClients(clientsData.allClients);
           // console.log('user', users)
-          console.log("clients", clients)
+          // console.log("clients", clients)
         }
       }, [clients, clientsData, clientsLoading, userData, userLoading, user]);
    
@@ -37,7 +37,7 @@ const App = () => {
     <main>
       <div className="App">
         <Header />
-        {userLoading && clientsLoading && <p>Loading...</p> }
+        {userLoading && clientsLoading && <p>Loading...</p>}
         <Switch>
           <Route exact path="/" render={() => 
             <Dashboard 
@@ -47,9 +47,11 @@ const App = () => {
             }
           />
       <Route exact path="/Search" render={() => 
-        <Search clients={clients} user={user} />
-            }
-          />
+        <Search 
+        clients={clients} 
+        user={user} />
+        }
+      />
       <Route exact path="/profile/:id" render={({ match }) => {
         console.log('MATCH', match)
         let clientMatch = clients.find(client => client.id === match.params.id) 
