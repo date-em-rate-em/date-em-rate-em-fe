@@ -2,35 +2,31 @@ import { gql } from "@apollo/client";
 
 export const ADD_REVIEW = gql`
     mutation (
-        $userId: Int!, 
+        $userId: ID!, 
         $clientEmail: String!, 
         $rating: Int!, 
-        $safetyMeter: Int!, 
-        $title: String!,
+        $safetyMeter: Int!,
         $body: String!,
-        $extendedBody: String!,
         $size: Float!,
         $payment: Int!,
         $kindness: Int!,
         $vibe: Int!,
-        $dateAgain: Boolean!,
+        $dateAgain: String!,
         $gender: String!
         ) {
-    reviewCreate(input: {
+    reviewCreate(
         userId: $userId, 
         clientEmail: $clientEmail, 
         rating: $rating, 
         safetyMeter: $safetyMeter, 
-        title: $title,
         body: $body,
-        extendedBody: $extendedBody,
         size: $size,
         payment: $payment,
         kindness: $kindness,
         vibe: $vibe,
         dateAgain: $dateAgain,
         gender: $gender
-    }) {
+    ) {
         review {
             id
             clientId
