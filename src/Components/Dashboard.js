@@ -7,7 +7,7 @@ export const Dashboard = ({ user, clients }) => {
     const [ lowClientCard, setLow ] = useState({});
     const [ featuredClient, setClientCard ] = useState({});
 
-    console.log('DASHBOARD USER', user)
+    // console.log('DASHBOARD USER', user)
     console.log('DASHBOARD CLIENTS', clients)
 
 
@@ -18,14 +18,14 @@ const randomClient = clients[Math.floor(Math.random() * clients.length)];
 useEffect(() => {
     if (randomClient) {
         setClientCard(randomClient);
-        console.log("feature", featuredClient)
+        // console.log("feature", featuredClient)
     }
 
     if(clients) {
         setHigh(sortByRatings(clients).pop())
         setLow(sortByRatings(clients).shift())
-        console.log("highhhhhhh", highClientCard)
-        console.log("lowwwwwwww", lowClientCard)
+        // console.log("highhhhhhh", highClientCard)
+        // console.log("lowwwwwwww", lowClientCard)
     }
   }, [randomClient, clients]);
 
@@ -37,41 +37,39 @@ const sortByRatings = (clients) => {
     return sortAverages
   }
 
-  console.log("feature222", featuredClient)
+//   console.log("feature222", featuredClient)
 
     return (
         <section>
             <h2>Welcome Back to ClienTell</h2>
             <article>
-              
+            <h3>Featured Client:</h3>
                 {clients.length && featuredClient.id &&
                     <ContactCard 
                     id={featuredClient.id}
                     email={featuredClient.email}
                     averageRating={featuredClient.averageRating}
                     reviews={featuredClient.reviews.length}
-                    // client={highClientCard}
                     />
 
                 }
+                 <h3>Here's a Highly Rated Client:</h3>
                 {clients.length && highClientCard.id &&
                     <ContactCard 
                     id={highClientCard.id}
                     email={highClientCard.email}
                     averageRating={highClientCard.averageRating}
                     reviews={highClientCard.reviews.length}
-                    // client={highClientCard}
                     />
 
                 }
-                <h3>Here's one to avoid:</h3>
+                <h3>Here's a Low Rated Client:</h3>
                 {clients.length && lowClientCard.id && 
                     <ContactCard 
                      id={lowClientCard.id}
                     email={lowClientCard.email}
                   averageRating={lowClientCard.averageRating}
                   reviews={lowClientCard.reviews.length}
-
                     />
                 }
             </article>
