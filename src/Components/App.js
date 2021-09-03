@@ -81,6 +81,7 @@ const App = () => {
              id={clientMatch.id} 
              key={clientMatch.id}
              email={clientMatch.email} 
+             clients={clients}
             //  averageRating={clientMatch.averageRating}
             //  reviews={clientMatch.reviews}
              />

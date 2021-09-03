@@ -2,9 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from '../utils/graphql_mutations';
+import { NavLink } from 'react-router-dom';
 
 
-const ReviewFormDetails = ({id}) => {
+const ReviewFormDetails = ({clients, id, email}) => {
 // console.log("clientssssss", clients)
 
 const [body, setBody] = useState('');
@@ -27,24 +28,26 @@ const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW)
 
 const submitReview = event => {
     event.preventDefault();
-    if(rating && body && safety) {
+    if(rating && body && safetyMeter) {
         reviewCreate({
             variables: {
-                // userId: user,
+                userId: 1,
                 clientEmail: email,
-                rating: rating,
-                safetyMeter: safety,
+                rating: Number(rating),
+                safetyMeter: Number(safetyMeter),
                 body: body,
-                size: size,
-                payment: payment,
-                kindness: kindness,
-                vibe: vibe,
+                size: Number(size),
+                payment: Number(payment),
+                kindness: Number(kindness),
+                vibe: Number(vibe),
                 dateAgain: dateAgain,
                 gender: gender
             }
         });
-      setFormError('')
+    //   setFormError('')
       clearInputs()
+      console.log('ID', id)
+      console.log("POST REVIEW??", clients)
 
     } else {
     //   setFormError('Sorry, you must input all required fields!')
@@ -54,7 +57,7 @@ const submitReview = event => {
   const clearInputs = () => {
     setRating('');
     setBody('');
-    set('');
+    setDateAgain('');
   }
 
 
@@ -209,7 +212,9 @@ const submitReview = event => {
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
-             <button id="submitBtn" className="submit-button" onClick={event => submitReview(event)}>Submit New Review</button>
+            <NavLink to={`/profile/${id}`}>
+                <button id="submitBtn" className="submit-button" onClick={event => submitReview(event)}>Submit New Review</button>
+            </NavLink>
         </div>
 
     </div>
