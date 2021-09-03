@@ -3,17 +3,8 @@ import { Route, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import ReviewCard from './ReviewCard';
 import ReviewContainer from './ReviewContainer';
-// import Review from './Review';
-
-//this page will be the client profile. We will need to pass props for the reviews to load on here, as well as the 
-//client's contact information info 
-//The button to add a review will need to take the client's ID and route them to the ReviewForm page 
 
 const Profile = ({id, key, email, reviews, averageRating}) => {
-// console.log("user", user)
-// console.log("clients", clients[1].reviews[0].body)
-console.log("reviews", reviews)
-
 
     return (
         <div>
@@ -26,18 +17,15 @@ console.log("reviews", reviews)
                 <h1>Client Average Rating:</h1>
                     <p>{averageRating}</p>
             </section>
+                <Link to='/review-form-page-2'>
             <section className="add-review-btn-section">
-                <Link exact path='/AddReview'>
             <button className="add-review-btn">
                         Add New Review
                 </button>
-                    </Link>
             </section>
+                    </Link>
             <section className="all-reviews">
                 <ReviewContainer averageRating={averageRating} reviews={reviews}/>
-                
-                {/* {clients[1].reviews[0].body} */}
-                {/* <Review/> */}
             </section>
         </div>
     );
