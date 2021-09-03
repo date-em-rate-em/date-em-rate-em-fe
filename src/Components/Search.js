@@ -9,8 +9,14 @@ export const Search = ({ clients }) => {
 
    //we will need to do some error handling with the way someone types in the phone number/email...
    console.log('ALL CLIENTS', allClients)
-   const clientCard = allClients.map((client) => {
-       return (
+   const clientCard = allClients.filter((client) => {
+      if (searchTerm === '') {
+          return client
+      } else if (client.email.toLowerCase().includes(searchTerm.toLowerCase())) {
+          return client 
+      }
+   }).map(client => {
+     return (
         <ContactCard 
         id={client.id}
         key={client.id}
@@ -18,13 +24,7 @@ export const Search = ({ clients }) => {
         averageRating={client.averageRating}
         reviews={client.reviews}
        />
-       )
-   }).filter(client => {
-    if (searchTerm === '') {
-        return client
-    } else if (client.email.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return client 
-    }
+    )
    })
 
    return (

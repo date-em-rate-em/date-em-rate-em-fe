@@ -7,7 +7,7 @@ export const ContactCard = ({ id, key, email, averageRating, reviews }) => {
         <NavLink to={`/profile/${id}`}>
             <article className='contact-card' id={id}>
                 <h3>{email}</h3>
-                <p>Average Rating:{averageRating}</p>
+                <p>Average Rating:{averageRating.toFixed(1)}</p>
                 <p># of reviews: {reviews.length}</p>
                 <button class="view-details-btn">View Client</button>
             </article>
