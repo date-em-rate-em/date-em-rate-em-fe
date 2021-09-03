@@ -30,8 +30,8 @@ const App = () => {
 
   return (
     <div className="App">
-      {clients && user && 
-      <Search
+      {clients.length && user && 
+      <Dashboard 
       clients={clients}
       user={user}
       />}
