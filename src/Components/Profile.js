@@ -17,9 +17,9 @@ const Profile = ({id, key, email, reviews, averageRating}) => {
                 <h1>Client Average Rating:</h1>
                     <p>{averageRating}</p>
             </section>
-                <Link to='/review-form-page-2'>
+                <Link to={`/add-review/${id}`}>
             <section className="add-review-btn-section">
-            <button className="add-review-btn">
+            <button className="add-review-btn" id={id}>
                         Add New Review
                 </button>
             </section>
