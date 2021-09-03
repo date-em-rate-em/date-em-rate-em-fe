@@ -6,14 +6,15 @@ import { Route, Switch } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSearch, faPlus, faHome } from '@fortawesome/free-solid-svg-icons'
-import { CLIENT_DATA_QUERY } from '../index'
-import { USER_DATA_QUERY } from '../index'
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import Profile from './Profile'
 import ReviewForm from './ReviewForm'
 import ReviewFormDetails from './ReviewFormDetails';
 import { Footer } from './Footer';
+import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
+import { USER_DATA_QUERY } from '../utils/graphql_queries'
+
 // import { Search } from 'history';
 
 const App = () => {
