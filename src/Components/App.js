@@ -72,13 +72,26 @@ const App = () => {
             />
             }
           />
-       <Route exact path="/review-form-page-2" render={() => 
+      <Route exact path="/add-review/:id" render={({ match }) => {
+        console.log('MATCH', match.params.id)
+        let clientMatch = clients.find(client => client.id === match.params.id) 
+            return ( 
+            <ReviewFormDetails
+             id={clientMatch.id} 
+             key={clientMatch.id}
+             email={clientMatch.email} 
+            //  averageRating={clientMatch.averageRating}
+            //  reviews={clientMatch.reviews}
+             />
+           )}
+            }/>
+       {/* <Route exact path="/review-form-page-2" render={() => 
             <ReviewFormDetails 
             clients={clients} 
             user={user} 
             />
             }
-          />
+          /> */}
         </Switch>
         <Footer/>
       </div>
