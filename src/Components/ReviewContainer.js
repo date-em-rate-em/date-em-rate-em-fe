@@ -1,16 +1,15 @@
 import React from 'react';
 import ReviewCard from './ReviewCard';
 
-const ReviewContainer = (clients) => {
-    console.log("reviewContainer", clients.clients)
+const ReviewContainer = ({reviews}) => {
+    console.log("reviewContainer", reviews)
 
-    const allClients = clients.reviews.map(review => {
+    const allReviews = reviews.map(review => {
         return (
             <ReviewCard
                 id={review.id}
                 key={review.id}
                 date={review.date}
-                review={review.review}
                 title={review.title}
                 rating={review.rating}
                 body={review.body}
@@ -21,14 +20,19 @@ const ReviewContainer = (clients) => {
                 vibe={review.vibe}
                 gender={review.gender}
                 dateAgain={review.dateAgain}
-                safety={review.safety}
+                safetyMeter={review.safetyMeter}
+                // punctuality={review.punctuality}
+                // hygiene={review.hygiene}
+                // condomUsage={review.condomUsage}
+                // dateDuration={review.dateDuratoin}
+                // kinks={review.kinks}
             />
         )
     })
 
     return (
         <div>
-            {/* {allReviews} */}
+            {allReviews}
         </div>
     );
 };
