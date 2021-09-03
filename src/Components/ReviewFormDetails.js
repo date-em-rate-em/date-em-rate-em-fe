@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useMutation } from "@apollo/client";
+import { ADD_REVIEW } from '../utils/graphql_mutations';
 
 
 const ReviewFormDetails = ({id}) => {
@@ -20,6 +22,41 @@ const [condomUsage, setCondomUsage] = useState('');
 const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
+const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW)
+
+
+const submitReview = event => {
+    event.preventDefault();
+    if(rating && body && safety) {
+        reviewCreate({
+            variables: {
+                // userId: user,
+                clientEmail: email,
+                rating: rating,
+                safetyMeter: safety,
+                body: body,
+                size: size,
+                payment: payment,
+                kindness: kindness,
+                vibe: vibe,
+                dateAgain: dateAgain,
+                gender: gender
+            }
+        });
+      setFormError('')
+      clearInputs()
+
+    } else {
+    //   setFormError('Sorry, you must input all required fields!')
+    } 
+  }
+
+  const clearInputs = () => {
+    setRating('');
+    setBody('');
+    set('');
+  }
+
 
     return (
     <div>
@@ -172,7 +209,7 @@ const [date, setDate] = useState('');
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
-             <button id="submitBtn" className="submit-button">Submit New Review </button>
+             <button id="submitBtn" className="submit-button" onClick={event => submitReview(event)}>Submit New Review</button>
         </div>
 
     </div>
