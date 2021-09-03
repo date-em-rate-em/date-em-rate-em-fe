@@ -18,7 +18,7 @@ export const Header = () => {
                 <Link to='/Search'>
                     <button>Search Clients</button>
                 </Link>
-                <Link to='/AddClient'>
+                <Link to='/review-form-page-1'>
                     <button>Add Client</button>
                 </Link>
                 <Link to='/Resources'>
