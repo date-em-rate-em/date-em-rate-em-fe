@@ -10,10 +10,10 @@ import { CLIENT_DATA_QUERY } from '../index'
 import { USER_DATA_QUERY } from '../index'
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
-import Header from './Header'
 import Profile from './Profile'
-import ReviewForm from './ReviewForm'
-import ReviewFormDetails from './ReviewFormDetails';
+// import ReviewForm from './ReviewForm'
+// import ReviewFormDetails from './ReviewFormDetails';
+import { Footer } from './Footer';
 // import { Search } from 'history';
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
           setUser(userData.allUsers);
           setClients(clientsData.allClients);
           // console.log('user', users)
-          // console.log("clients", clients)
+          console.log("clients", clients)
         }
       }, [clients, clientsData, clientsLoading, userData, userLoading, user]);
    
@@ -46,18 +46,24 @@ const App = () => {
             />
             }
           />
-      {/* <Route exact path="/Search" render={() => 
+      <Route exact path="/Search" render={() => 
         <Search clients={clients} user={user} />
             }
-          /> */}
-      <Route exact path="/profile/:id" render={({match}) => 
-            <Profile 
-            clients={clients} 
-            user={user} 
-            />
-            }
           />
-      <Route exact path="/review-form-page-1" render={() => 
+      <Route exact path="/profile/:id" render={({ match }) => {
+        console.log('MATCH', match)
+        let clientMatch = clients.find(client => client.id === match.params.id) 
+            return ( 
+            <Profile 
+             id={clientMatch.id} 
+             key={clientMatch.id}
+             email={clientMatch.email} 
+             averageRating={clientMatch.averageRating}
+             reviews={clientMatch.reviews}
+             />
+           )}
+            }/>
+      {/* <Route exact path="/review-form-page-1" render={() => 
             <ReviewForm 
             clients={clients} 
             user={user} 
@@ -70,7 +76,7 @@ const App = () => {
             user={user} 
             />
             }
-          />
+          /> */}
         </Switch>
         <Footer/>
       </div>
