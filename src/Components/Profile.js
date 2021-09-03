@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import ReviewCard from './ReviewCard';
+import ReviewContainer from './ReviewContainer';
 // import Review from './Review';
 
 //this page will be the client profile. We will need to pass props for the reviews to load on here, as well as the 
@@ -11,14 +12,19 @@ import ReviewCard from './ReviewCard';
 const Profile = ({id, key, email, reviews, averageRating}) => {
 // console.log("user", user)
 // console.log("clients", clients[1].reviews[0].body)
+console.log("reviews", reviews)
 
 
     return (
         <div>
             <h1>Client Profile</h1>
             <section className="client-contact-info">
-                <h1>Client Contact Information</h1>
+                <h1>Client Contact Information:</h1>
                     <p>{email}</p>
+            </section>
+            <section className="client-average-rating">
+                <h1>Client Average Rating:</h1>
+                    <p>{averageRating}</p>
             </section>
             <section className="add-review-btn-section">
                 <Link exact path='/AddReview'>
@@ -28,6 +34,7 @@ const Profile = ({id, key, email, reviews, averageRating}) => {
                     </Link>
             </section>
             <section className="all-reviews">
+                <ReviewContainer averageRating={averageRating} reviews={reviews}/>
                 
                 {/* {clients[1].reviews[0].body} */}
                 {/* <Review/> */}
