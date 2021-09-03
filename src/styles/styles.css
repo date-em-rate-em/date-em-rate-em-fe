@@ -1,0 +1,124 @@
+/* ==========================================================================
+l - Settings - Global Variables
+========================================================================== */
+/* === Neutrals === */
+/* === Palette === */
+/* === Font Import === */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@97,398&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+/* ==========================================================================
+ll - Tools - Mixins
+========================================================================== */
+/* === Flexbox === */
+/* === Grid === */
+/* === Media Queries === */
+/* === Helpers === */
+/* ==========================================================================
+lll - Generic - Resets & Normalize Styles
+========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a, Link {
+  text-decoration: none;
+}
+
+a:focus, a:hover, a:visited, a:link, a:active, Link:focus, Link:hover, Link:visited, Link:link, Link:active {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  padding: .5rem;
+  margin: 1rem;
+  background: none;
+  cursor: pointer;
+  text-transform: none;
+  border: 1px solid black;
+  font-size: 1rem;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 1.5px;
+  background: rgba(244, 245, 220, 0.76);
+  -webkit-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid rgba(244, 245, 220, 0);
+}
+
+/* ==========================================================================
+lV - Elements - Semanitic Bare Elements 
+========================================================================== */
+/* ==========================================================================
+V -  Components -  Specific UI components
+========================================================================== */
+.search-view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search-bar {
+  width: 60%;
+  padding: .3rem;
+  margin-top: 1.5rem;
+  place-self: center;
+  top: 10%;
+  right: 1rem;
+  border-radius: 7px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: none;
+  gap: 1rem;
+  margin-top: 1rem;
+  min-height: 50%;
+}
+/*# sourceMappingURL=styles.css.map */
