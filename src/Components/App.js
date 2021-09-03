@@ -11,8 +11,8 @@ import { USER_DATA_QUERY } from '../index'
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import Profile from './Profile'
-// import ReviewForm from './ReviewForm'
-// import ReviewFormDetails from './ReviewFormDetails';
+import ReviewForm from './ReviewForm'
+import ReviewFormDetails from './ReviewFormDetails';
 import { Footer } from './Footer';
 // import { Search } from 'history';
 
@@ -65,7 +65,7 @@ const App = () => {
              />
            )}
             }/>
-      {/* <Route exact path="/review-form-page-1" render={() => 
+      <Route exact path="/review-form-page-1" render={() => 
             <ReviewForm 
             clients={clients} 
             user={user} 
@@ -78,7 +78,7 @@ const App = () => {
             user={user} 
             />
             }
-          /> */}
+          />
         </Switch>
         <Footer/>
       </div>
