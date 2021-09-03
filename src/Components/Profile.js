@@ -8,9 +8,9 @@ import ReviewCard from './ReviewCard';
 //client's contact information info 
 //The button to add a review will need to take the client's ID and route them to the ReviewForm page 
 
-const Profile = ({user, clients}) => {
-console.log("user", user)
-console.log("clients", clients[1].reviews[0].body)
+const Profile = ({id, key, email, reviews, averageRating}) => {
+// console.log("user", user)
+// console.log("clients", clients[1].reviews[0].body)
 
 
     return (
@@ -18,7 +18,7 @@ console.log("clients", clients[1].reviews[0].body)
             <h1>Client Profile</h1>
             <section className="client-contact-info">
                 <h1>Client Contact Information</h1>
-                    <p>{clients[1].email}</p>
+                    <p>{email}</p>
             </section>
             <section className="add-review-btn-section">
                 <Link exact path='/AddReview'>
@@ -29,7 +29,7 @@ console.log("clients", clients[1].reviews[0].body)
             </section>
             <section className="all-reviews">
                 
-                {clients[1].reviews[0].body}
+                {/* {clients[1].reviews[0].body} */}
                 {/* <Review/> */}
             </section>
         </div>
