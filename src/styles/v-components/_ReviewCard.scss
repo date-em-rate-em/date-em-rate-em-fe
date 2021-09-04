@@ -1,0 +1,9 @@
+.each-review {
+    @include flex(column, start);
+    width: 60%;
+    background: $light-purple;
+    margin: 1rem;
+    // border: 1px solid $color-light;
+    box-shadow: $box-shadow;
+    padding: 1rem;
+}
