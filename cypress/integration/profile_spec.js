@@ -27,17 +27,17 @@ describe('Profile View', () => {
         cy.get('h1').contains('Client Profile')
       });
 
-      it('When the page is visited, you should see a client contact information', () => {
+    it('When the page is visited, you should see a client contact information', () => {
         cy.get('.client-profile')
         cy.get('.client-contact-info').contains('firstClient@email.com')
       });
 
-      it('When the page is visited, you should see a client average rating', () => {
+    it('When the page is visited, you should see a client average rating', () => {
         cy.get('.client-profile')
         cy.get('.profile-stars')
       });
 
-      it('When the page is visited, you should see a button to add a new review, taking you to a form page', () => {
+    it('When the page is visited, you should see a button to add a new review, taking you to a form page', () => {
         cy.get('.client-profile')
         cy.get('.add-review-btn')
         .click()
@@ -46,8 +46,8 @@ describe('Profile View', () => {
         cy.get('.form-heading')
         cy.go('back')
       });
-      
-      it('When the page is visited, you should see a client review card listing client data', () => {
+
+    it('When the page is visited, you should see a client review card listing client data', () => {
         cy.get('.client-profile')
         cy.get('.each-review')
       });
