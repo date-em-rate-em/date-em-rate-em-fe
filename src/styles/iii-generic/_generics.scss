@@ -26,15 +26,22 @@
     background: none;
     cursor: pointer;
     text-transform: none;
-    border: 1px solid $color-dark;
+    border: 1px solid $dark-purple;
+    border-radius: .5rem;
     font-size: 1rem;
     font-family: $font-family-secondary;
     letter-spacing: 1.5px;
-    background: $color-background;
-    transition: background-color 1s ease-out;
+    background: $color-light;
+    transition: background-color 600ms ease-out;
+    color: $dark-purple;
       &:hover{
-        background-color: $color-dark;
-        color: white;
-        border: 1px solid $color-primary;
+        background-color: $dark-purple;
+        color: $color-light;
+        border: 1px solid $light-purple;
       }
+  }
+
+  .app {
+    @include flex(column, center);
+    height: 100vh;
   }
