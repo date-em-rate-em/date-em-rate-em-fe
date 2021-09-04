@@ -1,0 +1,18 @@
+.contact-card {
+    @include flex(column, center);
+    width: 24rem;
+    background: $light-purple;
+    border-radius: .5rem;
+    color: $color-dark;
+    margin: 1rem;
+    box-shadow: $box-shadow;
+    padding: 1rem;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.view-details-btn {
+    place-self: flex-end;
+}
