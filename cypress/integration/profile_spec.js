@@ -31,5 +31,21 @@ describe('Profile View', () => {
         cy.get('.client-profile')
         cy.get('.client-contact-info').contains('firstClient@email.com')
       });
+
+      it('When the page is visited, you should see a client average rating', () => {
+        cy.get('.client-profile')
+        cy.get('.profile-stars')
+      });
+
+      it('When the page is visited, you should see a button to add a new review, taking you to a form page', () => {
+        cy.get('.client-profile')
+        cy.get('.add-review-btn')
+        .click()
+        .location("pathname")
+        .should("eq", "/add-review/1")
+        cy.get('.form-heading')
+        cy.go('back')
+      });
+
    
   });
