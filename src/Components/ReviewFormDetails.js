@@ -25,13 +25,38 @@ const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
 const [missingInfo, setMissingInfo] = useState('');
-const [isChecked, setIsChecked] = useState(false);
+const [isChecked1, setIsChecked1] = useState(false);
+const [isChecked2, setIsChecked2] = useState(false);
+const [isChecked3, setIsChecked3] = useState(false);
+const [isChecked4, setIsChecked4] = useState(false);
+const [isChecked5, setIsChecked5] = useState(false);
+
 const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
     refetchQueries: [CLIENT_DATA_QUERY]
   })
 console.log("setMissing", missingInfo)
 
+const validateRating = (numStars) => {
+    // let setChecked = `setIsChecked${numStars}`
+    console.log("BEFORE", rating)
+    setRating(numStars)
+    setIsChecked1(true)
+    console.log("AFTER", rating)
+    // if(numStars) {
+    //     setRating(5)
+    // } else if (isChecked4) {
+    //     setRating(4)
+    // } else if (isChecked3) {
+    //     setRating(3)
+    // } else if (isChecked2) {
+    //     setRating(2) 
+    // } else {
+    //     setRating(1)
+    // }
+}
 const submitReview = (event) => {
+    validateRating()
+    console.log(rating)
     // event.preventDefault();
     if(rating && body && safetyMeter) {
         reviewCreate({
@@ -86,27 +111,27 @@ const submitReview = (event) => {
             /> 
             <label for="rating">Rating</label>
             <FaRegStar 
-            className={!isChecked ? 'star' : 'checked1'}
-            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            className={!isChecked1 ? 'star' : 'checked1'}
+            onClick={!isChecked1 ? () => validateRating(1) : () => setIsChecked1(false)}
             />
              <FaRegStar 
-            className={!isChecked ? 'star' : 'checked2'}
-            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            className={!isChecked2 ? 'star' : 'checked2'}
+            onClick={!isChecked2 ? () => setIsChecked2(true): () => setIsChecked2(false)}
             />
              <FaRegStar 
-            className={!isChecked ? 'star' : 'checked3'}
-            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            className={!isChecked3 ? 'star' : 'checked3'}
+            onClick={!isChecked3 ? () => setIsChecked3(true) : () => setIsChecked3(false)}
             />
              <FaRegStar 
-            className={!isChecked ? 'star' : 'checked4'}
-            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            className={!isChecked4 ? 'star' : 'checked4'}
+            onClick={!isChecked4 ? () => setIsChecked4(true) : () => setIsChecked4(false)}
             />
              <FaRegStar 
-            className={!isChecked ? 'star' : 'checked5'}
-            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            className={!isChecked5 ? 'star' : 'checked5'}
+            onClick={!isChecked5 ? () => setIsChecked5(true) : () => setIsChecked5(false)}
             />
             {/* <i class="far fa-star"></i> */}
-             <input
+             {/* <input
                 id="rating"
                 type="range"
                 name="rating"
@@ -117,7 +142,7 @@ const submitReview = (event) => {
                 value={rating}
                 onChange={event => setRating(event.target.value)}
 
-            /> 
+            />  */}
           <label for="safety">Safety Meter</label>
          <input
                 id="safetyMeter"
@@ -240,9 +265,9 @@ const submitReview = (event) => {
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
-            <NavLink to={`/profile/${id}`}>
-            <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
-            </NavLink>
+            {/* <NavLink to={`/profile/${id}`}> */}
+            <button id="submitBtn" className="submit-button" onClick={(event) => validateRating(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
+            {/* </NavLink> */}
         </div>
 
     </div>
