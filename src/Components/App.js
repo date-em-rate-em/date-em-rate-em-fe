@@ -9,11 +9,11 @@ import { faSearch, faPlus, faHome } from '@fortawesome/free-solid-svg-icons'
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import Profile from './Profile'
-import ReviewForm from './ReviewForm'
 import ReviewFormDetails from './ReviewFormDetails';
 import { Footer } from './Footer';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
 import { USER_DATA_QUERY } from '../utils/graphql_queries'
+import NewClientForm from './NewClientForm';
 
 // import { Search } from 'history';
 
@@ -66,13 +66,6 @@ const App = () => {
              />
            )}
             }/>
-      <Route exact path="/review-form-page-1" render={() => 
-            <ReviewForm 
-            clients={clients} 
-            user={user} 
-            />
-            }
-          />
       <Route exact path="/add-review/:id" render={({ match }) => {
         console.log('MATCH', match.params.id)
         let clientMatch = clients.find(client => client.id === match.params.id) 
@@ -87,13 +80,13 @@ const App = () => {
              />
            )}
             }/>
-       {/* <Route exact path="/review-form-page-2" render={() => 
-            <ReviewFormDetails 
-            clients={clients} 
-            user={user} 
-            />
-            }
-          /> */}
+    <Route exact path="/new-client-form" render={() => {
+            return ( 
+            <NewClientForm 
+            //  clients={clients}
+             />
+           )}
+            }/>
         </Switch>
         <Footer/>
       </div>

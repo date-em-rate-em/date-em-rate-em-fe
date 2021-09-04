@@ -3,19 +3,18 @@ import { useState, useEffect } from 'react';
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from '../utils/graphql_mutations';
 import { NavLink } from 'react-router-dom';
-import { CLIENT_DATA_QUERY } from '../utils/graphql_queries';
+import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'; 
 
+const NewClientForm = () => {
 
-const ReviewFormDetails = ({clients, id, email}) => {
-// console.log("clientssssss", clients)
-
+const [email, setEmail] = useState('');
 const [body, setBody] = useState('');
-const [rating, setRating] = useState('');
-const [safetyMeter, setSafetyMeter] = useState('');
 const [dateAgain, setDateAgain] = useState('');
 const [gender, setGender] = useState('');
 const [kindness, setKindness] = useState('');
 const [payment, setPayment] = useState('');
+const [rating, setRating] = useState('');
+const [safetyMeter, setSafetyMeter] = useState('');
 const [size, setSize] = useState('');
 const [vibe, setVibe] = useState('');
 const [kinks, setKinks] = useState('');
@@ -24,23 +23,13 @@ const [condomUsage, setCondomUsage] = useState('');
 const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
-<<<<<<< HEAD
-const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
-    refetchQueries: [CLIENT_DATA_QUERY]
-  })
-
-
-const submitReview = () => {
-=======
 const [missingInfo, setMissingInfo] = useState('');
 const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
     refetchQueries: [CLIENT_DATA_QUERY]
   })
-console.log("setMissing", missingInfo)
+
 
 const submitReview = (event) => {
->>>>>>> 337e217e23c84ae5e90a41b4abb1ddfb1238867d
-    // event.preventDefault();
     if(rating && body && safetyMeter) {
         reviewCreate({
             variables: {
@@ -57,32 +46,40 @@ const submitReview = (event) => {
                 gender: gender
             }
         });
-    setMissingInfo('')
+      setMissingInfo('')
       clearInputs()
-      console.log('ID', id)
-      console.log("POST REVIEW??", clients)
 
     } else {
-        setMissingInfo('You must input all required fields to post a review!')
         event.preventDefault()
-      } 
+      setMissingInfo('You must input all required fields to post a review!')
+    } 
   }
 
   const clearInputs = () => {
     setRating('');
     setBody('');
     setDateAgain('');
+    setEmail('');
+    setGender('');
   }
 
 
     return (
     <div>
-        <header>
-           <h2 className="form-heading">Enter the Juicy Details Here! </h2>
-         </header>
-         <div className="form-container">
-             <p>Enter required information here:</p>
-             <label for="body">Body</label>
+         <header>
+                <h2 className="form-heading">Enter required new client information here to keep yourself and your community in the know about the current ClientTell out there. </h2>
+            </header>
+             <div className="required-content-container">
+                 <p>Enter Required Info Here: </p>
+             <input
+                id="emailInput"
+                type="text"
+                name="email"
+                placeholder="Email Address"
+                value={email}
+                onChange={event => setEmail(event.target.value)}
+            /> 
+            <label for="body">Body</label>
             <input
                 id="body"
                 type="text"
@@ -117,8 +114,10 @@ const submitReview = (event) => {
                 value={safetyMeter}
                 onChange={event => setSafetyMeter(event.target.value)}
             />    
-    
-        </div>
+            </div>
+        <header>
+           <h2 className="form-heading">Enter the Juicy Details Here! </h2>
+         </header>
         <div className="form-container">
              <p>Enter optional information here:</p>
          <label for="gender">Gender</label>
@@ -133,9 +132,9 @@ const submitReview = (event) => {
           <label for="size">Size</label>
              <input
                 id="size"
-                className='size-slider'
                 type="range"
                 name="size"
+                placeholder="Size"
                 min={ 0 } 
 	            max={ 10 } 
                 value={size}
@@ -210,7 +209,7 @@ const submitReview = (event) => {
         <label for="date-duration">How Long Was the Date?</label>
            <input
                 id="dateDuration"
-                type="number"
+                type="range"
                 name="date-duration"
                 min={ 1 } 
 	            max={ 5 } 
@@ -227,12 +226,8 @@ const submitReview = (event) => {
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
-            <NavLink to={`/profile/${id}`}>
-<<<<<<< HEAD
-                <button id="submitBtn" className="submit-button" onClick={()=> submitReview()}>Submit New Review</button>
-=======
-            <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
->>>>>>> 337e217e23c84ae5e90a41b4abb1ddfb1238867d
+            <NavLink to={`/Search`}>
+                <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter || !email) && <p>{missingInfo}</p>}</button>
             </NavLink>
         </div>
 
@@ -240,6 +235,6 @@ const submitReview = (event) => {
     );
 };
 
-export default ReviewFormDetails;
+export default NewClientForm;
 
  
