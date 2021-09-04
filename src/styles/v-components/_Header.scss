@@ -1,0 +1,10 @@
+.nav {
+    @include flex(row, between)
+    width: 100vw;
+    height: 7rem;
+    background: grey;
+    border-bottom: 2px solid rebeccapurple;
+}
+
+
+
