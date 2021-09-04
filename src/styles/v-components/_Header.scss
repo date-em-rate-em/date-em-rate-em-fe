@@ -2,8 +2,11 @@
     @include flex(row, between);
     width: 100vw;
     height: 11rem;
-    // background: grey;
+    background: $color-light;
     border-bottom: 1px solid $dark-purple;
+    box-shadow: $box-shadow;
+    position: sticky;
+    top: 0;
 }
 
 .header-left {
