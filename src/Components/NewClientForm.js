@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from '../utils/graphql_mutations';
 import { NavLink } from 'react-router-dom';
+import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'; 
 
+const NewClientForm = () => {
 
-const NewClientForm = ({clients, id, email}) => {
-// console.log("clientssssss", clients)
-
+const [email, setEmail] = useState('');
 const [body, setBody] = useState('');
 const [dateAgain, setDateAgain] = useState('');
 const [gender, setGender] = useState('');
@@ -23,11 +23,13 @@ const [condomUsage, setCondomUsage] = useState('');
 const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
-const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW)
+const [missingInfo, setMissingInfo] = useState('');
+const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
+    refetchQueries: [CLIENT_DATA_QUERY]
+  })
 
 
-const submitReview = event => {
-    event.preventDefault();
+const submitReview = (event) => {
     if(rating && body && safetyMeter) {
         reviewCreate({
             variables: {
@@ -44,13 +46,12 @@ const submitReview = event => {
                 gender: gender
             }
         });
-    //   setFormError('')
+      setMissingInfo('')
       clearInputs()
-      console.log('ID', id)
-      console.log("POST REVIEW??", clients)
 
     } else {
-    //   setFormError('Sorry, you must input all required fields!')
+        event.preventDefault()
+      setMissingInfo('You must input all required fields to post a review!')
     } 
   }
 
@@ -58,32 +59,27 @@ const submitReview = event => {
     setRating('');
     setBody('');
     setDateAgain('');
+    setEmail('');
+    setGender('');
   }
 
 
     return (
     <div>
          <header>
-                <h2 className="form-heading">Enter new client information here to keep yourself and your community in the know about the current ClientTell out there. </h2>
+                <h2 className="form-heading">Enter required new client information here to keep yourself and your community in the know about the current ClientTell out there. </h2>
             </header>
              <div className="required-content-container">
-                 <p>Enter either or both of the following: </p>
-            
+                 <p>Enter Required Info Here: </p>
              <input
                 id="emailInput"
                 type="text"
                 name="email"
                 placeholder="Email Address"
                 value={email}
-                onChange={event => setEmail(event)}
+                onChange={event => setEmail(event.target.value)}
             /> 
-            </div>
-        <header>
-           <h2 className="form-heading">Enter the Juicy Details Here! </h2>
-         </header>
-         <div className="form-container">
-             <p>Enter required information here:</p>
-             <label for="body">Body</label>
+            <label for="body">Body</label>
             <input
                 id="body"
                 type="text"
@@ -109,7 +105,7 @@ const submitReview = event => {
           <label for="safety">Safety Meter</label>
          <input
                 id="safetyMeter"
-                type="number"
+                type="range"
                 name="safety"
                 placeholder="Safety Meter"
                 required
@@ -118,15 +114,17 @@ const submitReview = event => {
                 value={safetyMeter}
                 onChange={event => setSafetyMeter(event.target.value)}
             />    
-    
-        </div>
+            </div>
+        <header>
+           <h2 className="form-heading">Enter the Juicy Details Here! </h2>
+         </header>
         <div className="form-container">
              <p>Enter optional information here:</p>
          <label for="gender">Gender</label>
             <input
                 id="gender"
                 type="text"
-                name="review"
+                name="gender"
                 placeholder="Client's Gender"
                 value={gender}
                 onChange={event => setGender(event.target.value)}
@@ -156,7 +154,7 @@ const submitReview = event => {
         <label for="kindness">Kindness</label>
         <input
                 id="kindness"
-                type="number"
+                type="range"
                 name="kindness"
                 placeholder="Kindness"
                 min={ 0 } 
@@ -177,8 +175,9 @@ const submitReview = event => {
             /> 
         <label for="date-again">Date Again</label>
          <select id="dateAgain" name="date-again" onChange={event => setDateAgain(event.target.value)}>
-           <option value={true}>Yes</option>
-           <option value={false}>No</option>
+           <option value="">Would You Date Them Again?</option>
+           <option value="Yes">Yes</option>
+           <option value="No">No</option>
          </select>
          {/* <label for="kinks">Kinks</label> */}
          {/* <input
@@ -227,8 +226,8 @@ const submitReview = event => {
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
-            <NavLink to={`/profile/${id}`}>
-                <button id="submitBtn" className="submit-button" onClick={event => submitReview(event)}>Submit New Review</button>
+            <NavLink to={`/Search`}>
+                <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter || !email) && <p>{missingInfo}</p>}</button>
             </NavLink>
         </div>
 
