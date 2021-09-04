@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 export const Header = () => {
 
     return (
-        <nav>
+        <nav className='nav'>
             <div className='header-left'>
                 <a target="_blank" href='https://weather.com/'>
                     <button>Quick Exit</button>
                 </a>
-                <h1 className='nav-logo'>ClienTell</h1>
+                <img className='nav-logo' src='https://i.imgur.com/dfyUcq1.png' alt='clientell logo'></img>
             </div>
             <div className='header-links'>
                 <Link to='/'>
