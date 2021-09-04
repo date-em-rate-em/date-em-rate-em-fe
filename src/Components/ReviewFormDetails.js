@@ -24,14 +24,6 @@ const [condomUsage, setCondomUsage] = useState('');
 const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
-<<<<<<< HEAD
-const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
-    refetchQueries: [CLIENT_DATA_QUERY]
-  })
-
-
-const submitReview = () => {
-=======
 const [missingInfo, setMissingInfo] = useState('');
 const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
     refetchQueries: [CLIENT_DATA_QUERY]
@@ -39,7 +31,6 @@ const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
 console.log("setMissing", missingInfo)
 
 const submitReview = (event) => {
->>>>>>> 337e217e23c84ae5e90a41b4abb1ddfb1238867d
     // event.preventDefault();
     if(rating && body && safetyMeter) {
         reviewCreate({
