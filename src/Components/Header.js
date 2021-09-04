@@ -9,7 +9,9 @@ export const Header = () => {
                 <a target="_blank" href='https://weather.com/'>
                     <button className='exit-btn'>Quick Exit</button>
                 </a>
+                <Link to='/'>
                 <img className='nav-logo' src='https://i.imgur.com/6y1TO2P.png' alt='clientell logo'></img>
+                </Link>
             </div>
             <div className='header-links'>
                 <Link to='/'>
