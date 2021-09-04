@@ -5,7 +5,7 @@ import { Dashboard } from './Dashboard';
 import { Route, Switch } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faSearch, faPlus, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faPlus, faHome, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import Profile from './Profile'
@@ -19,7 +19,7 @@ import NewClientForm from './NewClientForm';
 // import { Search } from 'history';
 
 const App = () => {
-  library.add(fab, faSearch, faPlus, faHome)
+  library.add(fab, faSearch, faPlus, faHome, faEnvelopeSquare)
   const [clients, setClients] = useState('');
   const [user, setUser] = useState('');
 
