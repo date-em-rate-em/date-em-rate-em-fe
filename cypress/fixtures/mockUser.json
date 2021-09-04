@@ -1,0 +1,10 @@
+{
+    "data": {
+        "allUsers": [
+            {
+                "id": "1",
+                "email": "test@turing.com"
+            }
+        ]
+    }
+}
