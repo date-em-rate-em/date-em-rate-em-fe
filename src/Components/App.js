@@ -14,6 +14,7 @@ import ReviewFormDetails from './ReviewFormDetails';
 import { Footer } from './Footer';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
 import { USER_DATA_QUERY } from '../utils/graphql_queries'
+import NewClientForm from './NewClientForm';
 
 // import { Search } from 'history';
 
@@ -87,13 +88,13 @@ const App = () => {
              />
            )}
             }/>
-       {/* <Route exact path="/review-form-page-2" render={() => 
-            <ReviewFormDetails 
-            clients={clients} 
-            user={user} 
-            />
-            }
-          /> */}
+    <Route exact path="/new-client-form" render={() => {
+            return ( 
+            <NewClientForm 
+            //  clients={clients}
+             />
+           )}
+            }/>
         </Switch>
         <Footer/>
       </div>
