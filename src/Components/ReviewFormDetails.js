@@ -84,7 +84,7 @@ const submitReview = () => {
             <label for="rating">Rating</label>
              <input
                 id="rating"
-                type="number"
+                type="range"
                 name="rating"
                 placeholder="Rating"
                 required
@@ -97,7 +97,7 @@ const submitReview = () => {
           <label for="safety">Safety Meter</label>
          <input
                 id="safetyMeter"
-                type="number"
+                type="range"
                 name="safety"
                 placeholder="Safety Meter"
                 required
@@ -122,9 +122,9 @@ const submitReview = () => {
           <label for="size">Size</label>
              <input
                 id="size"
-                type="number"
+                className='size-slider'
+                type="range"
                 name="size"
-                placeholder="Size"
                 min={ 0 } 
 	            max={ 10 } 
                 value={size}
@@ -133,7 +133,7 @@ const submitReview = () => {
           <label for="payment">Payment</label>
             <input
                 id="payment"
-                type="number"
+                type="range"
                 name="payment"
                 placeholder="Payment"
                 min={ 0 } 
@@ -144,7 +144,7 @@ const submitReview = () => {
         <label for="kindness">Kindness</label>
         <input
                 id="kindness"
-                type="number"
+                type="range"
                 name="kindness"
                 placeholder="Kindness"
                 min={ 0 } 
