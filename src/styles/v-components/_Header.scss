@@ -1,9 +1,32 @@
 .nav {
-    @include flex(row, between)
+    @include flex(row, between);
     width: 100vw;
-    height: 7rem;
-    background: grey;
-    border-bottom: 2px solid rebeccapurple;
+    height: 11rem;
+    // background: grey;
+    border-bottom: 1px solid $dark-purple;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-links {
+    @include flex(row, end);
+    height: 100%;
+}
+
+.exit-btn {
+   
+    &:hover {
+        background: red;
+        color: $color-light;
+        border: 1px solid $color-dark;
+    }
+}
+
+img {
+    margin-left: 1rem;
 }
 
 
