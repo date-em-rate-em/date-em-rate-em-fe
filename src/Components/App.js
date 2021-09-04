@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 import Profile from './Profile'
 import ReviewFormDetails from './ReviewFormDetails';
 import { Footer } from './Footer';
+import { Resources } from './Resources';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
 import { USER_DATA_QUERY } from '../utils/graphql_queries'
 import NewClientForm from './NewClientForm';
@@ -53,6 +54,9 @@ const App = () => {
         user={user} />
         }
       />
+       <Route exact path="/Resources" render={() => 
+        <Resources/>
+       } />
       <Route exact path="/profile/:id" render={({ match }) => {
         console.log('MATCH', match)
         let clientMatch = clients.find(client => client.id === match.params.id) 
