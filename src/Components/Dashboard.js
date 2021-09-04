@@ -43,17 +43,7 @@ const sortByRatings = (clients) => {
         <section className='client-dash'>
             <h2 className='welcome'>Welcome Back!</h2>
             <article className='featured-clients'>
-            <h3>Featured Client:</h3>
-                {clients.length && featuredClient.id &&
-                    <ContactCard 
-                    id={featuredClient.id}
-                    email={featuredClient.email}
-                    averageRating={featuredClient.averageRating}
-                    reviews={featuredClient.reviews.length}
-                    />
-
-                }
-                 <h3>Here's a Highly Rated Client:</h3>
+                 <h3>🔥 Highly Rated Client🔥</h3>
                 {clients.length && highClientCard.id &&
                     <ContactCard 
                     id={highClientCard.id}
@@ -63,7 +53,7 @@ const sortByRatings = (clients) => {
                     />
 
                 }
-                <h3>Here's a Low Rated Client:</h3>
+                <h3>Stay away from this one!</h3>
                 {clients.length && lowClientCard.id && 
                     <ContactCard 
                     id={lowClientCard.id}
@@ -71,6 +61,16 @@ const sortByRatings = (clients) => {
                     averageRating={lowClientCard.averageRating}
                     reviews={lowClientCard.reviews.length}
                     />
+                }
+                <h3>Featured Client:</h3>
+                {clients.length && featuredClient.id &&
+                    <ContactCard 
+                    id={featuredClient.id}
+                    email={featuredClient.email}
+                    averageRating={featuredClient.averageRating}
+                    reviews={featuredClient.reviews.length}
+                    />
+
                 }
             </article>
             <section className='resource'>
