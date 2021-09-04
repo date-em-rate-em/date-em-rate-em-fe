@@ -6,8 +6,9 @@
 }
 
 .all-reviews {
-    background: $dark-purple;
+    @include flex(column, center);
+    // border-top: 1px solid $dark-purple;
     width: 100vw;
-    box-shadow: $box-shadow;
+    // box-shadow: $box-shadow;
     overflow-y: scroll;
 }
