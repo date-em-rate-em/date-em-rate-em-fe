@@ -40,9 +40,9 @@ const sortByRatings = (clients) => {
 //   console.log("feature222", featuredClient)
 
     return (
-        <section>
-            <h2>Welcome Back to ClienTell</h2>
-            <article>
+        <section className='client-dash'>
+            <h2 className='welcome'>Welcome Back!</h2>
+            <article className='featured-clients'>
             <h3>Featured Client:</h3>
                 {clients.length && featuredClient.id &&
                     <ContactCard 
@@ -66,10 +66,10 @@ const sortByRatings = (clients) => {
                 <h3>Here's a Low Rated Client:</h3>
                 {clients.length && lowClientCard.id && 
                     <ContactCard 
-                     id={lowClientCard.id}
+                    id={lowClientCard.id}
                     email={lowClientCard.email}
-                  averageRating={lowClientCard.averageRating}
-                  reviews={lowClientCard.reviews.length}
+                    averageRating={lowClientCard.averageRating}
+                    reviews={lowClientCard.reviews.length}
                     />
                 }
             </article>
