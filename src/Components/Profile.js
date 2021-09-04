@@ -1,7 +1,5 @@
 import React from 'react';
-import { Route, Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
-import ReviewCard from './ReviewCard';
+import { Link } from "react-router-dom";
 import ReviewContainer from './ReviewContainer';
 
 const Profile = ({id, key, email, reviews, averageRating}) => {
