@@ -16,7 +16,7 @@
       align-items: center;
       justify-content: space-around;
     } @else if $alignment == start {
-      align-items: center;
+      align-items: right;
       justify-content: flex-start;
     } @else if $alignment == end {
       align-items: flex-end;
