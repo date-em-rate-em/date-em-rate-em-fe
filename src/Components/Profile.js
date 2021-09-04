@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { starRating } from '../utils/util';
 import ReviewContainer from './ReviewContainer';
 
 const Profile = ({id, email, reviews, averageRating}) => {
@@ -13,7 +14,7 @@ const Profile = ({id, email, reviews, averageRating}) => {
             </section>
             <section className="client-average-rating">
                 <h1>Client Average Rating:</h1>
-                    <p>{averageRating.toFixed(1)}</p>
+                    <p className='profile-stars'>{starRating(averageRating)}</p>
             </section>
                 <Link to={`/add-review/${id}`}>
             <section className="add-review-btn-section">
