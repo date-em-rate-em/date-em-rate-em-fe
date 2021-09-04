@@ -10,12 +10,12 @@ const ReviewFormDetails = ({clients, id, email}) => {
 // console.log("clientssssss", clients)
 
 const [body, setBody] = useState('');
+const [rating, setRating] = useState('');
+const [safetyMeter, setSafetyMeter] = useState('');
 const [dateAgain, setDateAgain] = useState('');
 const [gender, setGender] = useState('');
 const [kindness, setKindness] = useState('');
 const [payment, setPayment] = useState('');
-const [rating, setRating] = useState('');
-const [safetyMeter, setSafetyMeter] = useState('');
 const [size, setSize] = useState('');
 const [vibe, setVibe] = useState('');
 const [kinks, setKinks] = useState('');
@@ -24,12 +24,13 @@ const [condomUsage, setCondomUsage] = useState('');
 const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
+const [missingInfo, setMissingInfo] = useState('');
 const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
     refetchQueries: [CLIENT_DATA_QUERY]
   })
+console.log("setMissing", missingInfo)
 
-
-const submitReview = () => {
+const submitReview = (event) => {
     // event.preventDefault();
     if(rating && body && safetyMeter) {
         reviewCreate({
@@ -47,14 +48,15 @@ const submitReview = () => {
                 gender: gender
             }
         });
-    //   setFormError('')
+    setMissingInfo('')
       clearInputs()
       console.log('ID', id)
       console.log("POST REVIEW??", clients)
 
     } else {
-    //   setFormError('Sorry, you must input all required fields!')
-    } 
+        setMissingInfo('You must input all required fields to post a review!')
+        event.preventDefault()
+      } 
   }
 
   const clearInputs = () => {
@@ -114,7 +116,7 @@ const submitReview = () => {
             <input
                 id="gender"
                 type="text"
-                name="review"
+                name="gender"
                 placeholder="Client's Gender"
                 value={gender}
                 onChange={event => setGender(event.target.value)}
@@ -165,8 +167,9 @@ const submitReview = () => {
             /> 
         <label for="date-again">Date Again</label>
          <select id="dateAgain" name="date-again" onChange={event => setDateAgain(event.target.value)}>
-           <option value={true}>Yes</option>
-           <option value={false}>No</option>
+           <option value="">Would You Date Them Again?</option>
+           <option value="Yes">Yes</option>
+           <option value="No">No</option>
          </select>
          {/* <label for="kinks">Kinks</label> */}
          {/* <input
@@ -216,7 +219,7 @@ const submitReview = () => {
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
             <NavLink to={`/profile/${id}`}>
-                <button id="submitBtn" className="submit-button" onClick={()=> submitReview()}>Submit New Review</button>
+            <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
             </NavLink>
         </div>
 
