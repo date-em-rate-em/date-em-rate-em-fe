@@ -9,7 +9,7 @@ export const Footer = () => {
     return (
         <section>
             <Switch>
-                <Route exact path='/Dashboard' render={() => 
+                <Route exact path='/' render={() => 
                 <div className='footer-icons'>
                     <Link to='/Search'>
                         <FontAwesomeIcon icon="search" />
@@ -20,7 +20,7 @@ export const Footer = () => {
                 </div>
             }
             /> 
-                <Link to='/Dashboard'>
+                <Link to='/'>
                     <div className='return-home'>
                         <FontAwesomeIcon icon="home" />
                     </div>
