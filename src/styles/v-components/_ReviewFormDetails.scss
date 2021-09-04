@@ -1,4 +1,33 @@
-#vibe {
-    color: red;
-    background-color: black;
+.star {
+    height: 3rem;
+    width: 3rem;
+    &:hover {
+        color: $dark-purple;
+    }
+}
+
+.checked1 {
+    height: 3rem;
+    width: 3rem;
+    color: $dark-purple;
+}
+.checked2 {
+    height: 3rem;
+    width: 3rem;
+    color: $dark-purple;
+}
+.checked3 {
+    height: 3rem;
+    width: 3rem;
+    color: $dark-purple;
+}
+.checked4 {
+    height: 3rem;
+    width: 3rem;
+    color: $dark-purple;
+}
+.checked5 {
+    height: 3rem;
+    width: 3rem;
+    color: $dark-purple;
 }

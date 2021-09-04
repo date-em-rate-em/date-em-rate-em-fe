@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from '../utils/graphql_mutations';
 import { NavLink } from 'react-router-dom';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries';
-
+import { FaRegStar } from "react-icons/fa";
 
 const ReviewFormDetails = ({clients, id, email}) => {
 // console.log("clientssssss", clients)
@@ -25,6 +25,7 @@ const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
 const [missingInfo, setMissingInfo] = useState('');
+const [isChecked, setIsChecked] = useState(false);
 const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
     refetchQueries: [CLIENT_DATA_QUERY]
   })
@@ -84,6 +85,27 @@ const submitReview = (event) => {
                 onChange={event => setBody(event.target.value)}
             /> 
             <label for="rating">Rating</label>
+            <FaRegStar 
+            className={!isChecked ? 'star' : 'checked1'}
+            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            />
+             <FaRegStar 
+            className={!isChecked ? 'star' : 'checked2'}
+            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            />
+             <FaRegStar 
+            className={!isChecked ? 'star' : 'checked3'}
+            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            />
+             <FaRegStar 
+            className={!isChecked ? 'star' : 'checked4'}
+            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            />
+             <FaRegStar 
+            className={!isChecked ? 'star' : 'checked5'}
+            onClick={!isChecked ? () => setIsChecked(true) : () => setIsChecked(false)}
+            />
+            {/* <i class="far fa-star"></i> */}
              <input
                 id="rating"
                 type="range"
