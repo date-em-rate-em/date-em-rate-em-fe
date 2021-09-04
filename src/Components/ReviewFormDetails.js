@@ -219,11 +219,7 @@ const submitReview = (event) => {
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
             <NavLink to={`/profile/${id}`}>
-<<<<<<< HEAD
-                <button id="submitBtn" className="submit-button" onClick={()=> submitReview()}>Submit New Review</button>
-=======
             <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
->>>>>>> 337e217e23c84ae5e90a41b4abb1ddfb1238867d
             </NavLink>
         </div>
 
