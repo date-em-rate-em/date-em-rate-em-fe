@@ -31,7 +31,7 @@ const ReviewContainer = ({reviews}) => {
     })
 
     return (
-        <div>
+        <div className='all-reviews'>
             {allReviews}
         </div>
     );
