@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import ReviewContainer from './ReviewContainer';
 
-const Profile = ({id, key, email, reviews, averageRating}) => {
+const Profile = ({id, email, reviews, averageRating}) => {
 
     return (
-        <div>
+        <div className='client-profile'>
             <h1>Client Profile</h1>
             <section className="client-contact-info">
                 <h1>Client Contact Information:</h1>
@@ -18,7 +18,7 @@ const Profile = ({id, key, email, reviews, averageRating}) => {
                 <Link to={`/add-review/${id}`}>
             <section className="add-review-btn-section">
             <button className="add-review-btn" id={id}>
-                        Add New Review
+                        + Add New Review
                 </button>
             </section>
                     </Link>
