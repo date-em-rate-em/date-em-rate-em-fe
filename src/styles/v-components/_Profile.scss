@@ -1,0 +1,13 @@
+.client-profile {
+    @include flex(column, center);
+    margin-top: 1rem;
+    width: 100vw;
+    // overflow-y: scroll;
+}
+
+.all-reviews {
+    background: $dark-purple;
+    width: 100vw;
+    box-shadow: $box-shadow;
+    overflow-y: scroll;
+}
