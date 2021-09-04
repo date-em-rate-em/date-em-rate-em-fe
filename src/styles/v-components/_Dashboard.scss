@@ -1,9 +1,10 @@
 .client-dash {
-    @include flex(column, center);
+    // @include flex(column, center);
     margin: 1rem;
 }
 
 .featured-clients {
+    @include flex(column, center);
     margin: 1rem;
     width: 100vw;
 }
