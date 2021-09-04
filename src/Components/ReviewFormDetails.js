@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from '../utils/graphql_mutations';
 import { NavLink } from 'react-router-dom';
+import { CLIENT_DATA_QUERY } from '../utils/graphql_queries';
 
 
 const ReviewFormDetails = ({clients, id, email}) => {
@@ -23,7 +24,9 @@ const [condomUsage, setCondomUsage] = useState('');
 const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
-const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW)
+const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
+    refetchQueries: [CLIENT_DATA_QUERY]
+  })
 
 
 const submitReview = () => {
