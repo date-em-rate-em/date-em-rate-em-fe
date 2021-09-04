@@ -1,0 +1,89 @@
+{
+        "allClients": [
+            {
+                "averageRating": 5,
+                "email": "firstClient@email.com",
+                "id": "1",
+                "reviews": [
+                    {
+                        "body": "They spent the whole time telling me I was to sweet for this work, good person.",
+                        "clientId": 1,
+                        "dateAgain": "Yes",
+                        "extendedBody": null,
+                        "gender": "Non-Binary",
+                        "id": 1,
+                        "kindness": 10,
+                        "payment": 7,
+                        "rating": 5,
+                        "safetyMeter": 10,
+                        "size": 6,
+                        "title": null,
+                        "userId": 1,
+                        "vibe": 10
+                    }
+                ]
+            },
+            {
+                "averageRating": 2,
+                "email": "secondClient@email.com",
+                "id": "2",
+                "reviews": [
+                    {
+                        "body": "He was alright.",
+                        "clientId": 2,
+                        "dateAgain": "Yes",
+                        "extendedBody": null,
+                        "gender": "Male",
+                        "id": 1,
+                        "kindness": 10,
+                        "payment": 7,
+                        "rating": 2,
+                        "safetyMeter": 10,
+                        "size": 6,
+                        "title": null,
+                        "userId": 1,
+                        "vibe": 10
+                    },
+                    {
+                        "body": "He lives in his parents basement now, FYI.",
+                        "clientId": 1,
+                        "dateAgain": "Yes",
+                        "extendedBody": null,
+                        "gender": "Male",
+                        "id": 1,
+                        "kindness": 10,
+                        "payment": 7,
+                        "rating": 2,
+                        "safetyMeter": 10,
+                        "size": 6,
+                        "title": null,
+                        "userId": 1,
+                        "vibe": 10
+                    }
+                ]
+            },
+            {
+                "averageRating": 4,
+                "email": "thirdClient@email.com",
+                "id": "4",
+                "reviews": [
+                    {
+                        "body": "She was very cool and communicative.",
+                        "clientId": 3,
+                        "dateAgain": "Yes",
+                        "extendedBody": null,
+                        "gender": "Female",
+                        "id": 1,
+                        "kindness": 10,
+                        "payment": 7,
+                        "rating": 4,
+                        "safetyMeter": 10,
+                        "size": null,
+                        "title": null,
+                        "userId": 1,
+                        "vibe": 10
+                    }
+                ]
+            }
+        ]
+    }     
