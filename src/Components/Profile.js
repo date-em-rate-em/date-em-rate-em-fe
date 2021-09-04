@@ -15,7 +15,7 @@ const Profile = ({id, key, email, reviews, averageRating}) => {
             </section>
             <section className="client-average-rating">
                 <h1>Client Average Rating:</h1>
-                    <p>{averageRating}</p>
+                    <p>{averageRating.toFixed(1)}</p>
             </section>
                 <Link to={`/add-review/${id}`}>
             <section className="add-review-btn-section">
