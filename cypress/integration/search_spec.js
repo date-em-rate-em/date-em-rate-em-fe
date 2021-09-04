@@ -35,4 +35,17 @@ describe('Search View', () => {
         cy.get('h3').contains('secondClient@email.com')
       });
 
+      it('When the page is visited, you should be able to click on a searched client\'s profile', () => {
+        cy.get('.search-view')
+        cy.get('.search-bar')
+        .type("second")
+        cy.get('.contact-card')    
+        cy.get('h3').contains('secondClient@email.com')
+        .click()
+        .location("pathname")
+        .should("eq", "/profile/2")
+        cy.get('.client-profile')
+
+      });
+
   });
