@@ -22,12 +22,12 @@ describe('Search View', () => {
         cy.get('img').should("have.class", "nav-logo")
       });
 
-      it('When the page is visited, you should see a live search bar', () => {
+    it('When the page is visited, you should see a live search bar', () => {
         cy.get('.search-view')
         cy.get('.search-bar')
       });
 
-      it('When the page is visited, you should be able to search for a client email in the bar', () => {
+    it('When the page is visited, you should be able to search for a client email in the bar', () => {
         cy.get('.search-view')
         cy.get('.search-bar')
         .type("second")
@@ -35,7 +35,7 @@ describe('Search View', () => {
         cy.get('h3').contains('secondClient@email.com')
       });
 
-      it('When the page is visited, you should be able to click on a searched client\'s profile', () => {
+    it('When the page is visited, you should be able to click on a searched client\'s profile', () => {
         cy.get('.search-view')
         cy.get('.search-bar')
         .type("second")
