@@ -19,7 +19,7 @@
       align-items: center;
       justify-content: flex-start;
     } @else if $alignment == end {
-      align-items: center;
+      align-items: flex-end;
       justify-content: flex-end;
     }
   }
