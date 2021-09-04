@@ -41,7 +41,7 @@ const sortByRatings = (clients) => {
 
     return (
         <section className='client-dash'>
-            <h2 className='welcome'>Welcome Back!</h2>
+            {user.length && <h2 className='welcome'>Welcome back, sexii{user[0].id}43!</h2>}
             <article className='featured-clients'>
                  <h3>🔥 Highly Rated Client🔥</h3>
                 {clients.length && highClientCard.id &&
