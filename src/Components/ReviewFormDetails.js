@@ -26,8 +26,8 @@ const [date, setDate] = useState('');
 const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW)
 
 
-const submitReview = event => {
-    event.preventDefault();
+const submitReview = () => {
+    // event.preventDefault();
     if(rating && body && safetyMeter) {
         reviewCreate({
             variables: {
@@ -152,7 +152,7 @@ const submitReview = event => {
         <label for="vibe">Vibe</label>
         <input
                 id="vibe"
-                type="number"
+                type="range"
                 name="vibe"
                 placeholder="Vibe"
                 min={ 0 } 
@@ -213,7 +213,7 @@ const submitReview = event => {
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
             <NavLink to={`/profile/${id}`}>
-                <button id="submitBtn" className="submit-button" onClick={event => submitReview(event)}>Submit New Review</button>
+                <button id="submitBtn" className="submit-button" onClick={()=> submitReview()}>Submit New Review</button>
             </NavLink>
         </div>
 
