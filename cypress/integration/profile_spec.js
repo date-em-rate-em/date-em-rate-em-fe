@@ -46,6 +46,11 @@ describe('Profile View', () => {
         cy.get('.form-heading')
         cy.go('back')
       });
+      
+      it('When the page is visited, you should see a client review card listing client data', () => {
+        cy.get('.client-profile')
+        cy.get('.each-review')
+      });
 
    
   });
