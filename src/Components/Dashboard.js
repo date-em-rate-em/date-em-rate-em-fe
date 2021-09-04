@@ -7,8 +7,8 @@ export const Dashboard = ({ user, clients }) => {
     const [ lowClientCard, setLow ] = useState({});
     const [ featuredClient, setClientCard ] = useState({});
 
-    // console.log('DASHBOARD USER', user)
-    console.log('DASHBOARD CLIENTS', clients)
+    console.log('DASHBOARD USER', user)
+    // console.log('DASHBOARD CLIENTS', clients)
 
 
 // otherwise, we could just do a featured client of the day...
