@@ -11,19 +11,16 @@ const ReviewFormDetails = ({clients, id, email}) => {
 
 const [body, setBody] = useState('');
 const [rating, setRating] = useState('');
-const [safetyMeter, setSafetyMeter] = useState('');
+const [safetyMeter, setSafetyMeter] = useState('1');
 const [dateAgain, setDateAgain] = useState('');
 const [gender, setGender] = useState('');
-const [kindness, setKindness] = useState('');
-const [payment, setPayment] = useState('');
-const [size, setSize] = useState('');
-const [vibe, setVibe] = useState('');
-const [kinks, setKinks] = useState('');
-const [hygiene, setHygiene] = useState('');
-const [condomUsage, setCondomUsage] = useState('');
-const [duration, setDuration] = useState('');
+const [payment, setPayment] = useState('1');
+const [size, setSize] = useState('1');
+const [vibe, setVibe] = useState('1');
+const [hygiene, setHygiene] = useState('1');
+const [condoms, setCondomUsage] = useState('');
+const [duration, setDuration] = useState('0');
 const [punctuality, setPunctuality] = useState('');
-const [date, setDate] = useState('');
 const [missingInfo, setMissingInfo] = useState('');
 const maxLength = 300;
 const [charsLeft, setCharsLeft] = useState(maxLength);
@@ -108,10 +105,13 @@ const submitReview = (event) => {
                 body: body,
                 size: Number(size),
                 payment: Number(payment),
-                kindness: Number(kindness),
                 vibe: Number(vibe),
                 dateAgain: dateAgain,
-                gender: gender
+                gender: gender,
+                hygiene: Number(hygiene),
+                duration: Number(duration),
+                punctuality: punctuality,
+                condoms: condoms
             }
         });
     setMissingInfo('')
@@ -240,17 +240,6 @@ const submitReview = (event) => {
                 value={payment}
                 onChange={event => setPayment(event.target.value)}
             /> 
-        <label for="kindness">Kindness</label>
-        <input
-                id="kindness"
-                type="range"
-                name="kindness"
-                placeholder="Kindness"
-                min={ 1 } 
-	            max={ 10 } 
-                value={kindness}
-                onChange={event => setKindness(event.target.value)}
-            /> 
         <label for="vibe">Vibe</label>
         <input
                 id="vibe"
@@ -262,49 +251,25 @@ const submitReview = (event) => {
                 value={vibe}
                 onChange={event => setVibe(event.target.value)}
             /> 
-         <select id="dateAgain" name="date-again" onChange={event => setDateAgain(event.target.value)}>
-           <option value="">Would You Date Them Again?</option>
-           <option value="Yes">Yes</option>
-           <option value="">No</option>
-         </select>
-         {/* <label for="kinks">Kinks</label> */}
-         {/* <input
-                id="kinks"
-                type="text"
-                name="kinks"
-                placeholder="Kinks/Activities?"
-                value={kinks}
-                onChange={event => setKinks(event.target.value)}
-            />
-          <label for="hygiene">Hygiene</label>
-         <input
+        <label for="hygiene">Hygiene</label>
+            <input
                 id="hygiene"
-                type="text"
+                type="range"
                 name="hygiene"
-                placeholder="How Was Their Hygiene?"
                 value={hygiene}
+                min={ 1 } 
+	            max={ 10 } 
                 onChange={event => setHygiene(event.target.value)}
-            />
+                />
           <label for="condom-usage">How Willing Were They To Use Condoms?</label>
-          <input
+            <input
                 id="condomUsage"
                 type="text"
                 name="condom-usage"
                 placeholder="Condom Use Willingness"
-                value={condomUsage}
+                value={condoms}
                 onChange={event => setCondomUsage(event.target.value)}
-            />
-        <label for="date-duration">How Long Was the Date?</label>
-           <input
-                id="dateDuration"
-                type="number"
-                name="date-duration"
-                min={ 1 } 
-	            max={ 5 } 
-                placeholder="How Long was the Date?"
-                value={duration}
-                onChange={event => setDuration(event.target.value)}
-            />
+                />
         <label for="punctuality">How Punctual Were They?</label>
          <input
                 id="punctuality"
@@ -313,7 +278,23 @@ const submitReview = (event) => {
                 placeholder="How Punctual Were They?"
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
-            /> */}
+            /> 
+        <label for="date-duration">How Long Was the Date?</label>
+            <input
+                id="dateDuration"
+                type="number"
+                name="date-duration"
+                min={ 0 } 
+                max={ 24 } 
+                value={duration}
+                onChange={event => setDuration(event.target.value)}
+                />
+         <select id="dateAgain" name="date-again" onChange={event => setDateAgain(event.target.value)}>
+           <option value="">Would You Date Them Again?</option>
+           <option value="Yes">Yes</option>
+           <option value="No">No</option>
+         </select>
+
             <NavLink to={`/profile/${id}`}>
                 <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
             </NavLink>
