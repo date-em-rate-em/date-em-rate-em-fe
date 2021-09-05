@@ -44,7 +44,82 @@ describe('Add New Review View', () => {
         cy.get('#star2')
         .click()
       });
-    
+
+    it('When the page is visited, you should have a safety meter slider', () => {
+        cy.get('.review-form')
+        cy.get('.required-container')
+        cy.get('#safetyMeter')
+        .click()
+      });
+
+      it('When the page is visited, you should be able to fill out required info', () => {
+        cy.get('.review-form')
+        cy.get('.required-container')
+        cy.get('textarea').type('This was an ok date.')
+        cy.get('#star2')
+        .click()
+        cy.get('#safetyMeter[type=range]')
+        .invoke('val', 2)
+      });
+
+      it('When the page is visited, you should be able to fill out required info', () => {
+        cy.get('.review-form')
+        cy.get('.required-container')
+        cy.get('textarea').type('This was an ok date.')
+        cy.get('#star2')
+        .click()
+        cy.get('#safetyMeter[type=range]')
+        .invoke('val', 2)
+        .trigger('change', { data: 2 })
+        cy.get('#size[type=range]')
+        .invoke('val', 2)
+        .trigger('change', { data: 2 })
+        cy.get('#payment[type=range]')
+        .invoke('val', 2)
+        .trigger('change', { data: 2 })
+        cy.get('#kindness[type=range]')
+        .invoke('val', 2)
+        .trigger('change', { data: 2 })
+        cy.get('#vibe[type=range]')
+        .invoke('val', 2)
+        .trigger('change', { data: 2 })
+        cy.get('#submitBtn')
+        .click()
+      });
+
+      it.only('When the page is visited, you should be able to fill out required info', () => {
+        cy.get('.review-form')
+        cy.get('.required-container')
+        cy.get('textarea').type('This was an ok date.')
+        cy.get('#star2')
+        .click()
+        cy.get('#safetyMeter[type=range]')
+        .invoke('val', 10)
+        .trigger('change', { data: 10 })
+        // cy.get('#size[type=range]')
+        // .trigger('mousedown')
+        // .trigger('mousemove', 0, 10, { which: 3 })
+        // .trigger('mouseup')
+        // cy.get('#payment[type=range]')
+        // .trigger('mousedown')
+        // .trigger('mousemove', 0, 10, { which: 4 })
+        // .trigger('mouseup')
+        // cy.get('#kindness[type=range]')
+        // .trigger('mousedown')
+        // .trigger('mousemove', 0, 10, { which: 6 })
+        // .trigger('mouseup')
+        // cy.get('#vibe[type=range]')
+        // .trigger('mousedown')
+        // .trigger('mousemove', 0, 10, { which: 6 })
+        // .trigger('mouseup')
+        cy.get('#submitBtn').click({ force: true })
+      });
+
+      // .trigger('mousedown', { which: 1 }, { force: true })
+      // .trigger('mousemove', 881, 288, { force: true })
+      // .trigger('mouseup')
+
+
     // it('When the page is visited, you should be able to fill out the form', () => {
     //     // cy.get('input').contains('body')
     //     // cy.get('input[type='submit']')
