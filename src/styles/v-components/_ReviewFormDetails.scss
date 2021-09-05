@@ -1,8 +1,46 @@
+.review-form {
+    @include flex(column, center);
+    margin: 3rem;
+    width: 100vw;
+}
+
+.required-container {
+    @include flex(column, center);
+    margin: 1rem;
+    width: 80%;
+}
+
+.required-text {
+    margin: 1rem;
+}
+
+.review-input {
+    width: 60%;
+    min-height: 5rem;
+    height: 10rem;
+    text-align: center;
+    resize: none;
+    padding: 1rem;
+    font-family: $font-family-secondary;
+}
+
+.char-counter {
+    @include flex(row, end);
+    width: 60%;
+  }
+
+.rating-container {
+    @include flex(row, center);
+    margin: 1rem;
+}
+
 .star {
     height: 3rem;
     width: 3rem;
+    color: grey;
     &:hover {
         transform: scale(1.07);
+        color: $dark-purple;
     }
 }
 
@@ -30,4 +68,14 @@
     height: 3rem;
     width: 3rem;
     color: $dark-purple;
+}
+
+.optional-container {
+    @include flex(column, center);
+    margin: 1rem;
+    width: 80%;
+}
+
+.optional-text {
+    margin: 1rem;
 }
