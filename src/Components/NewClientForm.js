@@ -96,7 +96,7 @@ const submitReview = (event) => {
                 name="rating"
                 placeholder="Rating"
                 required
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 5 } 
                 value={rating}
                 onChange={event => setRating(event.target.value)}
@@ -109,7 +109,7 @@ const submitReview = (event) => {
                 name="safety"
                 placeholder="Safety Meter"
                 required
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={safetyMeter}
                 onChange={event => setSafetyMeter(event.target.value)}
@@ -135,7 +135,7 @@ const submitReview = (event) => {
                 type="range"
                 name="size"
                 placeholder="Size"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={size}
                 onChange={event => setSize(event.target.value)}
@@ -146,7 +146,7 @@ const submitReview = (event) => {
                 type="range"
                 name="payment"
                 placeholder="Payment"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={payment}
                 onChange={event => setPayment(event.target.value)}
@@ -157,7 +157,7 @@ const submitReview = (event) => {
                 type="range"
                 name="kindness"
                 placeholder="Kindness"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={kindness}
                 onChange={event => setKindness(event.target.value)}
@@ -168,7 +168,7 @@ const submitReview = (event) => {
                 type="range"
                 name="vibe"
                 placeholder="Vibe"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={vibe}
                 onChange={event => setVibe(event.target.value)}
