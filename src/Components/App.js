@@ -14,7 +14,7 @@ import { Footer } from './Footer';
 import { Resources } from './Resources';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
 import { USER_DATA_QUERY } from '../utils/graphql_queries'
-import NewClientForm from './NewClientForm';
+import { NewClientForm } from './NewClientForm';
 
 // import { Search } from 'history';
 
