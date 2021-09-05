@@ -2,11 +2,11 @@ import React from 'react';
 import { starRating, formatPayment, formatSize } from '../utils/util';
 
 // const ReviewCard = () => {
-    const ReviewCard = ({id, key, date, body, title, rating, size, payment, kindness, vibe, gender, dateAgain, safetyMeter }) => {
+    const ReviewCard = ({id, key, date, body, title, rating, size, payment, kindness, vibe, gender, dateAgain, safetyMeter, createdAt }) => {
 
     return (
         <div className="each-review" id={id}>
-        <h2 className="review-title">Client's Review from the date on {date}:</h2>
+        <h2 className="review-title">Client's Review from the date on {createdAt}:</h2>
             <p className="body">"{body}"</p>
             <p className="safety-meter">How Safe Did I Feel: {safetyMeter}</p>   
             <p className="rating">Rating: {starRating(rating)} </p>       
