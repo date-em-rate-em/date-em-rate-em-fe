@@ -5,23 +5,32 @@ export const CLIENT_DATA_QUERY = gql `
     allClients {
       id
       email
+      createdAt
+      updatedAt
       averageRating
+      averageSafetyMeter
+      averageSize
+      averagePayment
+      averageHygiene
+      averageDuration
       reviews {
-          createdAt
-          id
-          clientId
-          userId
-          rating
-          safetyMeter
-          body
-          extendedBody
-          title
-          size
-          payment
-          kindness
-          vibe
-          dateAgain
-          gender
+        id
+        clientId
+        userId
+        rating
+        safetyMeter
+        body
+        size
+        payment
+        vibe
+        dateAgain
+        gender
+        hygiene
+        duration
+        punctuality
+        condoms
+        createdAt
+        updatedAt
       }
     }
   }
@@ -30,8 +39,30 @@ export const CLIENT_DATA_QUERY = gql `
 export const USER_DATA_QUERY = gql `
   query {
     allUsers {
-      id
-      email
+        id
+        email
+        createdAt
+        updatedAt
+        reviews {
+        id
+        clientId
+        userId
+        rating
+        safetyMeter
+        body
+        size
+        payment
+        vibe
+        dateAgain
+        gender
+        hygiene
+        duration
+        punctuality
+        condoms
+        createdAt
+        updatedAt
+        }
+     }
     }
-  }
 `;
+
