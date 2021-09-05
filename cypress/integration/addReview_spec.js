@@ -35,7 +35,8 @@ describe('Add New Review View', () => {
       });
     
     it('When the page is visited, you should be able to fill out the form', () => {
-        cy.get('input').contains('body')
+        // cy.get('input').contains('body')
+        // cy.get('input[type='submit']')
       });
 
     //   it('When the page is visited, you should see a header', () => {
