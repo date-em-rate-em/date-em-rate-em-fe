@@ -7,6 +7,7 @@ export const CLIENT_DATA_QUERY = gql `
       email
       averageRating
       reviews {
+          createdAt
           id
           clientId
           userId
