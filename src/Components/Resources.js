@@ -14,6 +14,9 @@ export const Resources = () => {
             <a target="_blank" href=' https://swp.urbanjustice.org/news-room/'>
                     <button className='nswp'>Urban Justice Center</button>
             </a>
+            <a target="_blank" href='https://badgirlsbible.com/'>
+                    <button className='badgirls'>Bad Girls Bible</button>
+            </a>
         </section>
 
     )
