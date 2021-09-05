@@ -9,10 +9,13 @@ export const ADD_REVIEW = gql`
         $body: String!,
         $size: Float!,
         $payment: Int!,
-        $kindness: Int!,
         $vibe: Int!,
         $dateAgain: String!,
-        $gender: String!
+        $gender: String!,
+        $hygiene: Int!,
+        $duration: Int!,
+        $punctuality: String!,
+        $condoms: String!
         ) {
     reviewCreate(
         userId: $userId, 
@@ -22,10 +25,13 @@ export const ADD_REVIEW = gql`
         body: $body,
         size: $size,
         payment: $payment,
-        kindness: $kindness,
         vibe: $vibe,
         dateAgain: $dateAgain,
-        gender: $gender
+        gender: $gender,
+        hygiene: $hygiene,
+        duration: $duration,
+        punctuality: $punctuality,
+        condoms: $condoms
     ) {
         review {
             id
@@ -34,14 +40,15 @@ export const ADD_REVIEW = gql`
             rating
             safetyMeter
             body
-            extendedBody
-            title
             size
             payment
-            kindness
             vibe
             dateAgain
             gender
+            hygiene
+            duration
+            punctuality
+            condoms
         }
     }
   }
