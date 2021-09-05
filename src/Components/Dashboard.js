@@ -43,7 +43,7 @@ const sortByRatings = (clients) => {
         <section className='client-dash'>
             {user.length && <h2 className='welcome'>Welcome back, sexii{user[0].id}43!</h2>}
             <article className='featured-clients'>
-                 <h3>🔥 Highly Rated Client🔥</h3>
+                <h3 className='dashboard-clients'>🔥 Highly Rated Client🔥</h3>
                 {clients.length && highClientCard.id &&
                     <ContactCard 
                     id={highClientCard.id}
@@ -53,7 +53,7 @@ const sortByRatings = (clients) => {
                     />
 
                 }
-                <h3>Stay away from this one!</h3>
+                <h3 className='dashboard-clients'>Stay away from this one!</h3>
                 {clients.length && lowClientCard.id && 
                     <ContactCard 
                     id={lowClientCard.id}
@@ -62,7 +62,7 @@ const sortByRatings = (clients) => {
                     numReviews={lowClientCard.reviews.length}
                     />
                 }
-                <h3>Featured Client:</h3>
+                <h3 className='dashboard-clients'>Featured Client:</h3>
                 {clients.length && featuredClient.id &&
                     <ContactCard 
                     id={featuredClient.id}
