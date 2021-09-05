@@ -21,6 +21,7 @@ const ReviewContainer = ({reviews}) => {
                 gender={review.gender}
                 dateAgain={review.dateAgain}
                 safetyMeter={review.safetyMeter}
+                createdAt={review.createdAt}
                 // punctuality={review.punctuality}
                 // hygiene={review.hygiene}
                 // condomUsage={review.condomUsage}
