@@ -13,7 +13,7 @@ export const ADD_REVIEW = gql`
         $dateAgain: String!,
         $gender: String!,
         $hygiene: Int!,
-        $duration: Int!,
+        $duration: Float!,
         $punctuality: String!,
         $condoms: String!
         ) {
