@@ -156,23 +156,23 @@ const submitReview = (event) => {
             </div>
             <section className='rating-container'>
                 <FaRegStar 
-                className={!isChecked1 ? 'star' : 'checked1'}
+                className={!isChecked1 ? 'star' : 'checked1'} id="star1"
                 onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
                 />
                 <FaRegStar 
-                className={!isChecked2 ? 'star' : 'checked2'}
+                className={!isChecked2 ? 'star' : 'checked2'} id="star2"
                 onClick={!isChecked2 ? () => addRating(2): () => removeRating(2)}
                 />
                 <FaRegStar 
-                className={!isChecked3 ? 'star' : 'checked3'}
+                className={!isChecked3 ? 'star' : 'checked3'} id="star3"
                 onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
                 />
                 <FaRegStar 
-                className={!isChecked4 ? 'star' : 'checked4'}
+                className={!isChecked4 ? 'star' : 'checked4'} id="star4"
                 onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
                 />
                 <FaRegStar 
-                className={!isChecked5 ? 'star' : 'checked5'}
+                className={!isChecked5 ? 'star' : 'checked5'} id="star5"
                 onClick={!isChecked5 ? () => addRating(5) : () => removeRating(5)}
                 />
             </section>
