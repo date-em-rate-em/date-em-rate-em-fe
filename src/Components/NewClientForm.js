@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'; 
 import { FaRegStar } from "react-icons/fa";
 
-const NewClientForm = () => {
+export const NewClientForm = () => {
 
 const [email, setEmail] = useState('');
 const [body, setBody] = useState('');
@@ -170,39 +170,26 @@ const submitReview = (event) => {
             </div>
             <section className='rating-container'>
                 <FaRegStar 
-                className={!isChecked1 ? 'star' : 'checked1'} id="star1"
-                onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
-                />
-                <FaRegStar 
-                className={!isChecked2 ? 'star' : 'checked2'} id="star2"
-                onClick={!isChecked2 ? () => addRating(2): () => removeRating(2)}
-                />
-                <FaRegStar 
-                className={!isChecked3 ? 'star' : 'checked3'} id="star3"
-                onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
-                />
-                <FaRegStar 
-                className={!isChecked4 ? 'star' : 'checked4'} id="star4"
-                onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
-                />
-                <FaRegStar 
                 className={!isChecked5 ? 'star' : 'checked5'} id="star5"
                 onClick={!isChecked5 ? () => addRating(5) : () => removeRating(5)}
                 />
+                 <FaRegStar 
+                className={!isChecked4 ? 'star' : 'checked4'} id="star4"
+                onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
+                />
+                 <FaRegStar 
+                className={!isChecked3 ? 'star' : 'checked3'} id="star3"
+                onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
+                />
+                 <FaRegStar 
+                className={!isChecked2 ? 'star' : 'checked2'} id="star2"
+                onClick={!isChecked2 ? () => {addRating(2)}: () => {removeRating(2)}}
+                />
+                <FaRegStar 
+                className={!isChecked1 ? 'star' : 'checked1'} id="star1"
+                onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
+                />
             </section>
-            {/* <i class="far fa-star"></i> */}
-             {/* <input
-                id="rating"
-                type="range"
-                name="rating"
-                placeholder="Rating"
-                required
-                min={ 0 } 
-	            max={ 5 } 
-                value={rating}
-                onChange={event => setRating(event.target.value)}
-
-            />  */}
           <label for="safety">Safety Meter</label>
          <input
                 id="safetyMeter"
@@ -312,6 +299,5 @@ const submitReview = (event) => {
     );
 };
 
-export default NewClientForm;
 
  
