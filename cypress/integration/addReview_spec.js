@@ -31,13 +31,24 @@ describe('Add New Review View', () => {
     });
 
     it('When the page is visited, you should have a form container', () => {
-        cy.get('.form-container')
+        cy.get('.review-form')
+        cy.get('.required-container')
+        cy.get('.required-text').contains('Enter required information here:')
+        cy.get('textarea').type('This was an ok date.')
+      });
+
+      it('When the page is visited, you should have a star rating system', () => {
+        cy.get('.review-form')
+        cy.get('.required-container')
+        cy.get('.rating-container')
+        cy.get('#star2')
+        .click()
       });
     
-    it('When the page is visited, you should be able to fill out the form', () => {
-        // cy.get('input').contains('body')
-        // cy.get('input[type='submit']')
-      });
+    // it('When the page is visited, you should be able to fill out the form', () => {
+    //     // cy.get('input').contains('body')
+    //     // cy.get('input[type='submit']')
+    //   });
 
     //   it('When the page is visited, you should see a header', () => {
     //     cy.get('img').should("have.class", "nav-logo")
