@@ -1,5 +1,5 @@
 .contact-card {
-    @include flex(column, center);
+    @include flex(column, start);
     width: 24rem;
     background: $light-purple;
     border-radius: .5rem;
@@ -18,6 +18,15 @@
 }
 
 .email {
+   @include flex(row, start);
+}
+
+.email-icon {
     width: 2rem;
     height: 2rem;
+}
+
+.contact-email {
+    margin-left: .5rem;
+    align-self: center;
 }
