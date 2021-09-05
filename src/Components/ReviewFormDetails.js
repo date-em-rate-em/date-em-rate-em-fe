@@ -36,12 +36,33 @@ const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
   })
 console.log("setMissing", missingInfo)
 
-const validateRating = (numStars) => {
-    // let setChecked = `setIsChecked${numStars}`
-    console.log("BEFORE", rating)
-    setRating(numStars)
-    setIsChecked1(true)
-    console.log("AFTER", rating)
+const addRating = (num) => {
+    if(num === 1) {
+        setRating(num)
+        setIsChecked1(true)
+    } else if (num === 2) {
+        setRating(num)
+        setIsChecked1(true)
+        setIsChecked2(true)
+    } else if (num === 3) {
+        setRating(num)
+        setIsChecked1(true)
+        setIsChecked2(true)
+        setIsChecked3(true)
+    } else if (num === 4) {
+        setRating(num)
+        setIsChecked1(true)
+        setIsChecked2(true)
+        setIsChecked3(true)
+        setIsChecked4(true)
+    } else {
+        setRating(5)
+        setIsChecked1(true)
+        setIsChecked2(true)
+        setIsChecked3(true)
+        setIsChecked4(true)
+        setIsChecked5(true)
+    }
     // if(numStars) {
     //     setRating(5)
     // } else if (isChecked4) {
@@ -54,8 +75,32 @@ const validateRating = (numStars) => {
     //     setRating(1)
     // }
 }
+
+const removeRating = (num) => {
+    setRating('')
+ if(num === 1) {
+    setIsChecked1(false)
+ } else if(num === 2) {
+    setIsChecked2(false)
+ } else if (num === 3) {
+    setIsChecked1(false)
+    setIsChecked2(false)
+    setIsChecked3(false)
+} else if(num === 4) {
+    setIsChecked1(false)
+    setIsChecked2(false)
+    setIsChecked3(false)
+    setIsChecked4(false)
+} else {
+    setIsChecked1(false)
+    setIsChecked2(false)
+    setIsChecked3(false)
+    setIsChecked4(false)
+    setIsChecked5(false)
+}
+}
+
 const submitReview = (event) => {
-    validateRating()
     console.log(rating)
     // event.preventDefault();
     if(rating && body && safetyMeter) {
@@ -63,7 +108,7 @@ const submitReview = (event) => {
             variables: {
                 userId: 1,
                 clientEmail: email,
-                rating: Number(rating),
+                rating: rating,
                 safetyMeter: Number(safetyMeter),
                 body: body,
                 size: Number(size),
@@ -112,23 +157,23 @@ const submitReview = (event) => {
             <label for="rating">Rating</label>
             <FaRegStar 
             className={!isChecked1 ? 'star' : 'checked1'}
-            onClick={!isChecked1 ? () => validateRating(1) : () => setIsChecked1(false)}
+            onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
             />
              <FaRegStar 
             className={!isChecked2 ? 'star' : 'checked2'}
-            onClick={!isChecked2 ? () => setIsChecked2(true): () => setIsChecked2(false)}
+            onClick={!isChecked2 ? () => addRating(2): () => removeRating(2)}
             />
              <FaRegStar 
             className={!isChecked3 ? 'star' : 'checked3'}
-            onClick={!isChecked3 ? () => setIsChecked3(true) : () => setIsChecked3(false)}
+            onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
             />
              <FaRegStar 
             className={!isChecked4 ? 'star' : 'checked4'}
-            onClick={!isChecked4 ? () => setIsChecked4(true) : () => setIsChecked4(false)}
+            onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
             />
              <FaRegStar 
             className={!isChecked5 ? 'star' : 'checked5'}
-            onClick={!isChecked5 ? () => setIsChecked5(true) : () => setIsChecked5(false)}
+            onClick={!isChecked5 ? () => addRating(5) : () => removeRating(5)}
             />
             {/* <i class="far fa-star"></i> */}
              {/* <input
@@ -150,7 +195,7 @@ const submitReview = (event) => {
                 name="safety"
                 placeholder="Safety Meter"
                 required
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={safetyMeter}
                 onChange={event => setSafetyMeter(event.target.value)}
@@ -174,7 +219,7 @@ const submitReview = (event) => {
                 className='size-slider'
                 type="range"
                 name="size"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={size}
                 onChange={event => setSize(event.target.value)}
@@ -185,7 +230,7 @@ const submitReview = (event) => {
                 type="range"
                 name="payment"
                 placeholder="Payment"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={payment}
                 onChange={event => setPayment(event.target.value)}
@@ -196,7 +241,7 @@ const submitReview = (event) => {
                 type="range"
                 name="kindness"
                 placeholder="Kindness"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={kindness}
                 onChange={event => setKindness(event.target.value)}
@@ -207,7 +252,7 @@ const submitReview = (event) => {
                 type="range"
                 name="vibe"
                 placeholder="Vibe"
-                min={ 0 } 
+                min={ 1 } 
 	            max={ 10 } 
                 value={vibe}
                 onChange={event => setVibe(event.target.value)}
@@ -216,7 +261,7 @@ const submitReview = (event) => {
          <select id="dateAgain" name="date-again" onChange={event => setDateAgain(event.target.value)}>
            <option value="">Would You Date Them Again?</option>
            <option value="Yes">Yes</option>
-           <option value="No">No</option>
+           <option value="">No</option>
          </select>
          {/* <label for="kinks">Kinks</label> */}
          {/* <input
@@ -265,9 +310,9 @@ const submitReview = (event) => {
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> */}
-            {/* <NavLink to={`/profile/${id}`}> */}
-            <button id="submitBtn" className="submit-button" onClick={(event) => validateRating(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
-            {/* </NavLink> */}
+            <NavLink to={`/profile/${id}`}>
+                <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
+            </NavLink>
         </div>
 
     </div>
