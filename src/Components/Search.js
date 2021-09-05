@@ -22,7 +22,7 @@ export const Search = ({ clients }) => {
         key={client.id}
         email={client.email}
         averageRating={client.averageRating}
-        reviews={client.reviews}
+        numReviews={client.reviews.length}
        />
     )
    })
