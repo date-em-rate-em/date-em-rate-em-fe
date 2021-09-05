@@ -160,40 +160,27 @@ const submitReview = (event) => {
             </div>
             <section className='rating-container'>
                 <FaRegStar 
-                className={!isChecked1 ? 'star' : 'checked1'} id="star1"
-                onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
+                className={!isChecked5 ? 'star' : 'checked5'} id="star5"
+                onClick={!isChecked5 ? () => addRating(5) : () => removeRating(5)}
                 />
-                <FaRegStar 
+                 <FaRegStar 
+                className={!isChecked4 ? 'star' : 'checked4'} id="star4"
+                onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
+                />
+                 <FaRegStar 
+                className={!isChecked3 ? 'star' : 'checked3'} id="star3"
+                onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
+                />
+                 <FaRegStar 
                 className={!isChecked2 ? 'star' : 'checked2'} id="star2"
                 onClick={!isChecked2 ? () => addRating(2): () => removeRating(2)}
                 />
                 <FaRegStar 
-                className={!isChecked3 ? 'star' : 'checked3'} id="star3"
-                onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
-                />
-                <FaRegStar 
-                className={!isChecked4 ? 'star' : 'checked4'} id="star4"
-                onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
-                />
-                <FaRegStar 
-                className={!isChecked5 ? 'star' : 'checked5'} id="star5"
-                onClick={!isChecked5 ? () => addRating(5) : () => removeRating(5)}
+                className={!isChecked1 ? 'star' : 'checked1'} id="star1"
+                onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
                 />
             </section>
-            {/* <i class="far fa-star"></i> */}
-             {/* <input
-                id="rating"
-                type="range"
-                name="rating"
-                placeholder="Rating"
-                required
-                min={ 0 } 
-	            max={ 5 } 
-                value={rating}
-                onChange={event => setRating(event.target.value)}
-
-            />  */}
-          <label for="safety">Safety Meter</label>
+         <label for="safety">Safety Meter</label>
          <input
                 id="safetyMeter"
                 type="range"
@@ -287,6 +274,7 @@ const submitReview = (event) => {
                 min={ 0 } 
                 max={ 24 } 
                 value={duration}
+                onKeyDown="return false"
                 onChange={event => setDuration(event.target.value)}
                 />
          <select id="dateAgain" name="date-again" onChange={event => setDateAgain(event.target.value)}>
@@ -299,7 +287,6 @@ const submitReview = (event) => {
                 <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
             </NavLink>
         </div>
-
     </div>
     );
 };
