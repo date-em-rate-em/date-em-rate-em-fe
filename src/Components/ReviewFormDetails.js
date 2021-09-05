@@ -25,6 +25,8 @@ const [duration, setDuration] = useState('');
 const [punctuality, setPunctuality] = useState('');
 const [date, setDate] = useState('');
 const [missingInfo, setMissingInfo] = useState('');
+const maxLength = 300;
+const [charsLeft, setCharsLeft] = useState(maxLength);
 const [isChecked1, setIsChecked1] = useState(false);
 const [isChecked2, setIsChecked2] = useState(false);
 const [isChecked3, setIsChecked3] = useState(false);
@@ -35,6 +37,10 @@ const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
     refetchQueries: [CLIENT_DATA_QUERY]
   })
 console.log("setMissing", missingInfo)
+
+useEffect(() => {
+    setCharsLeft(maxLength - body.length);
+}, [body]);
 
 const addRating = (num) => {
     if(num === 1) {
@@ -63,17 +69,6 @@ const addRating = (num) => {
         setIsChecked4(true)
         setIsChecked5(true)
     }
-    // if(numStars) {
-    //     setRating(5)
-    // } else if (isChecked4) {
-    //     setRating(4)
-    // } else if (isChecked3) {
-    //     setRating(3)
-    // } else if (isChecked2) {
-    //     setRating(2) 
-    // } else {
-    //     setRating(1)
-    // }
 }
 
 const removeRating = (num) => {
@@ -138,43 +133,49 @@ const submitReview = (event) => {
 
 
     return (
-    <div>
+    <div className='review-form'>
         <header>
            <h2 className="form-heading">Enter the Juicy Details Here! </h2>
          </header>
-         <div className="form-container">
-             <p>Enter required information here:</p>
-             <label for="body">Body</label>
-            <input
+         <div className="required-container">
+             <p className='required-text'>Enter required information here:</p>
+            <textarea
                 id="body"
                 type="text"
                 name="body"
-                placeholder="Short Review"
+                className='review-input'
+                placeholder="Write your review here."
                 required
+                autocomplete='off'
                 value={body}
+                maxLength= {maxLength}
                 onChange={event => setBody(event.target.value)}
             /> 
-            <label for="rating">Rating</label>
-            <FaRegStar 
-            className={!isChecked1 ? 'star' : 'checked1'}
-            onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
-            />
-             <FaRegStar 
-            className={!isChecked2 ? 'star' : 'checked2'}
-            onClick={!isChecked2 ? () => addRating(2): () => removeRating(2)}
-            />
-             <FaRegStar 
-            className={!isChecked3 ? 'star' : 'checked3'}
-            onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
-            />
-             <FaRegStar 
-            className={!isChecked4 ? 'star' : 'checked4'}
-            onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
-            />
-             <FaRegStar 
-            className={!isChecked5 ? 'star' : 'checked5'}
-            onClick={!isChecked5 ? () => addRating(5) : () => removeRating(5)}
-            />
+            <div className='char-counter'>
+                {charsLeft}/{maxLength}
+            </div>
+            <section className='rating-container'>
+                <FaRegStar 
+                className={!isChecked1 ? 'star' : 'checked1'}
+                onClick={!isChecked1 ? () => addRating(1) : () => removeRating(1)}
+                />
+                <FaRegStar 
+                className={!isChecked2 ? 'star' : 'checked2'}
+                onClick={!isChecked2 ? () => addRating(2): () => removeRating(2)}
+                />
+                <FaRegStar 
+                className={!isChecked3 ? 'star' : 'checked3'}
+                onClick={!isChecked3 ? () => addRating(3) : () => removeRating(3)}
+                />
+                <FaRegStar 
+                className={!isChecked4 ? 'star' : 'checked4'}
+                onClick={!isChecked4 ? () => addRating(4) : () => removeRating(4)}
+                />
+                <FaRegStar 
+                className={!isChecked5 ? 'star' : 'checked5'}
+                onClick={!isChecked5 ? () => addRating(5) : () => removeRating(5)}
+                />
+            </section>
             {/* <i class="far fa-star"></i> */}
              {/* <input
                 id="rating"
@@ -202,8 +203,8 @@ const submitReview = (event) => {
             />    
     
         </div>
-        <div className="form-container">
-             <p>Enter optional information here:</p>
+        <div className="optional-container">
+             <p className='optional-text'>Enter optional information here:</p>
          <label for="gender">Gender</label>
             <input
                 id="gender"
@@ -257,7 +258,6 @@ const submitReview = (event) => {
                 value={vibe}
                 onChange={event => setVibe(event.target.value)}
             /> 
-        <label for="date-again">Date Again</label>
          <select id="dateAgain" name="date-again" onChange={event => setDateAgain(event.target.value)}>
            <option value="">Would You Date Them Again?</option>
            <option value="Yes">Yes</option>
