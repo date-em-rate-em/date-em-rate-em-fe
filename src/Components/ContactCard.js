@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { starRating } from '../utils/util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const ContactCard = ({ id, key, email, averageRating, reviews }) => {
+export const ContactCard = ({ id, key, email, averageRating, numReviews }) => {
 
     return (
         <NavLink to={`/profile/${id}`}>
@@ -13,7 +13,7 @@ export const ContactCard = ({ id, key, email, averageRating, reviews }) => {
                 </button>
                 <h3>{email}</h3>
                 <p>Average Rating: {starRating(averageRating)}</p>
-                <p># of reviews: {reviews.length}</p>
+                <p># of reviews: {numReviews}</p>
                 <button class="view-details-btn">View Client</button>
             </article>
         </NavLink>

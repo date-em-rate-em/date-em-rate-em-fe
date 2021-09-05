@@ -49,7 +49,7 @@ const sortByRatings = (clients) => {
                     id={highClientCard.id}
                     email={highClientCard.email}
                     averageRating={highClientCard.averageRating}
-                    reviews={highClientCard.reviews.length}
+                    numReviews={highClientCard.reviews.length}
                     />
 
                 }
@@ -59,7 +59,7 @@ const sortByRatings = (clients) => {
                     id={lowClientCard.id}
                     email={lowClientCard.email}
                     averageRating={lowClientCard.averageRating}
-                    reviews={lowClientCard.reviews.length}
+                    numReviews={lowClientCard.reviews.length}
                     />
                 }
                 <h3>Featured Client:</h3>
@@ -68,7 +68,7 @@ const sortByRatings = (clients) => {
                     id={featuredClient.id}
                     email={featuredClient.email}
                     averageRating={featuredClient.averageRating}
-                    reviews={featuredClient.reviews.length}
+                    numReviews={featuredClient.reviews.length}
                     />
 
                 }
