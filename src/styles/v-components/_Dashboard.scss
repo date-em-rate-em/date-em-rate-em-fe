@@ -1,3 +1,8 @@
+.loading {
+    @include flex (row, center);
+    margin-left: 600px;
+}
+
 .client-dash {
     // @include flex(column, center);
     margin: 1rem;
