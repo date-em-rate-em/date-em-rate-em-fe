@@ -32,6 +32,26 @@ export const Resources = () => {
     )
    })
 
+    return (
+        <section className='resources-sections'>
+                <section className="search-container">
+                <h2 className='under-construction'>Page currently under construction</h2>
+                <p>In the meantime, please click on the links below for sex-work specific resources from around the world:</p>
 
+                <input className='resources-search-bar'
+                type='text' 
+                placeholder='Search for resources...'
+                onChange={(event) => {
+                        setSearchTerm(event.target.value);
+                }} 
+                />
+                <div className='search-result-container'>
+                {resource.length ? resource : <h2> There are no resources that match your search.</h2>} 
+                </div>
+
+                </section>
+        </section>
+
+    )
 }
 
