@@ -17,7 +17,7 @@ import { USER_DATA_QUERY } from '../utils/graphql_queries'
 import { NewClientForm } from './NewClientForm';
 import { Error } from './Error';
 import loadingSpin from '../images/loadingSpin.gif';
-
+import { AboutUs } from './AboutUs';
 
 // import { Search } from 'history';
 
@@ -74,6 +74,9 @@ const App = () => {
         />
          <Route exact path="/Resources" render={() => 
           <Resources/>
+         } />
+          <Route exact path="/AboutUs" render={() => 
+          <AboutUs/>
          } />
         <Route exact path="/profile/:id" render={({ match }) => {
           console.log('MATCH', match)
