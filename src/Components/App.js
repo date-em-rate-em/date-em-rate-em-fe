@@ -15,6 +15,8 @@ import { Resources } from './Resources';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
 import { USER_DATA_QUERY } from '../utils/graphql_queries'
 import { NewClientForm } from './NewClientForm';
+import loadingSpin from '../images/loadingSpin.gif';
+
 
 // import { Search } from 'history';
 
@@ -35,11 +37,15 @@ const App = () => {
         }
       }, [clients, clientsData, clientsLoading, userData, userLoading, user]);
    
+    if ( )
+
+
+
+
    return (
     <main>
       <div className="App">
         <Header />
-        {userLoading && clientsLoading && <p>Loading...</p>}
         <Switch>
           <Route exact path="/" render={() => 
             <Dashboard 
