@@ -15,6 +15,7 @@ import { Resources } from './Resources';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
 import { USER_DATA_QUERY } from '../utils/graphql_queries'
 import { NewClientForm } from './NewClientForm';
+import { Error } from './Error';
 import loadingSpin from '../images/loadingSpin.gif';
 
 
@@ -29,12 +30,10 @@ const App = () => {
   const { loading: clientsLoading, error: clientsError, data: clientsData } = useQuery(CLIENT_DATA_QUERY);
     
     useEffect(() => {
-        if ((!userLoading && userData) && (!clientsLoading && clientsData)) {
+        if ((!userLoading && userData.allUsers.length) && (!clientsLoading && clientsData.allClients.length)) {
           setUser(userData.allUsers);
           setClients(clientsData.allClients);
-          // console.log('user', users)
-          // console.log("clients", clients)
-        }
+        } 
       }, [clients, clientsData, clientsLoading, userData, userLoading, user]);
    
     if (clientsLoading || userLoading) {
@@ -45,6 +44,14 @@ const App = () => {
         </div>
       )
     }
+
+  if(!clientsData && clientsError) {
+    return (
+      <Error 
+      errorMsg={clientsError.message}
+      />
+    )
+  }
 
    if (clientsData && userData) {
      return (
@@ -97,13 +104,17 @@ const App = () => {
               }/>
       <Route exact path="/new-client-form" render={() => {
               return ( 
-              <NewClientForm 
-              //  clients={clients}
-               />
+              <NewClientForm />
              )}
               }/>
-          </Switch>
-          <Footer/>
+       <Route render={() => {
+          return (
+          <Error 
+            errorMsg="That page does not exist. Go back home?" />
+          )
+          }}/>
+        </Switch>
+        <Footer/>
         </div>
       </main>
     );
