@@ -3,19 +3,15 @@
     margin-left: 600px;
 }
 
-.client-dash {
-    // @include flex(column, center);
-    margin: 1rem;
-}
-
 .featured-clients {
     @include flex(column, center);
     margin: 1rem;
-    width: 100vw;
+    // width: 100vw;
 }
 
 .welcome {
     place-self: self-start;
     font-style: italic;
     letter-spacing: 1.5px;
+    margin-left: 5rem;
 }
