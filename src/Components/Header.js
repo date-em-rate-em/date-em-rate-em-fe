@@ -29,6 +29,9 @@ export const Header = () => {
                 <Link to='/Resources'>
                     <button>Resources</button>
                 </Link>
+                <Link to='/AboutUs'>
+                    <button>AboutUs</button>
+                </Link>
                 </div>
             </div>
         </nav>
