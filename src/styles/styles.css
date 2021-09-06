@@ -4,8 +4,8 @@ l - Settings - Global Variables
 /* === Neutrals === */
 /* === Palette === */
 /* === Font Import === */
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@97,398&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@97,398&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"); */
 /* ==========================================================================
 ll - Tools - Mixins
 ========================================================================== */
@@ -16,7 +16,7 @@ ll - Tools - Mixins
 /* ==========================================================================
 lll - Generic - Resets & Normalize Styles
 ========================================================================== */
-* {
+/* * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -30,9 +30,9 @@ a, Link {
 a:focus, a:hover, a:visited, a:link, a:active, Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
-body {
+/* body {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -59,7 +59,7 @@ button:hover {
   background-color: black;
   color: white;
   border: 1px solid rgba(244, 245, 220, 0);
-}
+} */
 
 /* ==========================================================================
 lV - Elements - Semanitic Bare Elements 
@@ -67,7 +67,7 @@ lV - Elements - Semanitic Bare Elements
 /* ==========================================================================
 V -  Components -  Specific UI components
 ========================================================================== */
-.search-view {
+/* .search-view {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,9 +83,9 @@ V -  Components -  Specific UI components
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
+} */
 
-.search-bar {
+/* .search-bar {
   width: 60%;
   padding: .3rem;
   margin-top: 1.5rem;
@@ -95,8 +95,8 @@ V -  Components -  Specific UI components
   border-radius: 7px;
   text-align: center;
   font-family: "Arial", sans-serif;
-}
-
+} */
+/* 
 .cards-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,5 +120,5 @@ V -  Components -  Specific UI components
   gap: 1rem;
   margin-top: 1rem;
   min-height: 50%;
-}
+} */
 /*# sourceMappingURL=styles.css.map */
