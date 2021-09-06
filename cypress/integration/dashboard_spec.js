@@ -15,7 +15,7 @@ describe('Dashboard View', () => {
     });
   
     it('When the page is visited, you should see a header', () => {
-      cy.get('img').should("have.class", "nav-logo")
+      cy.get('img').should("have.class", "logo")
     });
 
     it('When the page is visited, you should see a welcome message', () => {
@@ -51,11 +51,6 @@ describe('Dashboard View', () => {
             cy.go('back')
         });
         
-    it.skip('When the page is visited, you should have a quick exit button that opens a new window', () => {
-            cy.get('.exit-btn')
-            .click()
-        });
-        
     it('When the page is visited, you should see a highly rated client', () => {
             cy.get('h3').contains("Highly")
           });
@@ -68,10 +63,6 @@ describe('Dashboard View', () => {
                cy.get('h3').contains("Featured")
              });
   
-    it('When the page is visited, you should have three cards', () => {
-              cy.get('.client-dash').children().should('have.length', 3)
-            });
-        
     it('When the page is visited, you should be able to click on a client card', () => {
             cy.get('.contact-card')    
              cy.get('h3').contains('firstClient@email.com')
@@ -80,4 +71,10 @@ describe('Dashboard View', () => {
                 .should("eq", "/profile/1")
             cy.get('.client-profile')
               });
+
+    it('When the page is visited, you should have a quick exit button that opens a new window', () => {
+      cy.get('.exit-btn')
+      .click()
+  });
+            
   });
