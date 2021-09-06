@@ -94,7 +94,7 @@ const removeRating = (num) => {
 const submitReview = (event) => {
     console.log(rating)
     // event.preventDefault();
-    if(rating && body && safetyMeter) {
+    if(rating && body && safetyMeter && email) {
         reviewCreate({
             variables: {
                 userId: 1,
