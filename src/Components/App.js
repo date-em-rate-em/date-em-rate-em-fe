@@ -114,7 +114,7 @@ const App = () => {
           )
           }}/>
         </Switch>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
       </main>
     );
