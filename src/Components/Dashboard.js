@@ -40,9 +40,9 @@ const sortByRatings = (clients) => {
 //   console.log("feature222", featuredClient)
 
     return (
-        <section className='client-dash'>
-            {user.length && <h2 className='welcome'>Welcome back, sexii{user[0].id}43!</h2>}
+        <>
             <article className='featured-clients'>
+            {user.length && <h2 className='welcome'>Welcome back, sexii{user[0].id}43!</h2>}
                 <h3 className='dashboard-clients'>🔥 Highly Rated Client🔥</h3>
                 {clients.length && highClientCard.id &&
                     <ContactCard 
@@ -75,6 +75,6 @@ const sortByRatings = (clients) => {
             <section className='resource'>
                 {/* Resource?? */}
             </section>
-        </section>
+        </>
     );
 };
