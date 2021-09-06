@@ -24,102 +24,83 @@
     }
   }
   
-  /* === Grid === */
-  @mixin grid($viewport) {
-      display: grid;
-      justify-items: center;
-      @if $viewport==mobile {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 1rem 1rem;
-      } @else if $viewport==tablet {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 2rem;
-      } @else if $viewport==desktop{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem 4rem;
-      }
-    }
-  
-  /* === Media Queries === */
-  @mixin mobile($property) {
-      @media only screen and (min-width: 250px) {
-        @content;
-        transition: 100ms;
-        @if $property==grid{
-          @include grid(mobile) 
-        } @else if $property==welcome-header{
-          transition: 1s;
-          font-size: 2.5rem;
-        } @else if $property==welcome-intro {
-          transition: 1s;
-          font-size: 1.5rem;
-        } @else if $property==welcome-question {
-          transition: 1s;
-          font-size: 1rem;
-        } @else if $property==title {
-          transition: 1s;
-          font-size: 2.2rem;
-        } @else if $property==quote {
-          transition: 1s;
-          font-size: 2rem;
-        } 
-      }
-    }
+  // /* === Media Queries === */
+  // @mixin mobile($property) {
+  //     @media only screen and (min-width: 400px) {
+  //       @content;
+  //       transition: 100ms;
+  //       // @if $property==grid{
+  //       //   @include grid(mobile) 
+  //       // }
+  //         @if $property==logo{
+  //         transition: 1s;
+  //         height: 3.5rem;
+  //       } @else if $property==header-links{
+  //         @include flex(column, end);
+  //         transition: 1s;
+  //       } @else if $property==welcome-question {
+  //         transition: 1s;
+  //         font-size: 1rem;
+  //       } @else if $property==title {
+  //         transition: 1s;
+  //         font-size: 2.2rem;
+  //       } @else if $property==button {
+  //         transition: 1s;
+  //         margin: 0;
+  //       } 
+  //     }
+  //   }
     
-    @mixin tablet($property) { 
-      @media only screen and (min-width: 768px) {
-        @content;
-        transition: 100ms;
-        @if $property==grid{
-          @include grid(tablet) 
-        } @else if $property==welcome-header{
-          transition: 1s;
-          font-size: 2.7rem;
-        } @else if $property==welcome-intro{
-          transition: 1s;
-          font-size: 1.7rem;
-        } @else if $property==welcome-question{
-          transition: 1s;
-          font-size: 1.3rem;
-        } @else if $property==title {
-          transition: 1s;
-          font-size: 2.4rem;
-        } @else if $property==quote {
-          transition: 1s;
-          font-size: 2.5rem;
-        } 
-      }
-    }
+  //   @mixin tablet($property) { 
+  //     @media only screen and (min-width: 768px) {
+  //       @content;
+  //       transition: 100ms;
+  //       @if $property==welcome-header{
+  //         transition: 1s;
+  //         font-size: 2.7rem;
+  //       } @else if $property==welcome-intro{
+  //         transition: 1s;
+  //         font-size: 1.7rem;
+  //       } @else if $property==welcome-question{
+  //         transition: 1s;
+  //         font-size: 1.3rem;
+  //       } @else if $property==title {
+  //         transition: 1s;
+  //         font-size: 2.4rem;
+  //       } @else if $property==quote {
+  //         transition: 1s;
+  //         font-size: 2.5rem;
+  //       } 
+  //     }
+  //   }
   
-    @mixin desktop($property) {
-      @media only screen and (min-width: 1000px) {
-        @content;
-        transition: 100ms;
-        @if $property==grid{
-          @include grid(desktop) 
-        } @else if $property==welcome-header{
-          transition: 1s;
-          font-size: 3rem;
-        } @else if $property==welcome-intro{
-          transition: 1s;
-          font-size: 2rem;
-        } @else if $property==welcome-question{
-          transition: 1s;
-          font-size: 1.6rem;
-        } @else if $property==title {
-          transition: 1s;
-          font-size: 2.6rem;
-        } @else if $property==quote {
-          transition: 1s;
-          font-size: 3.5rem;
-        } 
-      }
-    }
+  //   @mixin desktop($property) {
+  //     @media only screen and (min-width: 1000px) {
+  //       @content;
+  //       transition: 100ms;
+  //       @if $property==welcome-header{
+  //         transition: 1s;
+  //         font-size: 3rem;
+  //       } @else if $property==welcome-intro{
+  //         transition: 1s;
+  //         font-size: 2rem;
+  //       } @else if $property==welcome-question{
+  //         transition: 1s;
+  //         font-size: 1.6rem;
+  //       } @else if $property==title {
+  //         transition: 1s;
+  //         font-size: 2.6rem;
+  //       } @else if $property==quote {
+  //         transition: 1s;
+  //         font-size: 3.5rem;
+  //       } 
+  //     }
+  //   }
   
-  /* === Helpers === */
+  // /* === Helpers === */
   
-    @mixin mediaQueries($property) {
-      @include mobile($property);
-      @include tablet($property);
-      @include desktop($property);
-    }
+  //   @mixin mediaQueries($property) {
+  //     @include mobile($property);
+  //     @include tablet($property);
+  //     @include desktop($property);
+  //   }
