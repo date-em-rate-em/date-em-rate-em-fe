@@ -60,7 +60,7 @@ describe('Add New Review View', () => {
     });
   
     it('When the page is visited, you should see a header', () => {
-      cy.get('img').should("have.class", "nav-logo")
+      cy.get('img').should("have.class", "logo")
     });
 
     it('When the page is visited, you should have a form container', () => {
