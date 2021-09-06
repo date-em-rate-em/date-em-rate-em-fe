@@ -138,9 +138,7 @@ const submitReview = (event) => {
 
     return (
     <div className='review-form'>
-        <header>
            <h2 className="form-heading">Enter the Juicy Details Here! </h2>
-         </header>
          <div className="required-container">
              <p className='required-text'>Enter required information here:</p>
             <textarea
