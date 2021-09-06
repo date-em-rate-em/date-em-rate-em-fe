@@ -16,42 +16,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-// export const CLIENT_DATA_QUERY = gql `
-//   query {
-//     allClients {
-//       id
-//       email
-//       averageRating
-//       reviews {
-//           id
-//           clientId
-//           userId
-//           rating
-//           safetyMeter
-//           body
-//           extendedBody
-//           title
-//           size
-//           payment
-//           kindness
-//           vibe
-//           dateAgain
-//           gender
-//       }
-//     }
-//   }
-// `;
-
-// export const USER_DATA_QUERY = gql `
-//   query {
-//     allUsers {
-//       id
-//       email
-//     }
-//   }
-// `;
-
-
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
