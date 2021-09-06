@@ -30,7 +30,7 @@ const App = () => {
   const { loading: clientsLoading, error: clientsError, data: clientsData } = useQuery(CLIENT_DATA_QUERY);
     
     useEffect(() => {
-        if ((!userLoading && userData.allUsers.length) && (!clientsLoading && clientsData.allClients.length)) {
+        if ((!userLoading && userData) && (!clientsLoading && clientsData.allClients.length)) {
           setUser(userData.allUsers);
           setClients(clientsData.allClients);
         } 
