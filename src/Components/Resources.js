@@ -18,6 +18,20 @@ export const Resources = () => {
 
         ] 
 
- 
+        const resource = allResources.filter((resource) => {
+                if (searchTerm === '') {
+                    return resource
+                } else if (resource.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return resource 
+                }
+        }).map(resource => {
+     return (
+                <a target="_blank" href={resource.link}>
+                        <button className={resource.name}>{resource.name}</button>
+                </a>
+    )
+   })
+
+
 }
 
