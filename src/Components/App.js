@@ -37,71 +37,77 @@ const App = () => {
         }
       }, [clients, clientsData, clientsLoading, userData, userLoading, user]);
    
-    if ( )
+    if (clientsLoading || userLoading) {
+      return (
+        <div className="App">
+          <Header />
+          <img className='loading' src={loadingSpin} />
+        </div>
+      )
+    }
 
-
-
-
-   return (
-    <main>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" render={() => 
-            <Dashboard 
-            clients={clients} 
-            user={user} 
+   if (clientsData && userData) {
+     return (
+      <main>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path="/" render={() => 
+              <Dashboard 
+              clients={clients} 
+              user={user} 
+              />
+              }
             />
-            }
-          />
-      <Route exact path="/Search" render={() => 
-        <Search 
-        clients={clients} 
-        user={user} />
-        }
-      />
-       <Route exact path="/Resources" render={() => 
-        <Resources/>
-       } />
-      <Route exact path="/profile/:id" render={({ match }) => {
-        console.log('MATCH', match)
-        let clientMatch = clients.find(client => client.id === match.params.id) 
-            return ( 
-            <Profile 
-             id={clientMatch.id} 
-             key={clientMatch.id}
-             email={clientMatch.email} 
-             averageRating={clientMatch.averageRating}
-             reviews={clientMatch.reviews}
-             />
-           )}
-            }/>
-      <Route exact path="/add-review/:id" render={({ match }) => {
-        console.log('MATCH', match.params.id)
-        let clientMatch = clients.find(client => client.id === match.params.id) 
-            return ( 
-            <ReviewFormDetails
-             id={clientMatch.id} 
-             key={clientMatch.id}
-             email={clientMatch.email} 
-             clients={clients}
-            //  averageRating={clientMatch.averageRating}
-            //  reviews={clientMatch.reviews}
-             />
-           )}
-            }/>
-    <Route exact path="/new-client-form" render={() => {
-            return ( 
-            <NewClientForm 
-            //  clients={clients}
-             />
-           )}
-            }/>
-        </Switch>
-        <Footer/>
-      </div>
-    </main>
-  );
+        <Route exact path="/Search" render={() => 
+          <Search 
+          clients={clients} 
+          user={user} />
+          }
+        />
+         <Route exact path="/Resources" render={() => 
+          <Resources/>
+         } />
+        <Route exact path="/profile/:id" render={({ match }) => {
+          console.log('MATCH', match)
+          let clientMatch = clients.find(client => client.id === match.params.id) 
+              return ( 
+              <Profile 
+               id={clientMatch.id} 
+               key={clientMatch.id}
+               email={clientMatch.email} 
+               averageRating={clientMatch.averageRating}
+               reviews={clientMatch.reviews}
+               />
+             )}
+              }/>
+        <Route exact path="/add-review/:id" render={({ match }) => {
+          console.log('MATCH', match.params.id)
+          let clientMatch = clients.find(client => client.id === match.params.id) 
+              return ( 
+              <ReviewFormDetails
+               id={clientMatch.id} 
+               key={clientMatch.id}
+               email={clientMatch.email} 
+               clients={clients}
+              //  averageRating={clientMatch.averageRating}
+              //  reviews={clientMatch.reviews}
+               />
+             )}
+              }/>
+      <Route exact path="/new-client-form" render={() => {
+              return ( 
+              <NewClientForm 
+              //  clients={clients}
+               />
+             )}
+              }/>
+          </Switch>
+          <Footer/>
+        </div>
+      </main>
+    );
+   }
 }
 
 

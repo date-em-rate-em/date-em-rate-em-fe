@@ -51,7 +51,6 @@ const sortByRatings = (clients) => {
                     averageRating={highClientCard.averageRating}
                     numReviews={highClientCard.reviews.length}
                     />
-
                 }
                 <h3 className='dashboard-clients'>Stay away from this one!</h3>
                 {clients.length && lowClientCard.id && 
