@@ -139,10 +139,8 @@ const submitReview = (event) => {
 
 
     return (
-    <div>
-         <header>
-                <h2 className="form-heading">Enter required new client information here to keep yourself and your community in the know about the current ClientTell out there. </h2>
-            </header>
+    <div className='new-client'>
+            <h2 className="form-heading">Enter required new client information here to keep yourself and your community in the know about the current ClientTell out there. </h2>
          <div className="required-container">
              <p className='required-text'>Enter required information here:</p>
              <input
