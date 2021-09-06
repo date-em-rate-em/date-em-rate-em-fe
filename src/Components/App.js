@@ -38,10 +38,10 @@ const App = () => {
    
     if (clientsLoading || userLoading) {
       return (
-        <div className="App">
+        <>
           <Header />
           <img className='loading' src={loadingSpin} />
-        </div>
+        </>
       )
     }
 
@@ -55,9 +55,9 @@ const App = () => {
 
    if (clientsData && userData) {
      return (
-      <main>
-        <div className="App">
+       <>
           <Header />
+      {/* <main className='main'> */}
           <Switch>
             <Route exact path="/" render={() => 
               <Dashboard 
@@ -114,9 +114,8 @@ const App = () => {
           )
           }}/>
         </Switch>
-        {/* <Footer/> */}
-        </div>
-      </main>
+      {/* </main> */}
+      </>
     );
    }
 }
