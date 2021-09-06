@@ -3,10 +3,13 @@
     width: 60%;
     background: $light-purple;
     margin: 1rem;
-    // border: 1px solid $color-light;
     box-shadow: $box-shadow;
     padding: 1rem;
     border-radius: .4rem;
+}
+
+.date-and-rating {
+    @include flex(row, between);
 }
 
 .body {
@@ -17,5 +20,8 @@
 
 .rating {
     text-align: center;
+    align-self: center;
     letter-spacing: 8px;
 }
+
+
