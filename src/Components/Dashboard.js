@@ -72,9 +72,6 @@ const sortByRatings = (clients) => {
 
                 }
             </article>
-            <section className='resource'>
-                {/* Resource?? */}
-            </section>
         </>
     );
 };
