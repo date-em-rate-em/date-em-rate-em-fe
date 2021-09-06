@@ -1,30 +1,27 @@
 import React from 'react';
 import { starRating, formatPayment, formatSize, formatDate } from '../utils/util';
 
-// const ReviewCard = () => {
-    const ReviewCard = ({id, key, date, body, title, rating, size, payment, kindness, vibe, gender, dateAgain, safetyMeter, createdAt }) => {
-
-
+    const ReviewCard = ({id, key, body, rating, size, payment,vibe, gender, dateAgain, safetyMeter, date, hygiene, punctuality, condoms, duration }) => {
 
     return (
-        <div className="each-review" id={id}>
-        <h2 className="review-title">Client's Review from the date on {formatDate(createdAt)}:</h2>
-            {body && <p className="body">"{body}"</p>}
-            <p className="safety-meter">How Safe Did I Feel: {safetyMeter}</p>   
-            <p className="rating">{starRating(rating)} </p>       
-            {size && <p className="size-data">Size: {formatSize(size)}</p>}
-            {payment && <p className="payment-data">How Well Did They Pay: {formatPayment(payment)}</p>}            
-            {kindness && <p className="kindness-meter">Kindness: {kindness}/10</p>}          
-            {vibe && <p className="vibe-data">Vibe: {vibe}/10</p>}
-            {dateAgain && <p className="date-again">Would I Date Them Again? {dateAgain}</p>}
-            {gender && <p className="gender">Gender: {gender}</p>}  
-            {/* <p className="date">{date}</p>    */}
-            {/* <p className="vibe-data">Hygiene: {hygiene}</p>   
-            <p className="date-again">How Punctual Were They? {punctuality}</p>   
-            <p className="gender">Condom Usage: {condomUsage}</p>   
-            <p className="date-again">How Long Did the Date Last? {dateDuration}</p>   
-            <p className="gender">Kinks: {kinks}</p>    */}
-        </div>
+        <article className='each-review' id={id}>
+            <div className='date-and-rating'>
+                <p className='review-date'>{formatDate(date)}</p>
+                {rating &&<p className='rating'>{starRating(rating)} </p>}   
+            </div>
+            {body && <p className='body'>"{body}"</p>}
+            {gender && <p className='gender'><strong>Gender:</strong> {gender}</p>}  
+            {punctuality && <p className='date-again'><strong>How Punctual Were They?</strong> {punctuality}</p>}   
+            {duration && <p className='date-again'><strong>How Long Did the Date Last?</strong> {duration} hours</p>}  
+            {payment >= 1 && <p className='payment-data'><strong>How Well Did They Pay?</strong> {formatPayment(payment)}</p>}            
+            {safetyMeter && <p className='safety-meter'><strong>How Safe Did I Feel?</strong> {safetyMeter}/10</p>}  
+            {vibe >= 1 && <p className='vibe-data'><strong>Vibe:</strong> {vibe}/10</p>}
+            {hygiene && <p className='vibe-data'><strong>Hygiene:</strong> {hygiene}/10</p>}   
+            {size >= 1 && <p className='size-data'><strong>Size:</strong> {formatSize(size)}</p>}
+            {condoms && <p className='gender'><strong>Were They Willing To Use A Condom?</strong> {condoms}</p>} 
+            <br></br> 
+            {dateAgain && <p className='date-again'><strong>Would I Date Them Again?</strong> {dateAgain}</p>}
+        </article>
     );
 };
 

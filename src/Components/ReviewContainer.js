@@ -9,8 +9,6 @@ const ReviewContainer = ({reviews}) => {
             <ReviewCard
                 id={review.id}
                 key={review.id}
-                date={review.date}
-                title={review.title}
                 rating={review.rating}
                 body={review.body}
                 extendedBody={review.extendedBody}
@@ -21,12 +19,11 @@ const ReviewContainer = ({reviews}) => {
                 gender={review.gender}
                 dateAgain={review.dateAgain}
                 safetyMeter={review.safetyMeter}
-                createdAt={review.createdAt}
-                // punctuality={review.punctuality}
-                // hygiene={review.hygiene}
-                // condomUsage={review.condomUsage}
-                // dateDuration={review.dateDuratoin}
-                // kinks={review.kinks}
+                date={review.createdAt}
+                punctuality={review.punctuality}
+                hygiene={review.hygiene}
+                condoms={review.condoms}
+                duration={review.dateDuration}
             />
         )
     })
