@@ -1,43 +1,5 @@
 import { aliasClientsQuery, aliasMutation } from "../utils/graphql-test-utils";
 
-const newClientReviewMutation = `
-mutation {
-  allClients: [
-    {
-    "id": "1",
-    "email": "firstClient@email.com",
-    "createdAt": "2021-09-02T22:45:53Z",
-    "updatedAt": "2021-09-02T22:45:53Z",
-    "averageRating": 5,
-    "averageSafetyMeter": 7.0,
-    "averageSize": 3.0,
-    "averageHygiene": null,
-    "averageDuration": null,
-    "reviews": [
-    {
-    "body": "This was a fine date.",
-    "clientId": 14,
-    "condoms": "Was very willing to use a condom.",
-    "createdAt": "2021-09-05T02:40:24Z",
-    "dateAgain": "Yes",
-    "duration": 2,
-    "gender": "Didn't Ask",
-    "hygiene": 2,
-    "id": "40",
-    "payment": 2,
-    "punctuality": "Showed up a little early, but waited.",
-    "rating": 3,
-    "safetyMeter": 10,
-    "size": 2,
-    "updatedAt": "2021-09-05T02:40:24Z",
-    "userId": 1,
-    "vibe": 2
-    }
-  ]
-  }
-  ]
-}`
-
 describe('Add New Review View', () => {
     beforeEach(() => {
       cy.intercept(
@@ -50,6 +12,37 @@ describe('Add New Review View', () => {
           //Mutations
           aliasMutation(req, 'Clients')
         });
+
+        // cy.intercept(
+        //   {
+        //     method: "POST",
+        //     url:'https://date-em-rate-em-be.herokuapp.com/graphql',
+        //   },
+        //   {
+        //     status: 201,
+        //     body: {
+        //       review: [
+        //         {
+        //           body: "This was a fine date.",
+        //           condoms: "Was very willing to use a condom.",
+        //           dateAgain: "Yes",
+        //           duration: 2,
+        //           gender: "Didn't Ask",
+        //           hygiene: 2,
+        //           id: "40",
+        //           payment: 2,
+        //           punctuality: "Showed up a little early, but waited.",
+        //           rating: 3,
+        //           safetyMeter: 10,
+        //           size: 2,
+        //           updatedAt: "2021-09-05T02:40:24Z",
+        //           userId: 1,
+        //           vibe: 2
+        //         },
+        //       ],
+        //     },
+        //   }
+        // );
   
       cy.visit('http://localhost:3000/');
       cy.get('.contact-card')    
@@ -95,41 +88,6 @@ describe('Add New Review View', () => {
       it('When the page is visited, you should be able to fill out required info', () => {
         cy.get('.review-form')
         cy.get('.required-container')
-        cy.get('textarea').type('This was an ok date.')
-        cy.get('#star2')
-        .click()
-        cy.get('#safetyMeter[type=range]')
-        .invoke('val', 2)
-      });
-
-      it('When the page is visited, you should be able to fill out required info', () => {
-        cy.get('.review-form')
-        cy.get('.required-container')
-        cy.get('textarea').type('This was an ok date.')
-        cy.get('#star2')
-        .click()
-        cy.get('#safetyMeter[type=range]')
-        .invoke('val', 2)
-        .trigger('change', { data: 2 })
-        cy.get('#size[type=range]')
-        .invoke('val', 2)
-        .trigger('change', { data: 2 })
-        cy.get('#payment[type=range]')
-        .invoke('val', 2)
-        .trigger('change', { data: 2 })
-        cy.get('#kindness[type=range]')
-        .invoke('val', 2)
-        .trigger('change', { data: 2 })
-        cy.get('#vibe[type=range]')
-        .invoke('val', 2)
-        .trigger('change', { data: 2 })
-        cy.get('#submitBtn')
-        .click()
-      });
-
-      it.only('When the page is visited, you should be able to fill out required info', () => {
-        cy.get('.review-form')
-        cy.get('.required-container')
         cy.get('textarea').type('This was a fine date.')
         cy.get('#star3')
         .click()
@@ -161,14 +119,36 @@ describe('Add New Review View', () => {
         cy.get('#punctuality[type=text]')
         .invoke('val', "Showed up a little early, but waited.")
         .trigger('change', { data: "Showed up a little early, but waited." })
-        cy.request({
-          url:  'https://date-em-rate-em-be.herokuapp.com/graphql',
-          method: 'POST',
-          body: {newClientReviewMutation },
-        })
-        cy.get('#submitBtn').click()
+        // cy.get('#submitBtn').click()
       });
+
+      // it.only("should return a valid addAdditions mutation", () => {
+      //   cy.apiMutation(`
+      //       {
+      //       "body": "This was a fine date.",
+      //       "clientEmail": "firstClient@email.com",
+      //       "condoms": "Was very willing to use a condom.",
+      //       "dateAgain": "Yes",
+      //       "duration": 2,
+      //       "gender": "Didn't Ask",
+      //       "hygiene": 2,
+      //       "id": "40",
+      //       "payment": 2,
+      //       "punctuality": "Showed up a little early, but waited.",
+      //       "rating": 3,
+      //       "safetyMeter": 10,
+      //       "size": 2,
+      //       "userId": 1,
+      //       "vibe": 2
+      //       }
+      //       `
+      //   )
+      //   .then((Response) => {
+      //       expect(Response.body.data).to.have.property("addAdditions")
+      //   }
+      //   )
+    });
 
 
    
-  });
+ 
