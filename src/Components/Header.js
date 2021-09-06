@@ -10,22 +10,26 @@ export const Header = () => {
                     <button className='exit-btn'>Quick Exit</button>
                 </a>
                 <Link to='/'>
-                <img className='nav-logo' src='https://i.imgur.com/6y1TO2P.png' alt='clientell logo'></img>
+                    <img className='logo' src='https://i.imgur.com/6y1TO2P.png' alt='clientell logo'></img>
                 </Link>
             </div>
             <div className='header-links'>
-                <Link to='/'>
-                    <button>Home</button>
-                </Link>
-                <Link to='/Search'>
-                    <button>Search Clients</button>
-                </Link>
+                <div className='home-search'>
+                    <Link to='/'>
+                        <button>Home</button>
+                    </Link>
+                    <Link to='/Search'>
+                        <button>Search Clients</button>
+                    </Link>
+                </div>
+                <div className='Add-Resources'>
                 <Link to='/new-client-form'>
                     <button>Add Client</button>
                 </Link>
                 <Link to='/Resources'>
                     <button>Resources</button>
                 </Link>
+                </div>
             </div>
         </nav>
     );
