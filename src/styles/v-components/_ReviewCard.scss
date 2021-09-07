@@ -20,6 +20,10 @@
     font-size: 1.2rem;
     font-style: italic;
     text-align: center;
+    background: #4d4c4cd2;
+    color: $color-light;
+    border-radius: .5rem;
+    padding: 1rem;
 }
 
 .rating {
@@ -27,5 +31,11 @@
     align-self: center;
     letter-spacing: 8px;
 }
+
+.review-date {
+    font-family: $font-family-primary;
+}
+
+
 
 
