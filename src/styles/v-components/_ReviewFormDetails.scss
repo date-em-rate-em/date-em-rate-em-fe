@@ -2,7 +2,7 @@
 .review-form {
     @include flex(column, center);
     margin: 3rem;
-    width: 100vw;
+    // width: 100vw;
 }
 
 .required-container {
