@@ -35,12 +35,11 @@ export const Resources = () => {
     return (
         <section className='resources-sections'>
                 <section className="search-container">
-                <h2 className='under-construction'>Page currently under construction</h2>
-                <p>In the meantime, please click on the links below for sex-work specific resources from around the world:</p>
+                <p>Please click on the links below for sex-work specific resources from around the world:</p>
 
                 <input className='resources-search-bar'
                 type='text' 
-                placeholder='Search for resources...'
+                placeholder='Search for Resources...'
                 onChange={(event) => {
                         setSearchTerm(event.target.value);
                 }} 
