@@ -1,13 +1,16 @@
 
 .review-form {
     @include flex(column, center);
-    margin: 3rem;
-    // width: 100vw;
+    margin: 2rem;
+
+    h2 {
+        font-size: 1.4rem;
+    }
 }
 
 .required-container {
     @include flex(column, center);
-    margin: 1rem;
+    margin: 0rem 1rem;
     width: 80%;
 }
 
@@ -28,12 +31,14 @@
 .char-counter {
     @include flex(row, end);
     width: 60%;
+    margin-top: .5rem;
+    font-family: $font-family-secondary;
   }
 
 .rating-container {
     display: flex;
     flex-direction: row-reverse;
-    margin: 1rem;
+    margin: 1rem 0rem 2rem;
 }
 
 .star {
@@ -76,6 +81,34 @@
     @include flex(column, center);
     margin: 1rem;
     width: 80%;
+
+    input {
+        margin-bottom: 1.5rem;
+        font-family: $font-family-primary;
+        width: 40%;
+        padding: .2rem;
+        margin: 0rem 1rem .5rem;
+        right: 1rem;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    select {
+        font-family: $font-family-primary;
+        margin-bottom: 1rem;
+    }
+
+    #dateDuration {
+        width: 10%;
+        margin-bottom: 1.5rem;
+    }
+    #hygiene, #gender {
+        margin-bottom: 2rem;
+    }
+    label {
+        margin-bottom: .5rem;
+        font-family: $font-family-secondary;
+    }
 }
 
 .optional-text {
