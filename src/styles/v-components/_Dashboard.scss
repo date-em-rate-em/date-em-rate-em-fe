@@ -1,6 +1,5 @@
-.loading {
-    @include flex (row, center);
-    margin-left: 600px;
+.loading-container {
+    @include flex(row, center);
 }
 
 .featured-clients {
