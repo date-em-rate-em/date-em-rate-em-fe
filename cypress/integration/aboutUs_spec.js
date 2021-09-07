@@ -25,7 +25,7 @@ describe('About Us View', () => {
 
       it('When the page is visited, you should see a section with text describing the application', () => {
         cy.get('.about-us-section')
-        cy.get('.about-us-text').contains('ClientTell is focused on providing sex-workers a platform to offer feedback about the dates they’ve been on in order to share with their fellow sex-worker communities.')
+        cy.get('.about-us-text').contains('ClienTell is focused on providing sex-workers a platform to offer feedback about the dates they’ve been on in order to share with their fellow sex-worker communities. ')
       });
 
   });
