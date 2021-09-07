@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import { ContactCard } from './ContactCard';
+import { FaUserCircle } from 'react-icons/fa'
 
 export const Dashboard = ({ user, clients }) => {
     const [ highClientCard, setHigh ] = useState({});
@@ -31,9 +32,12 @@ const sortByRatings = (clients) => {
 
     return (
         <>
+                <div className='welcome'>
+                    <FaUserCircle className='user-icon'/>
+                    <h2>Welcome back, SexWorkIsRealWork{user[0].id}!</h2>
+                </div>
             <article className='featured-clients'>
-            {user.length && <h2 className='welcome'>Welcome back, ClienTell User: SexWorkIsRealWork{user[0].id}!</h2>}
-                <h3 className='dashboard-clients'>🔥 Highly Rated Client🔥</h3>
+                <h3 className='dashboard-clients'>Highest Rated Client:</h3>
                 {clients.length && highClientCard.id &&
                     <ContactCard 
                     id={highClientCard.id}
@@ -42,7 +46,7 @@ const sortByRatings = (clients) => {
                     numReviews={highClientCard.reviews.length}
                     />
                 }
-                <h3 className='dashboard-clients'>Stay away from this one!</h3>
+                <h3 className='dashboard-clients'>Lowest Rated Client:</h3>
                 {clients.length && lowClientCard.id && 
                     <ContactCard 
                     id={lowClientCard.id}

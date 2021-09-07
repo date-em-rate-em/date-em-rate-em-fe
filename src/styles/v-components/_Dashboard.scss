@@ -8,11 +8,22 @@
 }
 
 .welcome {
-    place-self: self-start;
-    font-style: italic;
-    letter-spacing: 1.5px;
+    @include flex(row, start);
     margin: 0rem 0rem 2rem 2rem;
-    font-size: 1.5rem;
+
+    h2 {
+        font-size: 1.5rem; 
+        font-style: italic;
+        letter-spacing: 1.5px;
+        margin-left: .3rem;
+        align-self: center;
+    }
+}
+
+.user-icon {
+    color: $dark-purple;
+    font-size: 1.9rem;
+    align-self: center;
 }
 
 .dashboard-clients {
