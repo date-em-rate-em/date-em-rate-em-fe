@@ -9,11 +9,11 @@ export const Profile = ({id, email, reviews, averageRating}) => {
         <div className='client-profile'>
             <h1>Client Profile</h1>
             <section className="client-contact-info">
-                <h1>Client Contact Information:</h1>
+                <h2>Client Contact Information:</h2>
                     <p>{email}</p>
             </section>
             <section className="client-average-rating">
-                <h1>Client Average Rating:</h1>
+                <h2>Client Average Rating:</h2>
                     <p className='profile-stars'>{starRating(averageRating)}</p>
             </section>
                 <Link to={`/add-review/${id}`}>
@@ -22,10 +22,8 @@ export const Profile = ({id, email, reviews, averageRating}) => {
                         + Add New Review
                 </button>
             </section>
-                    </Link>
-            <section className="all-reviews">
+                </Link>
                 <ReviewContainer averageRating={averageRating} reviews={reviews}/>
-            </section>
         </div>
     );
 };
