@@ -5,22 +5,21 @@
     h1 {
         font-size: 1.5rem;
         margin: 1rem;
+        text-decoration: underline;
     }
 }
 
 .client-contact-info {
-    text-align: center;
-
-    h1 {
-        font-size: 1.2rem;
+    p {
+        text-align: center;
     }
 }
 
-.client-average-rating {
-    h1 {
-        font-size: 1.2rem;
-    }
+h2 {
+    font-size: 1.2rem;
+    margin: .8rem;
 }
+
 
 .all-reviews {
     @include flex(column, center);
