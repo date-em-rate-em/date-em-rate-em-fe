@@ -18,7 +18,6 @@ import { Error } from './Error';
 import { AboutUs } from './AboutUs';
 import { BurgerMenuBtn } from './BurgerMenu';
 import loadingSpin from '../images/loadingSpin.gif';
-import { MobileMenu } from './MobileMenu';
 
 const App = () => {
   library.add(fab, faSearch, faPlus, faHome, faEnvelopeSquare, faStar)
@@ -28,9 +27,11 @@ const App = () => {
 
   const { loading: userLoading, error: userError, data: userData } = useQuery(USER_DATA_QUERY);
   const { loading: clientsLoading, error: clientsError, data: clientsData } = useQuery(CLIENT_DATA_QUERY);
-    
+
+
     useEffect(() => {
-        if ((!userLoading && userData) && (!clientsLoading && clientsData.allClients.length)) {
+      console.log('WINDOW>>>', window.location)
+      if ((!userLoading && userData) && (!clientsLoading && clientsData.allClients.length)) {
           setUser(userData.allUsers);
           setClients(clientsData.allClients);
         } 
@@ -85,8 +86,7 @@ const App = () => {
           <AboutUs/>
          } />
         <Route exact path="/profile/:id" render={({ match }) => {
-          console.log('MATCH', match)
-          let clientMatch = clients.find(client => client.id === match.params.id) 
+          let clientMatch = clientsData.allClients.find(client => client.id === match.params.id) 
               return ( 
               <Profile 
                id={clientMatch.id} 
@@ -98,16 +98,13 @@ const App = () => {
              )}
               }/>
         <Route exact path="/add-review/:id" render={({ match }) => {
-          console.log('MATCH', match.params.id)
-          let clientMatch = clients.find(client => client.id === match.params.id) 
+          let clientMatch = clientsData.allClients.find(client => client.id === match.params.id) 
               return ( 
               <ReviewFormDetails
                id={clientMatch.id} 
                key={clientMatch.id}
                email={clientMatch.email} 
                clients={clients}
-              //  averageRating={clientMatch.averageRating}
-              //  reviews={clientMatch.reviews}
                />
              )}
               }/>
