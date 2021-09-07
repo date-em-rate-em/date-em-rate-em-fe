@@ -2,7 +2,6 @@ import React from 'react';
 import ReviewCard from './ReviewCard';
 
 export const ReviewContainer = ({reviews}) => {
-    console.log("reviewContainer", reviews)
 
     const allReviews = reviews.map(review => {
         return (

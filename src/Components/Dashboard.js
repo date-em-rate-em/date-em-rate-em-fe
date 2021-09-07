@@ -7,25 +7,16 @@ export const Dashboard = ({ user, clients }) => {
     const [ lowClientCard, setLow ] = useState({});
     const [ featuredClient, setClientCard ] = useState({});
 
-    console.log('DASHBOARD USER', user)
-    // console.log('DASHBOARD CLIENTS', clients)
-
-
-// otherwise, we could just do a featured client of the day...
 const randomClient = clients[Math.floor(Math.random() * clients.length)];  
-// console.log("gimmeRandom", randomClient.reviews[0].body)
 
 useEffect(() => {
     if (randomClient) {
         setClientCard(randomClient);
-        // console.log("feature", featuredClient)
     }
 
     if(clients) {
         setHigh(sortByRatings(clients).pop())
         setLow(sortByRatings(clients).shift())
-        // console.log("highhhhhhh", highClientCard)
-        // console.log("lowwwwwwww", lowClientCard)
     }
   }, [randomClient, clients]);
 
@@ -37,12 +28,11 @@ const sortByRatings = (clients) => {
     return sortAverages
   }
 
-//   console.log("feature222", featuredClient)
 
     return (
         <>
             <article className='featured-clients'>
-            {user.length && <h2 className='welcome'>Welcome back, sexii{user[0].id}43!</h2>}
+            {user.length && <h2 className='welcome'>Welcome back, ClienTell User: SexWorkIsRealWork{user[0].id}!</h2>}
                 <h3 className='dashboard-clients'>🔥 Highly Rated Client🔥</h3>
                 {clients.length && highClientCard.id &&
                     <ContactCard 
