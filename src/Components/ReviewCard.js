@@ -19,7 +19,6 @@ import { starRating, formatPayment, formatSize, formatDate } from '../utils/util
             {hygiene && <p className='vibe-data'><strong>Hygiene:</strong> {hygiene}/10</p>}   
             {size >= 1 && <p className='size-data'><strong>Size:</strong> {formatSize(size)}</p>}
             {condoms && <p className='gender'><strong>Were They Willing To Use A Condom?</strong> {condoms}</p>} 
-            <br></br> 
             {dateAgain && <p className='date-again'><strong>Would I Date Them Again?</strong> {dateAgain}</p>}
         </article>
     );
