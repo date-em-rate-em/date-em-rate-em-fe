@@ -47,16 +47,11 @@ describe('Dashboard View', () => {
             .click()
             .location("pathname")
             .should("eq", "/resources")
-            cy.get('.under-construction')
             cy.go('back')
         });
         
-    it('When the page is visited, you should see a highly rated client', () => {
-            cy.get('h3').contains("Highly")
-          });
-          
     it('When the page is visited, you should see a low rated client', () => {
-              cy.get('h3').contains("Stay away")
+              cy.get('h3').contains("Lowest Rated Client")
           });
           
     it('When the page is visited, you should see a featured client', () => {
