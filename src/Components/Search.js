@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { ContactCard } from './ContactCard';
 
 
 export const Search = ({ clients }) => {
    const allClients = [...clients]
+
+
    const [ searchTerm, setSearchTerm ] = useState('');
 
-   //we will need to do some error handling with the way someone types in the phone number/email...
-   console.log('ALL CLIENTS', allClients)
    const clientCard = allClients.filter((client) => {
       if (searchTerm === '') {
           return client
@@ -42,8 +41,3 @@ export const Search = ({ clients }) => {
     </section>
 )
 }
-
-Search.propTypes = {
-
-};
-

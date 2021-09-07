@@ -7,7 +7,6 @@ import { CLIENT_DATA_QUERY } from '../utils/graphql_queries';
 import { FaRegStar } from "react-icons/fa";
 
 export const ReviewFormDetails = ({clients, id, email}) => {
-// console.log("clientssssss", clients)
 
 const [body, setBody] = useState('');
 const [rating, setRating] = useState('');
@@ -33,7 +32,6 @@ const [isChecked5, setIsChecked5] = useState(false);
 const [reviewCreate, { loading, error }] = useMutation(ADD_REVIEW, {
     refetchQueries: [CLIENT_DATA_QUERY]
   })
-// console.log("setMissing", missingInfo)
 
 useEffect(() => {
     setCharsLeft(maxLength - body.length);
@@ -93,8 +91,6 @@ const removeRating = (num) => {
 }
 
 const submitReview = (event) => {
-    console.log(rating)
-    // event.preventDefault();
     if(rating && body && safetyMeter) {
         reviewCreate({
             variables: {
@@ -116,12 +112,6 @@ const submitReview = (event) => {
         });
     setMissingInfo('')
       clearInputs()
-    //   console.log('ID', id)
-    //   console.log("POST REVIEW??", clients)
-      console.log("safetyMeter", safetyMeter)
-      console.log("body", body)
-      console.log("rating", rating)
-      
 
     } else {
         setMissingInfo('You must input all required fields to post a review!')

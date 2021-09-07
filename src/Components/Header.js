@@ -14,15 +14,12 @@ export const Header = () => {
                 </Link>
             </div>
             <div className='header-links'>
-                {/* <div className='home-search'> */}
                     <Link to='/'>
                         <button>Home</button>
                     </Link>
                     <Link to='/search'>
                         <button>Search Clients</button>
                     </Link>
-                {/* </div> */}
-                {/* <div className='Add-Resources'> */}
                 <Link to='/new-client-form'>
                     <button>+ Add Client</button>
                 </Link>
@@ -32,7 +29,6 @@ export const Header = () => {
                 <Link to='/about-us'>
                     <button>About Us</button>
                 </Link>
-                {/* </div> */}
             </div>
         </nav>
     );

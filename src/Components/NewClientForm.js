@@ -92,8 +92,6 @@ const removeRating = (num) => {
 }
 
 const submitReview = (event) => {
-    console.log(rating)
-    // event.preventDefault();
     if(rating && body && safetyMeter && email) {
         reviewCreate({
             variables: {
@@ -115,12 +113,6 @@ const submitReview = (event) => {
         });
     setMissingInfo('')
       clearInputs()
-    //   console.log('ID', id)
-    //   console.log("POST REVIEW??", clients)
-      console.log("safetyMeter", safetyMeter)
-      console.log("body", body)
-      console.log("rating", rating)
-      
 
     } else {
         setMissingInfo('You must input all required fields to post a review!')
