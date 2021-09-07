@@ -1,14 +1,14 @@
 .client-profile {
     @include flex(column, center);
     margin-top: 1rem;
-    width: 100vw;
+    // width: 100vw;
     // overflow-y: scroll;
 }
 
 .all-reviews {
     @include flex(column, center);
     // border-top: 1px solid $dark-purple;
-    width: 100vw;
+    // width: 100vw;
     // box-shadow: $box-shadow;
     overflow-y: scroll;
 }
