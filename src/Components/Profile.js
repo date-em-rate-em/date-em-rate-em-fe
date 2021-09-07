@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { starRating } from '../utils/util';
-import ReviewContainer from './ReviewContainer';
+import { ReviewContainer } from './ReviewContainer';
 
-const Profile = ({id, email, reviews, averageRating}) => {
+export const Profile = ({id, email, reviews, averageRating}) => {
 
     return (
         <div className='client-profile'>
@@ -30,4 +30,3 @@ const Profile = ({id, email, reviews, averageRating}) => {
     );
 };
 
-export default Profile;

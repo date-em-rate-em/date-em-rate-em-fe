@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewCard from './ReviewCard';
 
-const ReviewContainer = ({reviews}) => {
+export const ReviewContainer = ({reviews}) => {
     console.log("reviewContainer", reviews)
 
     const allReviews = reviews.map(review => {
@@ -35,4 +35,3 @@ const ReviewContainer = ({reviews}) => {
     );
 };
 
-export default ReviewContainer;
