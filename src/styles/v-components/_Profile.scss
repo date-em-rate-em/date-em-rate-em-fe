@@ -1,20 +1,39 @@
 .client-profile {
     @include flex(column, center);
-    margin-top: 1rem;
-    // width: 100vw;
-    // overflow-y: scroll;
+    margin: 1rem;
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+.client-contact-info {
+    text-align: center;
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+.client-average-rating {
+    h1 {
+        font-size: 1.2rem;
+    }
 }
 
 .all-reviews {
     @include flex(column, center);
-    // border-top: 1px solid $dark-purple;
-    // width: 100vw;
-    // box-shadow: $box-shadow;
-    overflow-y: scroll;
+    margin: 0rem 1rem 2rem 1rem;
 }
 
 .profile-stars {
     text-align: center;
     font-size: 2rem;
     letter-spacing: 10px;
+    margin: .5rem;
+}
+
+.add-review-btn {
+    margin: .5rem 0rem 0rem 0rem;
 }
