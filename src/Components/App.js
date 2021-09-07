@@ -16,7 +16,7 @@ import { USER_DATA_QUERY } from '../utils/graphql_queries'
 import { NewClientForm } from './NewClientForm';
 import { Error } from './Error';
 import { AboutUs } from './AboutUs';
-import { BurgerMenu } from './BurgerMenu';
+import { BurgerMenuBtn } from './BurgerMenu';
 import loadingSpin from '../images/loadingSpin.gif';
 import { MobileMenu } from './MobileMenu';
 
@@ -60,7 +60,7 @@ const App = () => {
    if (clientsData && userData) {
      return (
        <>
-       <BurgerMenu toggleMenu={handleMenu}/>
+       <BurgerMenuBtn toggleMenu={handleMenu}/>
        {!isMenuActive && 
        <>
           <Header />
