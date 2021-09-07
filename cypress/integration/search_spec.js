@@ -15,7 +15,7 @@ describe('Search View', () => {
          .click()
          cy.get('.search-view')
          .location("pathname")
-         .should("eq", "/Search")
+         .should("eq", "/search")
     });
   
     it('When the page is visited, you should see a header', () => {
