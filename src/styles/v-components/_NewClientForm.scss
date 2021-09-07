@@ -1,0 +1,23 @@
+.new-client {
+    @include flex(column, center);
+
+    input {
+        width: 40%;
+        padding: .2rem;
+        margin: 0rem 1rem .5rem;
+        right: 1rem;
+        border-radius: 5px;
+        text-align: center;
+        font-family: $font-family-secondary;
+    }
+
+    select {
+        font-family: $font-family-primary;
+    }
+}
+
+.form-heading {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.4rem;
+}
