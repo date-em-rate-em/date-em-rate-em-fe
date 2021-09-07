@@ -1,0 +1,20 @@
+.resources-search-bar {
+    width: 60%;
+    padding: .3rem;
+    margin-top: 1.5rem;
+    place-self: center;
+    top: 10%;
+    right: 1rem;
+    border-radius: 7px;
+    text-align: center;
+    font-family: $font-family-secondary;
+}
+
+.search-container {
+    @include flex(column, center);
+    margin: 1rem 3rem 1rem 3rem;
+
+    p {
+        text-align: center;
+    }
+}
