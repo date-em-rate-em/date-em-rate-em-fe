@@ -31,7 +31,7 @@ describe('Dashboard View', () => {
             .click()
             cy.get('.search-view')
             .location("pathname")
-            .should("eq", "/Search")
+            .should("eq", "/search")
         });
         
      it('When the page is visited, you should have an add client button that takes you to a form', () => {
@@ -46,7 +46,7 @@ describe('Dashboard View', () => {
             cy.get('button').contains('Resources')
             .click()
             .location("pathname")
-            .should("eq", "/Resources")
+            .should("eq", "/resources")
             cy.get('.under-construction')
             cy.go('back')
         });
