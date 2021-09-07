@@ -6,6 +6,10 @@
     box-shadow: $box-shadow;
     padding: 1rem;
     border-radius: .4rem;
+
+    p {
+        margin: .4rem;
+    }
 }
 
 .date-and-rating {
@@ -13,7 +17,7 @@
 }
 
 .body {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-style: italic;
     text-align: center;
 }
