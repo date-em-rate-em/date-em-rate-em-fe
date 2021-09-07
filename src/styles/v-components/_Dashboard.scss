@@ -6,10 +6,6 @@
 .featured-clients {
     @include flex(column, center);
     margin: 1rem;
-
-    h3 {
-        font-size: 1.1rem;
-    }
 }
 
 .welcome {
@@ -18,5 +14,10 @@
     letter-spacing: 1.5px;
     margin: 0rem 0rem 2rem 2rem;
     font-size: 1.5rem;
+}
+
+.dashboard-clients {
+    font-size: 1.1rem;
+    margin-bottom: -.5rem;
 }
 
