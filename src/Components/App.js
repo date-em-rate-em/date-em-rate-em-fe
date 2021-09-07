@@ -8,23 +8,23 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSearch, faPlus, faHome, faEnvelopeSquare, faStar } from '@fortawesome/free-solid-svg-icons'
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
-import Profile from './Profile'
-import ReviewFormDetails from './ReviewFormDetails';
-import { Footer } from './Footer';
+import { Profile } from './Profile'
+import { ReviewFormDetails } from './ReviewFormDetails';
 import { Resources } from './Resources';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries'
 import { USER_DATA_QUERY } from '../utils/graphql_queries'
 import { NewClientForm } from './NewClientForm';
 import { Error } from './Error';
-import loadingSpin from '../images/loadingSpin.gif';
 import { AboutUs } from './AboutUs';
-
-// import { Search } from 'history';
+import { BurgerMenu } from './BurgerMenu';
+import loadingSpin from '../images/loadingSpin.gif';
+import { MobileMenu } from './MobileMenu';
 
 const App = () => {
   library.add(fab, faSearch, faPlus, faHome, faEnvelopeSquare, faStar)
   const [clients, setClients] = useState('');
   const [user, setUser] = useState('');
+  const [isMenuActive, setIsMenuActive] = useState(false);
 
   const { loading: userLoading, error: userError, data: userData } = useQuery(USER_DATA_QUERY);
   const { loading: clientsLoading, error: clientsError, data: clientsData } = useQuery(CLIENT_DATA_QUERY);
@@ -36,14 +36,18 @@ const App = () => {
         } 
       }, [clients, clientsData, clientsLoading, userData, userLoading, user]);
    
-    if (clientsLoading || userLoading) {
-      return (
-        <>
-          <Header />
-          <img className='loading' src={loadingSpin} />
-        </>
-      )
-    }
+  const handleMenu = () => {
+    setIsMenuActive(!isMenuActive)
+  }
+
+  if (clientsLoading || userLoading) {
+    return (
+      <>
+        <Header />
+        <img className='loading' src={loadingSpin} />
+      </>
+    )
+  }
 
   if(!clientsData && clientsError) {
     return (
@@ -56,8 +60,10 @@ const App = () => {
    if (clientsData && userData) {
      return (
        <>
+       <BurgerMenu toggleMenu={handleMenu}/>
+       {!isMenuActive && 
+       <>
           <Header />
-      {/* <main className='main'> */}
           <Switch>
             <Route exact path="/" render={() => 
               <Dashboard 
@@ -66,16 +72,16 @@ const App = () => {
               />
               }
             />
-        <Route exact path="/Search" render={() => 
+        <Route exact path="/search" render={() => 
           <Search 
           clients={clients} 
           user={user} />
           }
         />
-         <Route exact path="/Resources" render={() => 
+        <Route exact path="/resources" render={() => 
           <Resources/>
          } />
-          <Route exact path="/AboutUs" render={() => 
+        <Route exact path="/about-us" render={() => 
           <AboutUs/>
          } />
         <Route exact path="/profile/:id" render={({ match }) => {
@@ -105,19 +111,20 @@ const App = () => {
                />
              )}
               }/>
-      <Route exact path="/new-client-form" render={() => {
+        <Route exact path="/new-client-form" render={() => {
               return ( 
               <NewClientForm />
              )}
               }/>
-       <Route render={() => {
+        <Route render={() => {
           return (
           <Error 
             errorMsg="That page does not exist. Go back home?" />
           )
           }}/>
         </Switch>
-      {/* </main> */}
+        </>
+       }
       </>
     );
    }
