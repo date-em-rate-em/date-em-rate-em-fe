@@ -7,9 +7,7 @@
     margin: 1rem 0rem 3rem 0rem;    
     box-shadow: $box-shadow;
     padding: 1rem;
-    &:hover {
-        transform: scale(1.02);
-    }
+
     p {
         margin-top: 1rem;
     }
@@ -17,6 +15,10 @@
 
 .view-details-btn {
     margin: 1rem 0rem 0rem 0rem;
+    &:hover{
+        background-color: rgba(91, 20, 171, .4);
+        border: 1px solid $dark-purple;
+    }
 }
 
 .email {
