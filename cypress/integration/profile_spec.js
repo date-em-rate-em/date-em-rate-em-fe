@@ -1,4 +1,4 @@
-import { aliasClientsQuery } from "../utils/graphql-test-utils";
+import { aliasQuery } from "../utils/graphql-test-utils";
 
 describe('Profile View', () => {
     beforeEach(() => {
@@ -7,10 +7,13 @@ describe('Profile View', () => {
         'https://date-em-rate-em-be.herokuapp.com/graphql',
         (req) => {
             //Queries
-          aliasClientsQuery(req, 'Clients');
+          aliasQuery(req, 'Clients');
         });
   
-      cy.visit('http://localhost:3000/');
+        cy.visit('http://localhost:3000/');
+        cy.wait('@gqlClientsQuery').then(interception => {
+              expect(interception).to.be.an('object');
+            });
       cy.get('.contact-card')    
       cy.get('h3').contains('firstClient@email.com')
          .click()

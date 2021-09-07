@@ -7,12 +7,12 @@ import mockUser from '../fixtures/mockUser.json';
   };
   
   // Alias query if operationName matches
-  export const aliasClientsQuery = (req, operationName) => {
+  export const aliasQuery = (req, operationName) => {
     if (hasOperationName(req, operationName)) {
       req.reply((res) => {
         res.body.data = mockClients;
       });
-            // req.alias = `gql${operationName}Query`
+            req.alias = `gql${operationName}Query`
     }
   };
 
