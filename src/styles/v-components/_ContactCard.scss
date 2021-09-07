@@ -7,14 +7,16 @@
     margin: 1rem;
     box-shadow: $box-shadow;
     padding: 1rem;
-
     &:hover {
         transform: scale(1.02);
+    }
+    p {
+        margin-top: 1rem;
     }
 }
 
 .view-details-btn {
-    place-self: flex-end;
+    margin: 1rem 0rem 0rem 0rem;
 }
 
 .email {
@@ -27,6 +29,6 @@
 }
 
 .contact-email {
-    margin-left: .5rem;
+    margin-left: .8rem;
     align-self: center;
 }
