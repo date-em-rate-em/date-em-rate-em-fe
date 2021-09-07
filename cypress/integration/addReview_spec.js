@@ -1,4 +1,4 @@
-import { aliasClientsQuery, aliasMutation } from "../utils/graphql-test-utils";
+import { aliasQuery, aliasMutation } from "../utils/graphql-test-utils";
 
 describe('Add New Review View', () => {
     beforeEach(() => {
@@ -7,44 +7,15 @@ describe('Add New Review View', () => {
         'https://date-em-rate-em-be.herokuapp.com/graphql',
         (req) => {
             //Queries
-          aliasClientsQuery(req, 'Clients');
+          aliasQuery(req, 'Clients');
 
           //Mutations
-          aliasMutation(req, 'Clients')
+          // aliasMutation(req, 'Clients')
         });
-
-        // cy.intercept(
-        //   {
-        //     method: "POST",
-        //     url:'https://date-em-rate-em-be.herokuapp.com/graphql',
-        //   },
-        //   {
-        //     status: 201,
-        //     body: {
-        //       review: [
-        //         {
-        //           body: "This was a fine date.",
-        //           condoms: "Was very willing to use a condom.",
-        //           dateAgain: "Yes",
-        //           duration: 2,
-        //           gender: "Didn't Ask",
-        //           hygiene: 2,
-        //           id: "40",
-        //           payment: 2,
-        //           punctuality: "Showed up a little early, but waited.",
-        //           rating: 3,
-        //           safetyMeter: 10,
-        //           size: 2,
-        //           updatedAt: "2021-09-05T02:40:24Z",
-        //           userId: 1,
-        //           vibe: 2
-        //         },
-        //       ],
-        //     },
-        //   }
-        // );
-  
-      cy.visit('http://localhost:3000/');
+        cy.visit('http://localhost:3000/');
+        cy.wait('@gqlClientsQuery').then(interception => {
+              expect(interception).to.be.an('object');
+            });
       cy.get('.contact-card')    
       cy.get('h3').contains('firstClient@email.com')
          .click()

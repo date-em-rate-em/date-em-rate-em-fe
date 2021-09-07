@@ -1,4 +1,4 @@
-import { aliasClientsQuery, aliasMutation } from "../utils/graphql-test-utils";
+import { aliasQuery, aliasMutation } from "../utils/graphql-test-utils";
 
 describe('Add New Client & Review View', () => {
     beforeEach(() => {
@@ -7,12 +7,15 @@ describe('Add New Client & Review View', () => {
         'https://date-em-rate-em-be.herokuapp.com/graphql',
         (req) => {
             //Queries
-          aliasClientsQuery(req, 'Clients');
+          aliasQuery(req, 'Clients');
 
           //Mutations
-          aliasMutation(req, 'Clients')
+          // aliasMutation(req, 'Clients')
         });
-      cy.visit('http://localhost:3000/')
+        cy.visit('http://localhost:3000/');
+        cy.wait('@gqlClientsQuery').then(interception => {
+              expect(interception).to.be.an('object');
+            });
       cy.get('button').contains('Add Client')
       .click()
       .location("pathname")

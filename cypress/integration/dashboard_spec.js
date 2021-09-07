@@ -1,5 +1,4 @@
-import { aliasClientsQuery } from "../utils/graphql-test-utils";
-// import { aliasUserQuery } from "../utils/graphql-test-utils";
+import { aliasQuery } from "../utils/graphql-test-utils";
 
 describe('Dashboard View', () => {
     beforeEach(() => {
@@ -8,10 +7,13 @@ describe('Dashboard View', () => {
         'https://date-em-rate-em-be.herokuapp.com/graphql',
         (req) => {
             //Queries
-          aliasClientsQuery(req, 'Clients');
+          aliasQuery(req, 'Clients');
         });
   
-      cy.visit('http://localhost:3000/');
+        cy.visit('http://localhost:3000/');
+        cy.wait('@gqlClientsQuery').then(interception => {
+              expect(interception).to.be.an('object');
+            });
     });
   
     it('When the page is visited, you should see a header', () => {
