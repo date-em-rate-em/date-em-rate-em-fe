@@ -13,7 +13,7 @@ export const ContactCard = ({ id, key, email, averageRating, numReviews }) => {
                 </div>
                 <p>average rating: {starRating(averageRating)}</p>
                 <p># of reviews: {numReviews}</p>
-                <button class="view-details-btn">View Client</button>
+                <button className="view-details-btn">View Client</button>
             </article>
         </NavLink>
     );
