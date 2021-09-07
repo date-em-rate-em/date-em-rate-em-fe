@@ -12,9 +12,10 @@
 
 .search-container {
     @include flex(column, center);
-    margin: 1rem 3rem 1rem 3rem;
+    margin: 3rem;
 
     p {
         text-align: center;
+        font-size: 1.2rem;
     }
 }
