@@ -8,6 +8,7 @@
     position: sticky;
     top: 0;
     margin-bottom: 1rem;
+    z-index: 5;
 }
 
 .header-left {
@@ -16,7 +17,7 @@
 }
 
 .header-links {
-    // @include mediaQueries(header-links);
+    @include mediaQueries(header-links);
     @include flex(row, end);
     height: 100%;
 }
