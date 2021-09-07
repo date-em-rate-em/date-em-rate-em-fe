@@ -30,7 +30,6 @@ const App = () => {
 
 
     useEffect(() => {
-      console.log('WINDOW>>>', window.location)
       if ((!userLoading && userData) && (!clientsLoading && clientsData.allClients.length)) {
           setUser(userData.allUsers);
           setClients(clientsData.allClients);
