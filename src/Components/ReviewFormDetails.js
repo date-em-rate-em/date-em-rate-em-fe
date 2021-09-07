@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries';
 import { FaRegStar } from "react-icons/fa";
 
-const ReviewFormDetails = ({clients, id, email}) => {
+export const ReviewFormDetails = ({clients, id, email}) => {
 // console.log("clientssssss", clients)
 
 const [body, setBody] = useState('');
@@ -289,6 +289,5 @@ const submitReview = (event) => {
     );
 };
 
-export default ReviewFormDetails;
 
  
