@@ -45,7 +45,9 @@ const App = () => {
     return (
       <>
         <Header />
-        <img className='loading' src={loadingSpin} />
+        <section className='loading-container'>
+          <img className='loading' src={loadingSpin} />
+        </section>
       </>
     )
   }
