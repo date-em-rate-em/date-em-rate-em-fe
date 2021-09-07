@@ -20,6 +20,7 @@
     @include mediaQueries(header-links);
     @include flex(row, end);
     height: 100%;
+    overflow-x: hidden;
 }
 
 .exit-btn {
