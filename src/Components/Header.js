@@ -14,25 +14,25 @@ export const Header = () => {
                 </Link>
             </div>
             <div className='header-links'>
-                <div className='home-search'>
+                {/* <div className='home-search'> */}
                     <Link to='/'>
                         <button>Home</button>
                     </Link>
-                    <Link to='/Search'>
+                    <Link to='/search'>
                         <button>Search Clients</button>
                     </Link>
-                </div>
-                <div className='Add-Resources'>
+                {/* </div> */}
+                {/* <div className='Add-Resources'> */}
                 <Link to='/new-client-form'>
-                    <button>Add Client</button>
+                    <button>+ Add Client</button>
                 </Link>
-                <Link to='/Resources'>
+                <Link to='/resources'>
                     <button>Resources</button>
                 </Link>
-                <Link to='/AboutUs'>
-                    <button>AboutUs</button>
+                <Link to='/about-us'>
+                    <button>About Us</button>
                 </Link>
-                </div>
+                {/* </div> */}
             </div>
         </nav>
     );
