@@ -10,7 +10,10 @@ describe('Resources View', () => {
           aliasClientsQuery(req, 'Clients');
         });
   
-      cy.visit('http://localhost:3000/');
+        cy.visit('http://localhost:3000/');
+        cy.wait('@gqlClientsQuery').then(interception => {
+              expect(interception).to.be.an('object');
+            });
          cy.get('button').contains('Resources')
          .click()
          cy.get('.resources-sections')

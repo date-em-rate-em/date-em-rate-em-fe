@@ -12,7 +12,7 @@ import mockUser from '../fixtures/mockUser.json';
       req.reply((res) => {
         res.body.data = mockClients;
       });
-            // req.alias = `gql${operationName}Query`
+            req.alias = `gql${operationName}Query`
     }
   };
 

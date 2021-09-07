@@ -1,5 +1,4 @@
 import { aliasClientsQuery } from "../utils/graphql-test-utils";
-// import { aliasUserQuery } from "../utils/graphql-test-utils";
 
 describe('Dashboard View', () => {
     beforeEach(() => {
@@ -12,6 +11,9 @@ describe('Dashboard View', () => {
         });
   
       cy.visit('http://localhost:3000/');
+      cy.wait('@gqlClientsQuery').then(interception => {
+            expect(interception).to.be.an('object');
+          });
     });
   
     it('When the page is visited, you should see a header', () => {

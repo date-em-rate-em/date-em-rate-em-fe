@@ -12,7 +12,10 @@ describe('Add New Client & Review View', () => {
           //Mutations
           aliasMutation(req, 'Clients')
         });
-      cy.visit('http://localhost:3000/')
+        cy.visit('http://localhost:3000/');
+        cy.wait('@gqlClientsQuery').then(interception => {
+              expect(interception).to.be.an('object');
+            });
       cy.get('button').contains('Add Client')
       .click()
       .location("pathname")
