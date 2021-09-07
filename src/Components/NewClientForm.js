@@ -132,7 +132,7 @@ const submitReview = (event) => {
 
     return (
     <div className='new-client'>
-            <h2 className="form-heading">Enter required new client information here to keep yourself and your community in the know about the current ClientTell out there. </h2>
+            <h2 className="form-heading">Enter new client information to keep yourself and your community in the know about the current ClientTell out there. </h2>
          <div className="required-container">
              <p className='required-text'>Enter required information here:</p>
              <input
@@ -185,7 +185,6 @@ const submitReview = (event) => {
                 id="safetyMeter"
                 type="range"
                 name="safety"
-                placeholder="Safety Meter"
                 required
                 min={ 1 } 
 	            max={ 10 } 
@@ -196,7 +195,6 @@ const submitReview = (event) => {
         </div>
         <div className="optional-container">
              <p className='optional-text'>Enter optional information here:</p>
-         <label for="gender">Gender</label>
             <input
                 id="gender"
                 type="text"
@@ -221,7 +219,6 @@ const submitReview = (event) => {
                 id="payment"
                 type="range"
                 name="payment"
-                placeholder="Payment"
                 min={ 1 } 
 	            max={ 10 } 
                 value={payment}
@@ -232,7 +229,6 @@ const submitReview = (event) => {
                 id="vibe"
                 type="range"
                 name="vibe"
-                placeholder="Vibe"
                 min={ 1 } 
 	            max={ 10 } 
                 value={vibe}
@@ -253,7 +249,6 @@ const submitReview = (event) => {
                 id="condomUsage"
                 type="text"
                 name="condom-usage"
-                placeholder="Condom Use Willingness"
                 value={condoms}
                 onChange={event => setCondomUsage(event.target.value)}
                 />
@@ -262,7 +257,6 @@ const submitReview = (event) => {
                 id="punctuality"
                 type="text"
                 name="punctuality"
-                placeholder="How Punctual Were They?"
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> 
@@ -282,7 +276,7 @@ const submitReview = (event) => {
            <option value="No">No</option>
          </select>
             <NavLink to={`/Search`}>
-                <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter || !email) && <p>{missingInfo}</p>}</button>
+                <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit{(!rating || !body || !safetyMeter || !email) && <p>{missingInfo}</p>}</button>
             </NavLink>
         </div>
     </div>
