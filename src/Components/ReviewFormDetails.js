@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { CLIENT_DATA_QUERY } from '../utils/graphql_queries';
 import { FaRegStar } from "react-icons/fa";
 
-export const ReviewFormDetails = ({clients, id, email}) => {
+export const ReviewFormDetails = ({ id, email }) => {
 
 const [body, setBody] = useState('');
 const [rating, setRating] = useState('');
@@ -128,7 +128,7 @@ const submitReview = (event) => {
 
     return (
     <div className='review-form'>
-           <h2 className="form-heading">Enter the Juicy Details Here! </h2>
+           <h2 className="form-heading">Give us the details about your date with {email}:</h2>
          <div className="required-container">
              <p className='required-text'>Enter required information here:</p>
             <textarea
@@ -272,7 +272,7 @@ const submitReview = (event) => {
          </select>
 
             <NavLink to={`/profile/${id}`}>
-                <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit New Review{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
+                <button id="submitBtn" className="submit-button" onClick={(event) => submitReview(event)}>Submit{(!rating || !body || !safetyMeter) && <p>{missingInfo}</p>}</button>
             </NavLink>
         </div>
     </div>
