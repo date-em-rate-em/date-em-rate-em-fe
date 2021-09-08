@@ -22,6 +22,8 @@ a, Link {
   text-decoration: none;
   &:focus, &:hover, &:visited, &:link, &:active {
     text-decoration: none;
+    font-family: $font-family-secondary;
+    font-size: 1.1rem;
   }
 }
 
