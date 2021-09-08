@@ -1,7 +1,7 @@
 
 .burger-menu {
     @include mediaQueries(burger-menu);
-    position: absolute;
+    position: fixed;
     z-index: 6;
     top: 4%;
     right: 10%;
