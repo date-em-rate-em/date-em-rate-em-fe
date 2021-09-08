@@ -1,4 +1,5 @@
 .contact-card {
+    @include mediaQueries(contact-card);
     @include flex(column, start);
     width: 24rem;
     background: $light-purple;

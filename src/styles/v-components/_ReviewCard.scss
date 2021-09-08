@@ -1,6 +1,7 @@
 .each-review {
+    @include mediaQueries(review-card);
     @include flex(column, start);
-    width: 60%;
+    width: 37rem;
     background: $light-purple;
     margin: 1rem;
     box-shadow: $box-shadow;
@@ -14,6 +15,7 @@
 
 .date-and-rating {
     @include flex(row, between);
+    @include mediaQueries(date-rating);
 }
 
 .body {
