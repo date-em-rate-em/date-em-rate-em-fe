@@ -13,9 +13,7 @@
 
 ## Overview
 
-------Describe App Here---- 
-
-client<i>tell  is an application to support sex-worker communities by creating a platform for them to share experiences about people they go out with in order to share that information with others in their community. The application was built using React and using GraphQL. This application was built as the capstone group project of Module 4 at [Turing](turing.edu) by a team of front-end and back-end students. View original project spec [here.](https://mod4.turing.edu/projects/capstone/)
+clien<i>tell</i>  is an application to support sex-worker communities by creating a platform for them to share experiences about people they go out with in order to share that information with others in their community. The application was built using React and using GraphQL. This application was built as the capstone group project of Module 4 at [Turing](turing.edu) by a team of front-end and back-end students. View original project spec [here.](https://mod4.turing.edu/projects/capstone/)
 
 ### Learning Goals
 
@@ -60,12 +58,6 @@ To view this application on your local machine:
 #### Add New Client
 - User may add a new client profile. <br>
 ![Demo of New Client Page](https://user-images.githubusercontent.com/78240633/132534427-38c8f12d-1d02-46d5-9685-56e64276ae4f.gif)
- 
-
-#### Mobile View/Responsive
-- Site is responsive and will change layouts across desktop, tablet, and phone screens<br>
-<!-- <img src="https://user-images.githubusercontent.com/76228573/128801402-1eb28bac-92c8-4391-af74-0998f8e0f4c1.png" alt="mobile view"
-width="100" height="200"/> <img src="https://user-images.githubusercontent.com/76228573/128801682-2d0b9ed4-c0c4-4d1e-be85-f380ba1ec734.png" alt="tablet view" width="200" height="250"/> <img src="https://user-images.githubusercontent.com/76228573/128801845-4482de83-02b6-4429-ba3d-80e63b1518dc.png" alt="desktop view" width="400" height="auto"/>  -->
 
 
 ## Future Additions
@@ -87,7 +79,7 @@ width="100" height="200"/> <img src="https://user-images.githubusercontent.com/7
 <br>
 
 ## Contributors
-### Author
+### Authors
 <table>
      <tr>
         <td> Alex Ferencz <a href="https://github.com/Aferencz1987">GitHub</td>
@@ -126,7 +118,7 @@ width="150" height="auto" /></td>
     </tr>
 </table>
 
-### Project Managers
+### Project Manager
 - [Brian Zanti](https://github.com/BrianZanti)
 
 **************************************************************************
