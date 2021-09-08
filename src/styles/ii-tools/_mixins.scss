@@ -44,6 +44,22 @@
           transform: scale(.5);
           transition: 200ms;
         } 
+        @if $property== contact-card {
+          width: 22rem;
+          transition: 200ms;
+        }
+        @if $property== review-card {
+          width: 23rem;
+          transition: 200ms;
+        }
+        @if $property== date-rating {
+          @include flex(column, center);
+          transition: 200ms;
+        }
+        @if $property== logo {
+          height: 3.5rem;
+          transition: 200ms;
+        }
       }
     }
     
@@ -61,6 +77,22 @@
           transform: scale(1);
           opacity: 1;
         }
+        @if $property== contact-card {
+          width: 23rem;
+          transition: 500ms;
+        }
+        @if $property== review-card {
+          width: 34rem;
+          transition: 200ms;
+        }
+        @if $property== date-rating {
+          @include flex(column, center);
+          transition: 200ms;
+        }
+        @if $property== logo {
+          height: 3.8rem;
+          transition: 200ms;
+        }
       }
     }
   
@@ -77,6 +109,22 @@
           opacity: 0;
           transition: 200ms;
         } 
+        @if $property== contact-card {
+          width: 24rem;
+          transition: 200ms;
+        }
+        @if $property== review-card {
+          width: 37rem;
+          transition: 200ms;
+        }
+        @if $property== date-rating {
+          @include flex(row, between);
+          transition: 200ms;
+        }
+        @if $property== logo {
+          height: 4.5rem;
+          transition: 200ms;
+        }
       }
     }
   
