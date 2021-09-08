@@ -15,16 +15,16 @@
         font-size: 1.5rem; 
         font-style: italic;
         letter-spacing: 1.5px;
-        margin-left: .3rem;
+        margin: 0rem 0rem 0rem .3rem;
+        align-self: center;
+    }
+    .user-icon {
+        color: $dark-purple;
+        font-size: 1.9rem;
         align-self: center;
     }
 }
 
-.user-icon {
-    color: $dark-purple;
-    font-size: 1.9rem;
-    align-self: center;
-}
 
 .dashboard-clients {
     font-size: 1.1rem;
