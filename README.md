@@ -1,70 +1,128 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# <p align="center">client<i>tell</i></p>
 
-## Available Scripts
 
-In the project directory, you can run:
+### Table of Contents
+- [Overview](#overview)
+- [Learning Goals](#learning-goals)
+- [Installation & Viewing](#installation-and-viewing)
+- [Functionality](#functionality)
+- [Future Additions](#future-additions)
+- [Tech Stack](#tech-stack)
+- [Contributors](#contributors)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+------Describe App Here---- 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+client<i>tell was built with React, using the [The Genrenator API](https://binaryjazz.us/wp-json/genrenator/v1/story/) -----
 
-### `npm test`
+This application was built as the capstone group project of Module 4 at [Turing](turing.edu).  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+View original project spec [here.](https://mod4.turing.edu/projects/capstone/)
 
-### `npm run build`
+### Learning Goals
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To solidify and demonstrate the understanding of:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React fundementals and modular code architecture
+- Router to create a multi-page and sophisticated UX
+- Cypress testing to test the application end-to-end
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation and Viewing 
 
-### `npm run eject`
+This application is deployed to Netlify. You may view the live application [here](https://clientell.netlify.app/).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To view this application on your local machine:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Clone down this repository
+- Run `npm i` in your terminal
+- Run `npm start` in your terminal
+- To view Cypress tests, open a separate tab in your terminal and run `npm run cypress`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Functionality 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Welcome <br>
+![Demo of launch page]() 
 
-## Learn More
+#### Shufflin' & Favoriting
+- User may shuffle until they find a convo starter that speaks to them, and favorite it!<br>
+![Demo of shufflin']()
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### View Favorites
+- User may view all favorites and remove ones that they no longer want. <br>
+![Demo of favoriting]()
+ 
 
-### Code Splitting
+#### Mobile View/Responsive
+- Site is responsive and will change layouts across desktop, tablet, and phone screens<br>
+<!-- <img src="https://user-images.githubusercontent.com/76228573/128801402-1eb28bac-92c8-4391-af74-0998f8e0f4c1.png" alt="mobile view"
+width="100" height="200"/> <img src="https://user-images.githubusercontent.com/76228573/128801682-2d0b9ed4-c0c4-4d1e-be85-f380ba1ec734.png" alt="tablet view" width="200" height="250"/> <img src="https://user-images.githubusercontent.com/76228573/128801845-4482de83-02b6-4429-ba3d-80e63b1518dc.png" alt="desktop view" width="400" height="auto"/>  -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Future Additions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- *Log-In*: Ability to create an account and log into the page.
+- *Edit Reviews*: Ability to modify a previously submitted review. 
 
-### Making a Progressive Web App
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<div align="left">  
+<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square" alt="React Badge">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
+<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" alt="CSS3 Badge">
+<img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat-square" alt="Sass Badge"> 
+<img src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" alt="Cypress Badge">
 
-### Advanced Configuration
+</div> 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
+## Contributors
+### Author
+<table>
+     <tr>
+        <td> Alex Ferencz <a href="https://github.com/Aferencz1987">GitHub</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/45580970?v=4" alt="Alex Ferencz photo"
+width="150" height="auto" /></td>
+    </tr>
+         <tr>
+        <td> Alicia Henzler <a href="https://github.com/ahenzler">GitHub</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/59706432?v=4" alt="Alicia Henzler photo"
+width="150" height="auto" /></td>
+    </tr>
+         <tr>
+        <td> Lawrence Whalen <a href="https://github.com/LawrenceWhalen">GitHub</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/78388882?v=4" alt="Lawrence Whalen photo"
+width="150" height="auto" /></td>
+    </tr>
+         <tr>
+        <td> Lourdes Mendoza <a href="https://github.com/mendozalourdes">GitHub</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/78240633?v=4" alt="Lourdes Mendoza photo"
+width="150" height="auto" /></td>
+    </tr>
+         <tr>
+        <td> Rachael Carroll <a href="https://github.com/rachaelcarroll">GitHub</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/76228573?v=4" alt="Rachael Carroll photo"
+width="150" height="auto" /></td>
+    </tr>
+</table>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Project Managers
+- [Brian Zanti](https://github.com/BrianZanti)
 
-### `npm run build` fails to minify
+**************************************************************************
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**[Back to top](#table-of-contents)**
+
