@@ -15,19 +15,20 @@
 
 ------Describe App Here---- 
 
-client<i>tell was built with React, using the [The Genrenator API](https://binaryjazz.us/wp-json/genrenator/v1/story/) -----
-
-This application was built as the capstone group project of Module 4 at [Turing](turing.edu).  
-
-View original project spec [here.](https://mod4.turing.edu/projects/capstone/)
+client<i>tell  is an application to support sex-worker communities by creating a platform for them to share experiences about people they go out with in order to share that information with others in their community. The application was built using React and using GraphQL. This application was built as the capstone group project of Module 4 at [Turing](turing.edu) by a team of front-end and back-end students. View original project spec [here.](https://mod4.turing.edu/projects/capstone/)
 
 ### Learning Goals
 
 To solidify and demonstrate the understanding of:
 
-- React fundementals and modular code architecture
-- Router to create a multi-page and sophisticated UX
+- Gain experience working across front-end and back-end teams to create an application 
+- Self-teach GraphQL on both front-end and back-end teams
+- Practice a git workflow using Git Rebase
+- Use continuous integration tools to build and automate the deployment of features
 - Cypress testing to test the application end-to-end
+- Build applications that execute in development, test, CI, and production environments
+- Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
+
 
 ## Installation and Viewing 
 
@@ -43,16 +44,22 @@ To view this application on your local machine:
 ## Functionality 
 
 #### Welcome <br>
-![Demo of launch page]() 
+- User arrives to dashboard where they can see the top rated, lowest rated, and featured client. <br>
+![Demo of dashboard view](https://user-images.githubusercontent.com/78240633/132533621-e63bc215-326e-4816-a5dd-bc5eaf152820.gif) 
 
-#### Shufflin' & Favoriting
-- User may shuffle until they find a convo starter that speaks to them, and favorite it!<br>
-![Demo of shufflin']()
+#### Search Page & Add Review 
+- User may search through list of clients, then click on one to see their profile and add a review. <br>
+![Demo Search Page & Add Review](https://user-images.githubusercontent.com/78240633/132533148-7b6b062d-2d75-478c-b07c-3752c8612784.gif)
 
 
-#### View Favorites
-- User may view all favorites and remove ones that they no longer want. <br>
-![Demo of favoriting]()
+#### About Us & Resources Page 
+- User may learn more about the application and find more resources. <br>
+![Demo About Us & Resources](https://user-images.githubusercontent.com/78240633/132533843-dc806196-4013-4073-b79b-77cabd397c55.gif)
+
+
+#### Add New Client
+- User may add a new client profile. <br>
+![Demo of New Client Page](https://user-images.githubusercontent.com/78240633/132534427-38c8f12d-1d02-46d5-9685-56e64276ae4f.gif)
  
 
 #### Mobile View/Responsive
