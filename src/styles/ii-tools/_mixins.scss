@@ -40,7 +40,7 @@
           transition: 500ms;
         } 
         @if $property== header-links {
-          opacity: 0;
+          display: none;
           transform: scale(.5);
           transition: 200ms;
         } 
@@ -68,14 +68,14 @@
         @content;
         transition: 100ms;
         @if $property== burger-menu {
-          opacity: 0;
+          opacity: 1;
           transform: scale(.5);
           transition: 200ms;
         } 
         @if $property== header-links {
           transition: 200ms;
           transform: scale(1);
-          opacity: 1;
+          display: none;
         }
         @if $property== contact-card {
           width: 23rem;
@@ -101,7 +101,7 @@
         @content;
         transition: 100ms;
         @if $property == header-links {
-          opacity: 1;
+          @include flex(row, end);
           transition: 200ms;
         } 
         @if $property == burger-menu {
