@@ -34,7 +34,8 @@ const sortByRatings = (clients) => {
         <>
                 <div className='welcome'>
                     <FaUserCircle className='user-icon'/>
-                {user.length && <h2 className='welcome'>Welcome back, ClienTell SexWorkIsRealWork{user[0].id}!</h2>}                </div>
+                {user.length && <h2>Welcome back, SexWorkIsRealWork{user[0].id}!</h2>}                
+                </div>
             <article className='featured-clients'>
                 <h3 className='dashboard-clients'>Highest Rated Client:</h3>
                 {clients.length && highClientCard.id &&
