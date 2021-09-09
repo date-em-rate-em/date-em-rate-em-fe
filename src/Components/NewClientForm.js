@@ -199,7 +199,6 @@ const submitReview = (event) => {
                 id="gender"
                 type="text"
                 name="gender"
-                placeholder="Client's Gender"
                 value={gender}
                 onChange={event => setGender(event.target.value)}
             /> 

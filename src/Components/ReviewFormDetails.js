@@ -111,10 +111,11 @@ const submitReview = (event) => {
             }
         });
     setMissingInfo('')
-      clearInputs()
+    clearInputs()
 
     } else {
         setMissingInfo('You must input all required fields to post a review!')
+        
         event.preventDefault()
       } 
   }
@@ -189,7 +190,6 @@ const submitReview = (event) => {
                 id="gender"
                 type="text"
                 name="gender"
-                placeholder="Client's Gender"
                 value={gender}
                 onChange={event => setGender(event.target.value)}
             /> 
@@ -209,7 +209,6 @@ const submitReview = (event) => {
                 id="payment"
                 type="range"
                 name="payment"
-                placeholder="Payment"
                 min={ 1 } 
 	            max={ 10 } 
                 value={payment}
@@ -220,7 +219,6 @@ const submitReview = (event) => {
                 id="vibe"
                 type="range"
                 name="vibe"
-                placeholder="Vibe"
                 min={ 1 } 
 	            max={ 10 } 
                 value={vibe}
@@ -241,7 +239,6 @@ const submitReview = (event) => {
                 id="condomUsage"
                 type="text"
                 name="condom-usage"
-                placeholder="Condom Use Willingness"
                 value={condoms}
                 onChange={event => setCondomUsage(event.target.value)}
                 />
@@ -250,7 +247,6 @@ const submitReview = (event) => {
                 id="punctuality"
                 type="text"
                 name="punctuality"
-                placeholder="How Punctual Were They?"
                 value={punctuality}
                 onChange={event => setPunctuality(event.target.value)}
             /> 
