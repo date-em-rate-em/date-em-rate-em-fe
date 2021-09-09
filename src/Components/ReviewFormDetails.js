@@ -115,7 +115,7 @@ const submitReview = (event) => {
 
     } else {
         setMissingInfo('You must input all required fields to post a review!')
-        
+
         event.preventDefault()
       } 
   }
@@ -185,11 +185,11 @@ const submitReview = (event) => {
         </div>
         <div className="optional-container">
              <p className='optional-text'>Enter optional information here:</p>
-         <label for="gender">Gender</label>
             <input
                 id="gender"
                 type="text"
                 name="gender"
+                placeholder="Client's Gender"
                 value={gender}
                 onChange={event => setGender(event.target.value)}
             /> 
