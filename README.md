@@ -67,14 +67,16 @@ To view this application on your local machine:
 
 ## Tech Stack
 
-<div align="left">  
+<div align="center">  
 <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square" alt="React Badge">
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
 <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" alt="CSS3 Badge">
 <img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat-square" alt="Sass Badge"> 
-<img src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" alt="Cypress Badge">
-
-</div> 
+<img src="https://img.shields.io/badge/Apollo%20GraphQL-311C87?logo=apollographql&logoColor=fff&style=flat-square" alt="Apollo GraphQL Badge">
+<img src="https://img.shields.io/badge/GraphQL-E434AA?logo=graphql&logoColor=fff&style=flat-square" alt="GraphQL Badge"> 
+<img src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" alt="Cypress Badge"> 
+<img src="https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=fff&style=flat-square" alt="Heroku Badge"> 
+</div>  
 
 <br>
 
